@@ -115,6 +115,54 @@
                         </div> {% endcomment %}
                     </div>
                 </section>
+                <section class="banner-section overflow-hidden p-relative" style="margin-top:2rem;">
+                    <div class="banner banner-fixed">
+                        <figure>
+                            <img src="{% static 'images/demos/demo-tea/banner/10.png' %}" alt="Newمواد" width="1903" height="787">
+                        </figure>
+                        <div class="container tea-banner-container">
+                            <div class="banner-content rtl" style="position:absolute; top:50%; right:5%; transform:translateY(-50%); z-index:2; text-align:right;">
+                                <h4 class="banner-subtitle font-secondary font-weight-light text-primary ls-normal">
+                                    محصول جدید
+                                </h4>
+                                <h2 class="banner-title font-weight-bold">کیفیت عالی <br> عطر و طعم بی نظیر</h2>
+                                <a href="demo-tea-shop.html" class="btn btn-link btn-underline ls-normal">
+                                   مشاهده و انتخاب 
+                                    <i class="d-icon-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <figure class="img-anim3 floating p-absolute" data-options="{'inverX':false, 'invertY:false'}">
+                            <img src="{% static 'images/demos/demo-tea/banner/11.png' %}" class="layer appear-animate" alt="piece"
+                                 width="300" height="300" data-animation-options="{
+                                    'name': 'fadeInLeftShorter',
+                                    'delay': '.5s'
+                                }">
+                        </figure>
+                        <figure class="img-anim4 floating p-absolute" data-options="{'inverX':false, 'invertY:false'}">
+                            <img src="{% static 'images/demos/demo-tea/banner/12.png' %}" class="layer appear-animate" alt="piece"
+                                 width="300" height="300" data-animation-options="{
+                                    'name': 'fadeInRightShorter',
+                                    'delay': '.5s'
+                                }">
+                        </figure>
+                        <h4 class="bg-text font-weight-bold text-white p-absolute lh-1 appear-animate"
+                            data-animation-options="{
+                            'name': 'fadeInUpShorter',
+                            'delay': '1.5s'
+                        }">
+                            مواد
+                        </h4>
+                    </div>
+                </section>
+                <style>
+                .tea-banner-container {
+                    width: 100%;
+                    max-width: none;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+                </style>
                 <div class="container">
                     <section class="mt-6 appear-animate mb-10 drop-shadow">
                         <div class="overflow-hidden">
@@ -161,66 +209,6 @@
                                         </h4>
                                         <p>ما تضمین پرداخت امن را داریم</p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="category-section mb-6 pt-6 appear-animate rtl text-right" data-animation-options="{
-                        'name': 'fadeInLeftShorter',
-                        'delay': '.3s'
-                    }">
-                        <h2 class="title-echo pb-md-0 pb-4">محصولات <span>محصولات </span></h2>
-                        <div class="row">
-                            <div class="col-lg-3 col-6 category">
-                                <a href="demo-food2-shop.html">
-                                    <figure class="category-media">
-                                        <img src="{% static 'images/demos/demo-food2/categories/cat1.jpg' %}" alt="category"
-                                            width="280" height="245" />
-                                    </figure>
-                                </a>
-                                <div class="category-content rtl">
-                                    <h4 class="category-name mb-1"><a href="demo-food2-shop.html">سبزیجات</a></h4>
-                                    <p class="category-count text-grey">14 محصول
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-6 category">
-                                <a href="demo-food2-shop.html">
-                                    <figure class="category-media">
-                                        <img src="{% static 'images/demos/demo-food2/categories/cat2.jpg' %}" alt="category"
-                                            width="280" height="245" />
-                                    </figure>
-                                </a>
-                                <div class="category-content rtl">
-                                    <h4 class="category-name mb-1"><a href="demo-food2-shop.html">نوشیدنی</a></h4>
-                                    <p class="category-count text-grey">8 محصول
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-6 category">
-                                <a href="demo-food2-shop.html">
-                                    <figure class="category-media">
-                                        <img src="{% static 'images/demos/demo-food2/categories/cat3.jpg' %}" alt="category"
-                                            width="280" height="245" />
-                                    </figure>
-                                </a>
-                                <div class="category-content rtl">
-                                    <h4 class="category-name mb-1"><a href="demo-food2-shop.html">میوه</a></h4>
-                                    <p class="category-count text-grey">12 محصول 
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-6 category">
-                                <a href="demo-food2-shop.html">
-                                    <figure class="category-media">
-                                        <img src="{% static 'images/demos/demo-food2/categories/cat4.jpg' %}" alt="category"
-                                            width="280" height="245" />
-                                    </figure>
-                                </a>
-                                <div class="category-content rtl">
-                                    <h4 class="category-name mb-1"><a href="demo-food2-shop.html">پاپریکا</a></h4>
-                                    <p class="category-count text-grey">6محصول
-                                    </p>
                                 </div>
                             </div>
                         </div>
