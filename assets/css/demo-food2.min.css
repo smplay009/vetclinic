@@ -11602,6 +11602,7 @@ ul.blog-filters {
     font-weight: 600;
     line-height: 0;
     color: #222;
+     background-color: #EAEFEF;
 }
 
     .icon-box-icon svg {
@@ -18804,6 +18805,154 @@ h2 {
 
 .rtl {
     direction: rtl;
+}
+
+.banner {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-size: 1rem
+}
+
+    .banner figure img {
+        display: block;
+        width: 100%;
+        height: auto
+    }
+
+    .banner.inner-banner:before {
+        content: "";
+        position: absolute;
+        right: 1rem;
+        left: 1rem;
+        top: 1rem;
+        bottom: 1rem;
+        border: 2px solid rgba(225,225,225,0.3);
+        z-index: 1
+    }
+
+    .banner.inner-banner .banner-content {
+        z-index: 2
+    }
+
+    .banner .banner-content {
+        position: relative
+    }
+
+.banner-radius {
+    border-radius: 1rem;
+    overflow: hidden
+}
+
+.banner-subtitle {
+    
+    line-height: 1
+}
+
+.banner-price-info, .banner-title {
+    line-height: 1
+}
+
+.banner-fixed > .banner-content, .banner-fixed > .container, .banner-fixed > .container-fluid {
+    position: absolute;
+    z-index: 1
+}
+
+.banner-fixed > .container, .banner-fixed > .container-fluid {
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0
+}
+
+.banner-fixed.content-middle .banner-content {
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.banner-fixed.content-center .banner-content {
+    text-align: center;
+    right: 50%;
+    transform: translateX(-50%)
+}
+
+.banner-fixed.content-center.content-middle .banner-content {
+    transform: translate(-50%,-50%)
+}
+
+@media (-ms-high-contrast:none),screen and (-ms-high-contrast:active) {
+    .intro-slider .banner img {
+        height: 100%;
+        width: 100%
+    }
+}
+
+
+.banner-fixed > .banner-content, .banner-fixed > .container, .banner-fixed > .container-fluid {
+    position: absolute;
+    z-index: 1
+}
+
+.banner-fixed > .container, .banner-fixed > .container-fluid {
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0
+}
+
+.banner-fixed.content-middle .banner-content {
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.banner-fixed.content-center .banner-content {
+    text-align: center;
+    right: 50%;
+    transform: translateX(-50%)
+}
+
+.banner-fixed.content-center.content-middle .banner-content {
+    transform: translate(-50%,-50%)
+}
+
+@media (-ms-high-contrast:none),screen and (-ms-high-contrast:active) {
+    .intro-slider .banner img {
+        height: 100%;
+        width: 100%
+    }
+}
+.banner-price-info, .banner-title {
+    line-height: 1
+}
+aside .banner-content {
+    right: 5%;
+    top: 12%;
+    width: 90%
+}
+.intro-slide .banner-content {
+        top: 18.5%;
+        left: 50%;
+        transform: translateX(-50%)
+    }
+
+.banner-section .banner-title {
+        font-size: 5em;
+        color: #333;
+        margin-bottom: 3.4rem;
+        line-height: 1.2
+    }
+.menu-banner1 .banner-subtitle, .menu-banner1 .banner-title {
+    font-size: 3.6rem
+}
+.shop-banner-default .banner-title, .shop-boxed-banner .banner-title {
+    margin-bottom: 2.4rem;
+    font-size: 4em;
+    letter-spacing: -0.035em
+}
+aside .banner-title {
+    font-size: 2.3rem;
+    line-height: 1.4em
 }
 
 .ltr {
