@@ -1245,78 +1245,198 @@
                         </div>
                     </section>
                 </div>
-                <section class="banner-section row gutter-no mb-10 pb-6 rtl text-right">
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="banner1 banner banner-fixed overlay-zoom" style="background-color: #f4f4f4;">
-                            <figure>
-                                <img src="{% static 'images/demos/demo-food2/banners/banner1.jpg' %}" alt="banner" width="472"
-                                    height="450" />
-                            </figure>
-                            <div class="banner-content text-bottom text-center x-50 appear-animate">
-                                <h4 class="banner-subtitle font-weight-bold ls-normal">
-                                   سالاد سبزیجات
-                                </h4>
-                                <a href="demo-food2-shop.html"
-                                    class="btn btn-link btn-underline icon-arrow-left font-weight-semi-bold ls-m btn-primary">
-                                    مشاهده و انتخاب<i class="d-icon-arrow-left"></i></a>
-                            </div>
+                
+                    <section class="products-section row gutter-no align-items-center">
+                    <div class="col-lg-6">
+                        <div class="intro-media appear-animate" style="background-color: #EFEFEF;">
+                            <img src="{% static 'images/demos/demo8/banners/3.jpg' %}" alt="banner" width="951" height="645" />
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="category overlay-zoom" style="background-color: #489c5e;">
-                            <a href="demo-food2-shop.html">
-                                <figure class="category-media">
-                                    <img src="{% static 'images/demos/demo-food2/banners/banner2.jpg' %}" alt="banner" width="480"
-                                        height="450" />
-                                </figure>
-                            </a>
-                            <div class="category-content y-50 x-50 w-100 pl-2 pr-2 pb-1 p-absolute appear-animate">
-                                <h2 class="font-weight-normal ls-normal text-uppercase text-white mb-1"> محصولات جدید
-                                </h2>
-                                <h4 class="font-weight-bold text-white ls-m mb-0">میوه های اورگانیک</h4>
-                                <h4 class="font-weight-normal text-white ls-m mb-10"><span>امروز</span></h4>
-                                <a href="demo-food2-shop.html"
-                                    class="btn btn-md-ellipse btn-ellipse btn-solid btn-primary icon-arrow-left">
-                                    مشاهده و انتخاب<i class="d-icon-arrow-left"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 order-last order-xl-auto">
-                        <div class="intro-banner banner banner-fixed overlay-zoom" style="background-color: #f4f4f4;">
-                            <figure>
-                                <img src="{% static 'images/demos/demo-food2/banners/banner3.jpg' %}" alt="banner" width="480"
-                                    height="450" />
-                            </figure>
-                            <div class="banner-content text-bottom text-center x-50 appear-animate">
-                                <h4 class="banner-subtitle font-weight-bold ls-normal">
-                                   پرفروش این ماه
-                                </h4>
-                                <a href="demo-food2-shop.html"
-                                    class="btn btn-link btn-underline icon-arrow-right font-weight-semi-bold ls-m btn-primary">
-                                    مشاهده و انتخاب<i class="d-icon-arrow-left"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="category overlay-zoom" style="background-color: #36312f">
-                            <a href="demo-food2-shop.html">
-                                <figure class="category-media">
-                                    <img src="{% static 'images/demos/demo-food2/banners/banner4.jpg' %}" alt="banner" width="471"
-                                        height="450" />
-                                </figure>
-                            </a>
-                            <div class="category-content y-50 x-50 w-100 p-absolute appear-animate pl-2 pr-2 pb-1">
-                                <h2 class="font-weight-normal ls-normal text-uppercase text-secondary text-white mb-1">
-                                   بهترین غذا</h2>
-                                <h4 class="font-weight-bold text-white ls-m mb-0"> آب میوه طبیعی</h4>
-                                <h4 class="font-weight-normal text-white ls-m mb-10"><span>امروز</span></h4>
-                                <a href="demo-food2-shop.html"
-                                    class="btn btn-md-ellipse btn-ellipse btn-solid btn-primary icon-arrow-left">
-                                    مشاهده و انتخاب<i class="d-icon-arrow-left"></i></a>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="product-wrapper">
+                            <h2 class="title title-simple"></h2>
+                            <div class="owl-carousel owl-theme row owl-nav-full cols-2" data-owl-options="{
+                                 'rtl':true,
+                                'items': 2,
+                                'nav': true,
+                                'dots': false,
+                                'loop': false,
+                                'margin': 20
+                            }">
+                                <div class="product text-center">
+                                    <figure class="product-media">
+                                        <a href="demo8-product.html">
+                                            <img src="{% static 'images/demos/demo8/products/6.jpg' %}" alt="product" width="267"
+                                                 height="301">
+                                        </a>
+                                        <div class="product-action-vertical">
+                                            <a href="#" class="btn-product-icon btn-cart" data-toggle="modal"
+                                               data-target="#addCartModal" title="اضافه به خرید">
+                                                <i class="d-icon-bag"></i>
+                                            </a>
+                                            <a href="#" class="btn-product-icon btn-wishlist" title="اضافه به علاقه مندی">
+                                                <i class="d-icon-heart"></i>
+                                            </a>
+                                        </div>
+                                        <div class="product-action">
+                                            <a href="#" class="btn-product btn-quickview" title="مشاهده و انتخاب ">
+                                                مشاهده و انتخاب
+                                            </a>
+                                        </div>
+                                    </figure>
+                                    <div class="product-details rtl">
+                                        <h3 class="product-name">
+                                            <a href="demo8-product.html"> ظرف میوه</a>
+                                        </h3>
+                                        <div class="product-price">
+                                            <span class="price"> 900,000 تومان </span>
+                                        </div>
+                                        <div class="ratings-container">
+                                            <div class="ratings-full">
+                                                <span class="ratings" style="width:100%"></span>
+                                                <span class="tooltiptext tooltip-top"></span>
+                                            </div>
+                                            <a href="demo8-product.html" class="rating-reviews">( از 16نظر )</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product text-center">
+                                    <figure class="product-media">
+                                        <a href="demo8-product.html">
+                                            <img src="{% static 'images/demos/demo8/products/7.jpg' %}" alt="product" width="267"
+                                                 height="301">
+                                        </a>
+                                        <div class="product-action-vertical">
+                                            <a href="#" class="btn-product-icon btn-cart" data-toggle="modal"
+                                               data-target="#addCartModal" title="اضافه به خرید">
+                                                <i class="d-icon-bag"></i>
+                                            </a>
+                                            <a href="#" class="btn-product-icon btn-wishlist" title="اضافه به علاقه مندی">
+                                                <i class="d-icon-heart"></i>
+                                            </a>
+                                        </div>
+                                        <div class="product-action">
+                                            <a href="#" class="btn-product btn-quickview" title="مشاهده و انتخاب ">
+                                                مشاهده و انتخاب
+                                            </a>
+                                        </div>
+                                    </figure>
+                                    <div class="product-details rtl">
+                                        <h3 class="product-name">
+                                            <a href="demo8-product.html"> شیرینی خوری</a>
+                                        </h3>
+                                        <div class="product-price">
+                                            <ins class="new-price"> 3،800،000 تومان </ins><del class="old-price"> > 4،800،000 تومان < </del>
+                                        </div>
+                                        <div class="ratings-container">
+                                            <div class="ratings-full">
+                                                <span class="ratings" style="width:100%"></span>
+                                                <span class="tooltiptext tooltip-top"></span>
+                                            </div>
+                                            <a href="demo8-product.html" class="rating-reviews">( از 16نظر )</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
+                <section class="products-section row gutter-no align-items-center">
+                    <div class="col-lg-6">
+                        <div class="intro-media appear-animate">
+                            <img src="{% static 'images/demos/demo8/banners/4.jpg' %}" alt="banner" width="960" height="664" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="product-wrapper">
+                            <h2 class="title title-simple">مبلمان کوچک</h2>
+                            <div class="owl-carousel owl-theme row owl-nav-full cols-2" data-owl-options="{
+                                 'rtl':true,
+                                'items': 2,
+                                'nav': true,
+                                'dots': false,
+                                'loop': false,
+                                'margin': 20
+                            }">
+                                <div class="product text-center">
+                                    <figure class="product-media">
+                                        <a href="demo8-product.html">
+                                            <img src="{% static 'images/demos/demo8/products/8.jpg' %}" alt="product" width="267"
+                                                 height="301">
+                                        </a>
+                                        <div class="product-action-vertical">
+                                            <a href="#" class="btn-product-icon btn-cart" data-toggle="modal"
+                                               data-target="#addCartModal" title="اضافه به خرید">
+                                                <i class="d-icon-bag"></i>
+                                            </a>
+                                            <a href="#" class="btn-product-icon btn-wishlist" title="اضافه به علاقه مندی">
+                                                <i class="d-icon-heart"></i>
+                                            </a>
+                                        </div>
+                                        <div class="product-action">
+                                            <a href="#" class="btn-product btn-quickview" title="مشاهده و انتخاب ">
+                                                مشاهده و انتخاب
+                                            </a>
+                                        </div>
+                                    </figure>
+                                    <div class="product-details rtl">
+                                        <h3 class="product-name">
+                                            <a href="demo8-product.html">میز چای خوری</a>
+                                        </h3>
+                                        <div class="product-price">
+                                            <ins class="new-price"> 6,000,000 تومان </ins><del class="old-price"> 8,000,000 تومان </del>
+                                        </div>
+                                        <div class="ratings-container">
+                                            <div class="ratings-full">
+                                                <span class="ratings" style="width:100%"></span>
+                                                <span class="tooltiptext tooltip-top"></span>
+                                            </div>
+                                            <a href="demo8-product.html" class="rating-reviews">( از 13 نظر )</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product text-center">
+                                    <figure class="product-media">
+                                        <a href="demo8-product.html">
+                                            <img src="{% static 'images/demos/demo8/products/9.jpg' %}" alt="product" width="267"
+                                                 height="301">
+                                        </a>
+                                        <div class="product-action-vertical">
+                                            <a href="#" class="btn-product-icon btn-cart" data-toggle="modal"
+                                               data-target="#addCartModal" title="اضافه به خرید">
+                                                <i class="d-icon-bag"></i>
+                                            </a>
+                                            <a href="#" class="btn-product-icon btn-wishlist" title="اضافه به علاقه مندی">
+                                                <i class="d-icon-heart"></i>
+                                            </a>
+                                        </div>
+                                        <div class="product-action">
+                                            <a href="#" class="btn-product btn-quickview" title="مشاهده و انتخاب ">
+                                                مشاهده و انتخاب
+                                            </a>
+                                        </div>
+                                    </figure>
+                                    <div class="product-details rtl">
+                                        <h3 class="product-name">
+                                            <a href="demo8-product.html"> میزپذیرایی</a>
+                                        </h3>
+                                        <div class="product-price">
+                                            <span class="price"> 1,200,000 تومان </span>
+                                        </div>
+                                        <div class="ratings-container">
+                                            <div class="ratings-full">
+                                                <span class="ratings" style="width:80%"></span>
+                                                <span class="tooltiptext tooltip-top"></span>
+                                            </div>
+                                            <a href="demo8-product.html" class="rating-reviews">( از 18 نظر )</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
                 <div class="container">
                     <section class="category-section mb-4 mb-lg-6 pb-7 appear-animate" data-animation-options="{
                         'name': 'fadeInLeftShorter',
