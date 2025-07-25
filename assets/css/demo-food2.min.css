@@ -18728,26 +18728,6 @@ h2 {
         margin-top: -6px;
     }
 
-.category-section .category-content {
-    padding: 2.7rem 0;
-}
-
-.category-section .category-name {
-    font-size: 2rem;
-    color: #222;
-}
-
-.category-section .category-count {
-    font-size: 1.4rem;
-}
-
-.category-section .category img {
-    transition: transform 0.35s;
-}
-
-.category-section .category:hover img {
-    transform: translateY(-7px);
-}
 
 .arrivals-section {
     margin-bottom: 3.7rem;
@@ -37619,31 +37599,171 @@ h2 {
         margin-top: -6px;
     }
 
-.category-section .category-content {
-    padding: 2.7rem 0;
+    
+.category-section {
+    position: relative;
+    padding: 13rem 0
 }
 
-.category-section .category-name {
-    font-size: 2rem;
-    color: #222;
-}
+    .category-section .title-wrapper span.title-info {
+        width: 250px
+    }
 
-.category-section .category-count {
-    font-size: 1.4rem;
-}
+    .category-section .shape-divider {
+        position: static
+    }
 
-.category-section .category img {
-    transition: transform 0.35s;
-}
+    .category-section .category {
+        border-radius: 6px;
+        overflow: hidden;
+        margin-bottom: 2rem
+    }
 
-.category-section .category:hover img {
-    transform: translateY(-7px);
-}
+    .category-section .category-content {
+        background-color: #E1EEFB;
+        color: #222;
+        overflow: hidden;
+        min-height: 68px
+    }
+
+
 
 .arrivals-section {
     margin-bottom: 3.7rem;
 }
 
+
+.category-section {
+    background-color: #F4F5F7;
+    margin-top: -0.5rem;
+    margin-bottom: 0rem;
+    padding: 12rem 0rem 7.6rem 0rem
+}
+
+    .category-section:before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        right: 0;
+        left: 0;
+        border-right: 50vw solid transparent;
+        border-left: 50vw solid transparent;
+        border-top: 50px solid #fff
+    }
+
+    .category-section:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: -1px;
+        border-right: 50vw solid transparent;
+        border-left: 50vw solid #eaedf1;
+        border-top: 50px solid transparent;
+        border-bottom: 50px solid transparent
+    }
+
+    .category-section .category > a {
+        width: 100%
+    }
+
+    .category-section .category-banner .category-content {
+        align-items: center;
+        background-color: rgba(255,255,255,0.9);
+        padding: 16px 46px;
+        left: auto
+    }
+
+        .category-section .category-banner .category-content h4 {
+            color: #666666;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 30px;
+            letter-spacing: 0px
+        }
+
+        .category-section .category-banner .category-content span {
+            color: #222222;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 30px;
+            letter-spacing: 0px
+        }
+
+    .category-section .category-badge .category-name {
+        font-weight: 600
+    }
+
+    .category-section .height-x3 {
+        height: 59.5rem
+    }
+
+    .category-section .height-x2 {
+        height: 37.1rem
+    }
+
+    .category-section .height-x1 {
+        height: 22.4rem
+    }
+
+    .category-section .category-more .btn {
+        color: #222
+    }
+
+        .category-section .category-more .btn:hover {
+            color: #fff
+        }
+
+    .category-section .category-badge .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none
+    }
+
+.category-section-shadow {
+    line-height: 0
+}
+
+    .category-section-shadow svg {
+        width: calc(300% + 1.3px);
+        height: 230px
+    }
+
+.category-section-top {
+    z-index: -1;
+    transform: rotate(180deg);
+    margin-top: -8rem
+}
+
+    .category-section-top svg {
+        transform: translateX(-50%) rotateY(180deg)
+    }
+
+.category-section-bottom {
+    z-index: -1;
+    transform: rotate(180deg);
+    margin-top: -7rem
+}
+
+@media (max-width:767px) {
+    
+
+    .category-section .container {
+        margin-top: 0
+    }
+
+    .category-section-shadow svg {
+        height: 150px
+    }
+
+    .category-section-bottom {
+        margin-top: -2rem
+    }
+    .category-section-shadow svg {
+        height: 100px
+    }
+}
 .product-details {
     padding-top: 1.6rem;
 }

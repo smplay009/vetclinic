@@ -165,56 +165,85 @@
                     
                 </section>
                 
-                <div class="container">
-                    <section class="mt-6 appear-animate mb-10 drop-shadow">
-                        <div class="overflow-hidden">
-                            <div class="service-carousel owl-carousel owl-theme row cols-md-3 cols-sm-2 cols-1"
-                                data-owl-options="{
-                                 'rtl':true,
-                                    'nav': false,
-                                    'dots': false,
-                                    'loop': true,
-                                    'autoplay': true,
-                                    'autoplayTimeout': 3000,
-                                    'responsive': {
-                                        '0': {
-                                            'items': 1
-                                        },
-                                        '576': {
-                                            'items': 2
-                                        },
-                                        '992': {
-                                            'items': 3
-                                        }
-                                    }
-                                }">
-                                <div class="icon-box icon-box-side">
-                                    <i class="icon-box-icon d-icon-truck"></i>
-                                    <div class="icon-box-content rtl">
-                                        <h4 class="icon-box-title text-capitalize ls-normal">ارسال رایگان و مرجوعی 
-                                        </h4>
-                                        <p>سراسر کشور</p>
-                                    </div>
+                
+                    <section class="mt-4 category-section p-relative overflow-hidden ">
+                    
+                    <div class="container text-center">
+                        <div class="owl-carousel owl-theme owl-nav-fade row cols-lg-4 cols-md-3 cols-2 mb-6"
+                             data-owl-options="{
+                             'rtl':true,
+                            'items': 4,
+                            'nav': false,
+                            'dots': false,
+                            'margin': 20,
+                            'loop': true,
+                            'autoplay': true,
+                            'autoplayTimeout': 4000,
+                            'responsive': {
+                                '0': {
+                                    'items': 2
+                                },
+                                '768': {
+                                    'items': 3
+                                },
+                                '992': {
+                                    'items': 4,
+                                    'nav': true
+                                }
+                            }
+                        }">
+                            <div class="category category-classic">
+                                <figure class="category-media">
+                                    <a href="demo-medical-shop.html">
+                                        <img src="{% static 'images/demos/demo-medical/category/1.jpg' %}" alt="category" width="280"
+                                             height="175">
+                                    </a>
+                                </figure>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name">مراقبت های شخصی</h4>
+                                    <span class="category-count">6 محصول</span>
                                 </div>
-                                <div class="icon-box icon-box-side">
-                                    <i class="icon-box-icon d-icon-service"></i>
-                                    <div class="icon-box-content rtl">
-                                        <h4 class="icon-box-title text-capitalize ls-normal">پشتیبانی 24 ساعته
-                                        </h4>
-                                        <p>دسترسی فوری به پشتیبان های ما</p>
-                                    </div>
+                            </div>
+                            <div class="category category-classic">
+                                <figure class="category-media">
+                                    <a href="demo-medical-shop.html">
+                                        <img src="{% static 'images/demos/demo-medical/category/2.jpg' %}" alt="category" width="280"
+                                             height="175">
+                                    </a>
+                                </figure>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name">پزشکی و سلامت</h4>
+                                    <span class="category-count">1 محصول</span>
                                 </div>
-                                <div class="icon-box icon-box-side">
-                                    <i class="icon-box-icon d-icon-secure"></i>
-                                    <div class="icon-box-content rtl">
-                                        <h4 class="icon-box-title text-normal ls-normal">پرداخت 100% مطمئن
-                                        </h4>
-                                        <p>ما تضمین پرداخت امن را داریم</p>
-                                    </div>
+                            </div>
+                            <div class="category category-classic">
+                                <figure class="category-media">
+                                    <a href="demo-medical-shop.html">
+                                        <img src="{% static 'images/demos/demo-medical/category/3.jpg' %}" alt="category" width="280"
+                                             height="175">
+                                    </a>
+                                </figure>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name">امکانات پزشکی</h4>
+                                    <span class="category-count">3 محصول</span>
+                                </div>
+                            </div>
+                            <div class="category category-classic">
+                                <figure class="category-media">
+                                    <a href="demo-medical-shop.html">
+                                        <img src="{% static 'images/demos/demo-medical/category/4.jpg' %}" alt="category" width="280"
+                                             height="175">
+                                    </a>
+                                </figure>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name">تجهیزات پزشکی</h4>
+                                    <span class="category-count">2 محصول</span>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                        <a href="demo-medical-shop.html" class="btn btn-rounded btn-dark">مشاهده همه دسته ها</a>
+                    </div>
+                </section>
                     <section class="arrivals-section appear-animate text-right">
                         <h2 class="title-echo mb-1"> محصولات جدید<span> محصولات جدید</span></h2>
                         <div class="tab tab-nav-center rtl">
