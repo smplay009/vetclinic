@@ -50,6 +50,9 @@
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     
+   
+    
+  
 </head>
 <body class="riode-rounded-skin">
     <div class="page-wrapper">
@@ -1069,56 +1072,99 @@
     <script src="{% static 'vendor/jquery.floating/jquery.floating.min.js' %}"></script>
     <!-- Main JS File -->
     <script src="{% static 'js/main.min.js' %}"></script>
-    
-    
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/parallax/parallax.min.js' %}"></script>
+    <script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
     <script src="{% static 'vendor/elevatezoom/jquery.elevatezoom.min.js' %}"></script>
-    
-    
+    <script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'vendor/owl-carousel/owl.carousel.min.js' %}"></script>
     <!-- Main JS File -->
     <script src="{% static 'js/main.min.js' %}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
-
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/parallax/parallax.min.js' %}"></script>
+    <script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'vendor/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'vendor/jquery.floating/jquery.floating.min.js' %}"></script>
+    <!-- Main JS File -->
+    <script src="{% static 'js/main.min.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script>
+    var $jqForm = jQuery.noConflict(true);
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/persian-date@1.1.0/dist/persian-date.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
+<!-- ✅ کد جاوااسکریپت برای فرم -->
 <script>
-  $(document).ready(function () {
-    $('#datepicker').persianDatepicker({
+  $jqForm(document).ready(function () {
+    // ⏰ فعال کردن تقویم شمسی
+    $jqForm('#datepicker').persianDatepicker({
       format: 'YYYY/MM/DD',
       theme: 'light',
       initialValue: false,
       autoClose: true,
+      calendar: {
+        persian: {
+          locale: 'fa'
+        }
+      }
     });
 
-    $('#form-main').on('submit', function (e) {
+    // 🕓 زیباسازی Select ساعت
+    $jqForm('select[name="time"]').select2({
+      placeholder: "انتخاب ساعت",
+      dir: "rtl",
+      width: '100%',
+      minimumResultsForSearch: -1,
+      dropdownCssClass: 'select2-dropdown-custom'
+    });
+
+    // 📤 ارسال فرم
+    $jqForm('#form-main').on('submit', function (e) {
       e.preventDefault();
-      $('#form-message').text('در حال ارسال...');
+      $jqForm('#form-message').text('در حال ارسال...');
       setTimeout(() => {
-        $('#form-message').text('نوبت با موفقیت ثبت شد!');
+        $jqForm('#form-message').text('نوبت با موفقیت ثبت شد!');
         this.reset();
       }, 800);
     });
   });
 </script>
-<script>
-  $(document).ready(function() {
-    $('select[name="time"]').select2({
-      placeholder: "انتخاب ساعت",
-      dir: "rtl",
-      width: '100%',
-      minimumResultsForSearch: -1, // مخفی کردن سرچ‌بار
-      dropdownCssClass: 'select2-dropdown-custom'
-    });
-  });
-</script>
 
+<!-- 🎨 استایل زیباسازی select2 -->
+<style>
+  .select2-dropdown-custom .select2-results__option {
+    font-family: 'Vazirmatn', sans-serif;
+    padding: 10px 12px;
+    font-size: 15px;
+    color: #333;
+  }
 
+  .select2-dropdown-custom .select2-results__option--highlighted {
+    background-color: #FFD700;
+    color: #000;
+  }
 
+  .select2-container--default .select2-selection--single {
+    border-radius: 10px;
+    padding: 6px 12px;
+    height: auto;
+    background-color: #fff;
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 15px;
+    border: 1px solid #ccc;
+  }
 
-   
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 28px;
+  }
 
-
+  .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 100%;
+  }
+</style>
 </body>
 </html>
