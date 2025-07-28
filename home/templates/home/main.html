@@ -399,262 +399,7 @@
   }
 </style>
 
-
-<style>
-.booking-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    margin: 50px auto;
-    max-width: 1000px;
-    gap: 40px;
-    direction: rtl;
-    font-family: 'Vazirmatn', sans-serif;
-  }
-
-  .booking-box img {
-    max-width: 450px;
-    border-radius: 12px;
-    object-fit: cover;
-  }
-
-  .booking-form {
-    flex: 1;
-    background: #fafafa;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.05);
-  }
-
-  .booking-form input,
-  .booking-form select,
-  .booking-form button {
-    width: 100%;
-    padding: 12px 14px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-  }
-
-  .booking-form button {
-    background-color: #4CAF50;
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-  }
-
-  #form-response {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #2e7d32;
-    text-align: center;
-  }
-</style>
-
-<div class="booking-box">
-  <img src="{% static 'img/cat-vet.jpg' %}" alt="cat at vet">
-
-  <form id="booking-form" method="POST" class="booking-form">
-    {% csrf_token %}
-    <input type="text" name="name" placeholder="نام کامل" required>
-    <input type="text" name="phone" placeholder="شماره تماس" required>
-    <input type="text" id="datepicker" name="date" placeholder="تاریخ" required readonly>
-
-    <select name="time" required>
-      <option value="">انتخاب ساعت</option>
-      {% for hour in hours %}
-        <option value="{{ hour }}">{{ hour }}</option>
-      {% endfor %}
-    </select>
-
-    <button type="submit">ثبت نوبت</button>
-    <div id="form-response"></div>
-  </form>
-</div>
-
                 <div class="container">
-                    <section class="category-section mb-4 mb-lg-6 pb-7 appear-animate" data-animation-options="{
-                        'name': 'fadeInLeftShorter',
-                        'delay': '.3s'
-                    }">
-                        <h2 class="title-echo mb-2"> پرفروش ترین ها<span> پرفروش ترین ها</span></h2>
-                        <div class="row cols-lg-4 cols-md-3 cols-2 rtl">
-                            <div class="product text-center product-with-qty">
-                                <figure class="product-media">
-                                    <a href="demo-food2-product.html">
-                                        <img src="{% static 'images/demos/demo-food2/products/1-1.jpg' %}" alt="product" width="280"
-                                            height="315" />
-                                        <img src="{% static 'images/demos/demo-food2/products/1-2.jpg' %}" alt="product" width="280"
-                                            height="315" />
-                                    </a>
-                                    <div class="product-label-group">
-                                        <label class="product-label label-sale">%25 تخفیف</label>
-                                    </div>
-                                    <div class="product-action-vertical">
-                                        <a href="#" class="btn-product-icon btn-wishlist" title="اضافه به علاقه مندی"><i
-                                                class="d-icon-heart"></i></a>
-                                    </div>
-                                </figure>
-                                <div class="product-details rtl">
-                                    <h3 class="product-name">
-                                        <a href="demo-food2-product.html">پاپریکا</a>
-                                    </h3>
-                                    <div class="product-price ls-md">
-                                        <span class="price"> 140,000 تومان </span>
-                                    </div>
-                                    <div class="ratings-container">
-                                        <div class="ratings-full">
-                                            <span class="ratings" style="width:100%"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div>
-                                        <a href="demo-food2-product.html" class="rating-reviews">( از 13 نظر )</a>
-                                    </div>
-                                    <div class="product-action">
-                                        <div class="product-quantity">
-                                            <button class="quantity-minus d-icon-minus" title="minus"></button>
-                                            <input class="quantity form-control" type="number" min="1" max="1000000"
-                                                title="qty">
-                                            <button class="quantity-plus d-icon-plus" title="plus"></button>
-                                        </div>
-                                        <a href="#" class="btn-product btn-cart ls-l" data-toggle="modal"
-                                            data-target="#addCartModal" title="اضافه به خرید"><i
-                                                class="d-icon-bag"></i><span>اضافه به سبد</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product text-center product-with-qty">
-                                <figure class="product-media">
-                                    <a href="demo-food2-product.html">
-                                        <img src="{% static 'images/demos/demo-food2/products/2-1.jpg' %}" alt="product" width="280"
-                                            height="315" />
-                                        <img src="{% static 'images/demos/demo-food2/products/2-2.jpg' %}" alt="product" width="280"
-                                            height="315" />
-                                    </a>
-                                    <div class="product-label-group">
-                                        <label class="product-label label-sale">%25 تخفیف</label>
-                                    </div>
-                                    <div class="product-action-vertical">
-                                        <a href="#" class="btn-product-icon btn-wishlist" title="اضافه به علاقه مندی"><i
-                                                class="d-icon-heart"></i></a>
-                                    </div>
-                                </figure>
-                                <div class="product-details rtl">
-                                    <h3 class="product-name">
-                                        <a href="demo-food2-product.html">انگور</a>
-                                    </h3>
-                                    <div class="product-price ls-md">
-                                        <span class="price"> 140,000 تومان </span>
-                                    </div>
-                                    <div class="ratings-container">
-                                        <div class="ratings-full">
-                                            <span class="ratings" style="width:100%"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div>
-                                        <a href="demo-food2-product.html" class="rating-reviews">( از 13 نظر )</a>
-                                    </div>
-                                    <div class="product-action">
-                                        <div class="product-quantity">
-                                            <button class="quantity-minus d-icon-minus" title="minus"></button>
-                                            <input class="quantity form-control" type="number" min="1" max="1000000"
-                                                title="qty">
-                                            <button class="quantity-plus d-icon-plus" title="plus"></button>
-                                        </div>
-                                        <a href="#" class="btn-product btn-cart ls-l" data-toggle="modal"
-                                            data-target="#addCartModal" title="اضافه به خرید"><i
-                                                class="d-icon-bag"></i><span>اضافه به سبد</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product text-center product-with-qty">
-                                <figure class="product-media">
-                                    <a href="demo-food2-product.html">
-                                        <img src="{% static 'images/demos/demo-food2/products/3-1.jpg' %}" alt="product" width="280"
-                                            height="315" />
-                                        <img src="{% static 'images/demos/demo-food2/products/3-2.jpg' %}" alt="product" width="280"
-                                            height="315" />
-                                    </a>
-                                    <div class="product-label-group">
-                                        <label class="product-label label-sale">%25 تخفیف</label>
-                                    </div>
-                                    <div class="product-action-vertical">
-                                        <a href="#" class="btn-product-icon btn-wishlist" title="اضافه به علاقه مندی"><i
-                                                class="d-icon-heart"></i></a>
-                                    </div>
-                                </figure>
-                                <div class="product-details rtl">
-                                    <h3 class="product-name">
-                                        <a href="demo-food2-product.html">گوجه</a>
-                                    </h3>
-                                    <div class="product-price ls-md">
-                                        <span class="price"> 140,000 تومان </span>
-                                    </div>
-                                    <div class="ratings-container">
-                                        <div class="ratings-full">
-                                            <span class="ratings" style="width:100%"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div>
-                                        <a href="demo-food2-product.html" class="rating-reviews">( از 13 نظر )</a>
-                                    </div>
-                                    <div class="product-action">
-                                        <div class="product-quantity">
-                                            <button class="quantity-minus d-icon-minus" title="minus"></button>
-                                            <input class="quantity form-control" type="number" min="1" max="1000000"
-                                                title="qty">
-                                            <button class="quantity-plus d-icon-plus" title="plus"></button>
-                                        </div>
-                                        <a href="#" class="btn-product btn-cart ls-l" data-toggle="modal"
-                                            data-target="#addCartModal" title="اضافه به خرید"><i
-                                                class="d-icon-bag"></i><span>اضافه به سبد</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product text-center product-with-qty">
-                                <figure class="product-media">
-                                    <a href="demo-food2-product.html">
-                                        <img src="{% static 'images/demos/demo-food2/products/4-1.jpg' %}" alt="product" width="280"
-                                            height="315" />
-                                        <img src="{% static 'images/demos/demo-food2/products/4-2.jpg' %}" alt="product" width="280"
-                                            height="315" />
-                                    </a>
-                                    <div class="product-label-group">
-                                        <label class="product-label label-sale">%25 تخفیف</label>
-                                    </div>
-                                    <div class="product-action-vertical">
-                                        <a href="#" class="btn-product-icon btn-wishlist" title="اضافه به علاقه مندی"><i
-                                                class="d-icon-heart"></i></a>
-                                    </div>
-                                </figure>
-                                <div class="product-details rtl">
-                                    <h3 class="product-name">
-                                        <a href="demo-food2-product.html">هلو</a>
-                                    </h3>
-                                    <div class="product-price ls-md">
-                                        <span class="price"> 140,000 تومان </span>
-                                    </div>
-                                    <div class="ratings-container">
-                                        <div class="ratings-full">
-                                            <span class="ratings" style="width:100%"></span>
-                                            <span class="tooltiptext tooltip-top"></span>
-                                        </div>
-                                        <a href="demo-food2-product.html" class="rating-reviews">( از 13 نظر )</a>
-                                    </div>
-                                    <div class="product-action">
-                                        <div class="product-quantity">
-                                            <button class="quantity-minus d-icon-minus" title="minus"></button>
-                                            <input class="quantity form-control" type="number" min="1" max="1000000"
-                                                title="qty">
-                                            <button class="quantity-plus d-icon-plus" title="plus"></button>
-                                        </div>
-                                        <a href="#" class="btn-product btn-cart ls-l" data-toggle="modal"
-                                            data-target="#addCartModal" title="اضافه به خرید"><i
-                                                class="d-icon-bag"></i><span>اضافه به سبد</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
                     <section class="about-circle p-relative appear-animate pb-10 rtl text-right" data-animation-options="{
                         'name': 'fadeInUpShorter',
                         'duration': '1.2s',
@@ -726,6 +471,255 @@
                             </div>
                         </div>
                     </section>
+<section id="appointment-section">
+  <div class="appointment-row">
+    
+    <!-- فرم نوبت‌دهی -->
+    <div class="appointment-form">
+      <h2 class="title">گرفتن یک <span class="highlight">نوبت</span></h2>
+      <form id="form-main">
+        <div class="form-group">
+          <label>نام و نام خانوادگی</label>
+          <input type="text" name="name" required />
+        </div>
+        <div class="form-group">
+          <label>شماره تماس</label>
+          <input type="tel" name="phone" required />
+        </div>
+        <div class="form-group">
+          <label>تاریخ مراجعه</label>
+          <input type="text" id="datepicker" name="date" required />
+        </div>
+        <div class="form-group">
+          <label>ساعت</label>
+          <select name="time" required>
+            <option value="">انتخاب ساعت</option>
+            <option>10:00</option>
+            <option>12:00</option>
+            <option>14:00</option>
+            <option>16:00</option>
+          </select>
+        </div>
+        <div class="form-submit">
+          <button type="submit">
+            نوبت‌دهی <span class="arrow">➜</span>
+          </button>
+        </div>
+        <div id="form-message"></div>
+      </form>
+    </div>
+
+    <!-- تصویر سگ -->
+    <div class="appointment-image">
+      <img src="{% static 'images/pawcat.png' %}" alt="" />
+    </div>
+    
+  </div>
+</section>
+
+<style>
+#appointment-section {
+  padding: 60px 40px;
+  direction: rtl;
+  font-family: 'Vazirmatn', sans-serif;
+}
+.select2-container .select2-selection--single {
+  background: #fff;
+  border: none;
+  border-radius: 14px;
+  height: 48px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  color: #333;
+  box-shadow: 0 0 0 2px #FFD70066;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 100%;
+  right: 10px;
+}
+
+.select2-dropdown.select2-dropdown-custom {
+  border-radius: 14px;
+  border: none;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.select2-results__option {
+  padding: 10px 14px;
+  font-size: 1rem;
+  text-align: right;
+}
+.appointment-row {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.appointment-form {
+  flex: 1 1 400px;
+  background: #DDDAD0;
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 40px 30px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  max-width: 500px;
+}
+
+.appointment-image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.appointment-image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  animation: floaty 4s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.highlight {
+  color: #F44373;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  background: #fff;
+  color: #333;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-submit button {
+  background: #F44373;
+  color: #fff;
+  border: none;
+  padding: 12px 36px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px rgba(244, 67, 115, 0.3);
+  cursor: pointer;
+}
+
+.form-submit button:hover {
+  background: #e63765;
+}
+
+.arrow {
+  font-size: 1.2rem;
+}
+
+#form-message {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #28a745;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .appointment-row {
+    flex-direction: column-reverse;
+  }
+
+  .appointment-form, .appointment-image {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  #appointment-section {
+    padding: 24px 16px;
+  }
+
+  .appointment-row {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .appointment-form {
+    padding: 20px 16px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .appointment-image {
+    max-width: 240px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    max-height: 180px;
+    object-fit: contain;
+  }
+
+  .form-submit {
+    margin-top: 20px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .form-group {
+    margin-bottom: 12px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  .form-submit button {
+    padding: 10px 28px;
+    font-size: 1.1rem;
+  }
+
+  #form-msg {
+    font-size: 1rem;
+  }
+}
+</style>
                     <section class="pt-5 appear-animate" data-animation-options="{
                         'name': 'fadeInUpShorter',
                         'duration': '1.2s',
@@ -810,105 +804,30 @@
                             </div>
                         </div>
                     </section>
-                    <section class="instagram-section pt-2 pt-md-7 pt-10 pb-8 appear-animate" data-animation-options="{
-                        'delay': '.2s',
-                        'duration': '.5s'
-                    }">
-                        <h2 class="title-echo mb-2">اینستاگرام<span>اینستاگرام</span></h2>
-                        <div class="owl-carousel owl-theme row cols-xl-5 cols-lg-4 cols-sm-3 cols-2" data-owl-options="{
-                             'rtl':true,
-                            'items': 5,
-                            'nav': false,
-                            'dots': false,
-                            'margin': 20,
-                            'autoplay': true,
-                            'responsive': {
-                                '0': {
-                                    'items': 2
-                                },
-                                '576': {
-                                    'items': 3
-                                },
-                                '992': {
-                                    'items': 4
-                                },
-                                '1200': {
-                                    'items': 5
-                                }
-                            }
-                        }">
-                            <figure class="instagram">
-                                <a href="#">
-                                    <img src="{% static 'images/demos/demo-food2/instagram/1.png' %}" alt="Instagram" width="220"
-                                        height="220" />
-                                </a>
-                            </figure>
-                            <figure class="instagram">
-                                <a href="#">
-                                    <img src="{% static 'images/demos/demo-food2/instagram/2.png' %}" alt="Instagram" width="220"
-                                        height="220" />
-                                </a>
-                            </figure>
-                            <figure class="instagram">
-                                <a href="#">
-                                    <img src="{% static 'images/demos/demo-food2/instagram/3.png' %}" alt="Instagram" width="220"
-                                        height="220" />
-                                </a>
-                            </figure>
-                            <figure class="instagram">
-                                <a href="#">
-                                    <img src="{% static 'images/demos/demo-food2/instagram/4.png' %}" alt="Instagram" width="220"
-                                        height="220" />
-                                </a>
-                            </figure>
-                            <figure class="instagram">
-                                <a href="#">
-                                    <img src="{% static 'images/demos/demo-food2/instagram/5.png' %}" alt="Instagram" width="220"
-                                        height="220" />
-                                </a>
-                            </figure>
-                        </div>
-                    </section>
-                    <div class="brand-section pt-6 pb-5 pt-lg-10 pb-lg-10 mb-10 appear-animate" data-animation-options="{
-                        'delay': '.2s',
-                        'duration': '.5s'
-                    }">
-                        <div class="owl-carousel owl-theme row cols-xl-6 cols-lg-5 cols-sm-4 cols-xs-3 cols-2"
-                            data-owl-options="{
-                             
-                             'rtl':true,
-                            'items': 6,
-                            'nav': false,
-                            'dots': false,
-                            'margin': 20,
-                            'loop': true,
-                            'autoplay': true,
-                            'responsive': {
-                                '0': {
-                                    'items': 2
-                                },
-                                '480': {
-                                    'items': 3
-                                },
-                                '576': {
-                                    'items': 4
-                                },
-                                '992': {
-                                    'items': 5
-                                },
-                                '1200': {
-                                    'items': 6
-                                }
-                            }
-                        }">
-                            <img src="{% static 'images/demos/demo-food2/brand/brand1.png' %}" alt="brand" width="117" height="34" />
-                            <img src="{% static 'images/demos/demo-food2/brand/brand2.png' %}" alt="brand" width="89" height="26" />
-                            <img src="{% static 'images/demos/demo-food2/brand/brand3.png' %}" alt="brand" width="90" height="28" />
-                            <img src="{% static 'images/demos/demo-food2/brand/brand4.png' %}" alt="brand" width="100" height="40" />
-                            <img src="{% static 'images/demos/demo-food2/brand/brand5.png' %}" alt="brand" width="119" height="31" />
-                            <img src="{% static 'images/demos/demo-food2/brand/brand6.png' %}" alt="brand" width="100" height="42" />
-                        </div>
-                    </div>
+                    <section class="social-section">
+  <h2 class="social-title">شبکه‌های اجتماعی <span>ما را دنبال کنید</span></h2>
+
+  <div class="social-icons-wrapper">
+    <div class="social-icons">
+      <a href="https://instagram.com/yourpage" target="_blank">
+        <img src="{% static 'images/youtube.png' %}" alt="Instagram">
+      </a>
+      <a href="https://youtube.com/yourchannel" target="_blank">
+        <img src="{% static 'images/insta.png' %}" alt="YouTube">
+      </a>
+    </div>
+  </div>
+
+  <img src="{% static 'images/dogy.png' %}" alt="سگ بامزه" class="corner-dog">
+</section>
+
+
+                    
+                </div>
+            </div>
+        </main>
+
+
                 </div>
             </div>
         </main>

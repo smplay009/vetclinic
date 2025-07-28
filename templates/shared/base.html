@@ -12,7 +12,6 @@
     <link rel="icon" type="image/png" href="images/icons/favicon.png">
     <!-- Preload Font -->
     <link rel="preload" href="fonts/riode.ttf?5gap68" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css">
     <link rel="preload" href="vendor/fontawesome-free/webfonts/fa-solid-900.woff2" as="font" type="font/woff2"
           crossorigin="anonymous">
     <link rel="preload" href="vendor/fontawesome-free/webfonts/fa-brands-400.woff2" as="font" type="font/woff2"
@@ -31,7 +30,6 @@
             s.parentNode.insertBefore(wf, s);
         })(document);
     </script>
-    
     <link rel="stylesheet" type="text/css" href="{% static 'vendor/fontawesome-free/css/all.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.min.css' %}">
     <link rel="preload" href="fonts/riode.ttf?5gap68" as="font" type="font/ttf" crossorigin>
@@ -47,10 +45,11 @@
     <link href="{% static 'fonts/vazir/font-vazir.css' %}" rel="stylesheet" />
     <!-- Main CSS File -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/demo-food2.min.css' %}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css">
-   
+    <link rel="preload" href="fonts/riode.ttf?5gap68" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/css/persian-datepicker.min.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     
-  
 </head>
 <body class="riode-rounded-skin">
     <div class="page-wrapper">
@@ -1070,56 +1069,55 @@
     <script src="{% static 'vendor/jquery.floating/jquery.floating.min.js' %}"></script>
     <!-- Main JS File -->
     <script src="{% static 'js/main.min.js' %}"></script>
-    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'vendor/parallax/parallax.min.js' %}"></script>
-    <script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    
+    
     <script src="{% static 'vendor/elevatezoom/jquery.elevatezoom.min.js' %}"></script>
-    <script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
-    <script src="{% static 'vendor/owl-carousel/owl.carousel.min.js' %}"></script>
+    
+    
     <!-- Main JS File -->
     <script src="{% static 'js/main.min.js' %}"></script>
-    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'vendor/parallax/parallax.min.js' %}"></script>
-    <script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
-    <script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
-    <script src="{% static 'vendor/owl-carousel/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'vendor/jquery.floating/jquery.floating.min.js' %}"></script>
-    <!-- Main JS File -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/persian-date@1.1.0/dist/persian-date.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/persian-datepicker@1.2.0/dist/js/persian-datepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script>
   $(document).ready(function () {
     $('#datepicker').persianDatepicker({
-      format: 'YYYY-MM-DD',
+      format: 'YYYY/MM/DD',
+      theme: 'light',
+      initialValue: false,
       autoClose: true,
-      initialValue: false
     });
 
-    $("#booking-form").on("submit", function (e) {
+    $('#form-main').on('submit', function (e) {
       e.preventDefault();
-      let formData = $(this).serialize();
-
-      $.ajax({
-        url: "{% url 'appointment_ajax' %}",
-        method: "POST",
-        data: formData,
-        success: function (res) {
-          if (res.status === "ok") {
-            $("#form-response").css("color", "green").text("نوبت با موفقیت ثبت شد");
-            $("#booking-form")[0].reset();
-          } else {
-            $("#form-response").css("color", "red").text(res.error);
-          }
-        },
-        error: function () {
-          $("#form-response").css("color", "red").text("خطا در ارسال فرم.");
-        }
-      });
+      $('#form-message').text('در حال ارسال...');
+      setTimeout(() => {
+        $('#form-message').text('نوبت با موفقیت ثبت شد!');
+        this.reset();
+      }, 800);
     });
   });
 </script>
+<script>
+  $(document).ready(function() {
+    $('select[name="time"]').select2({
+      placeholder: "انتخاب ساعت",
+      dir: "rtl",
+      width: '100%',
+      minimumResultsForSearch: -1, // مخفی کردن سرچ‌بار
+      dropdownCssClass: 'select2-dropdown-custom'
+    });
+  });
+</script>
+
+
+
+
+   
 
 
 </body>

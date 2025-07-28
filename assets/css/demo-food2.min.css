@@ -21469,9 +21469,6 @@ blockquote {
     }
 }
 
-.order-first {
-    order: -1;
-}
 
 .order-last {
     order: 9;
@@ -24285,6 +24282,83 @@ blockquote {
 .d-icon-truck:before {
     content: ""
 }
+.social-section {
+  position: relative;
+  background: linear-gradient(to right, #2A1C6C, #542BBA);
+  padding: 60px 20px 100px;
+  border-radius: 24px;
+  text-align: center;
+  font-family: 'Vazirmatn', sans-serif;
+  color: #fff;
+  overflow: hidden;
+  margin: 40px auto;
+  max-width: 1100px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.social-title {
+  font-size: 2.3rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.social-title span {
+  display: block;
+  font-size: 1.2rem;
+  color: #FFD700;
+  margin-top: 10px;
+}
+
+.social-icons-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 40px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.social-icons a img {
+  width: 140px;
+  height: 140px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: translateY(-10px) scale(1.05);
+}
+
+.corner-dog {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 300px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ریسپانسیو برای نمایشگرهای کوچیک‌تر */
+@media (max-width: 768px) {
+  .social-icons-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .corner-dog {
+    position: relative;
+    margin-top: 30px;
+    left: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 220px;
+  }
+}
 
 .d-icon-service:before {
     content: ""
@@ -24302,9 +24376,6 @@ blockquote {
     content: ""
 }
 
-.d-icon-layer:before {
-    content: ""
-}
 
 .d-icon-alert:before {
     content: ""
