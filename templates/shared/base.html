@@ -95,141 +95,49 @@
         {% endblock main %}
 
         <!-- End of Main -->
-        <footer class="footer rtl text-right">
-            <div class="container">
-                <div class="footer-middle">
-                    <div class="row pt-2">
-                        <div class="col-lg-2 d-flex align-items-center">
-                            <div class="widget widget-about mb-0">
-                                <a href="demo-food2.html" class="logo-footer">
-                                    <img src="{% static 'images/demos/demo-food2/logo-footer.png' %}" alt="logo-footer" width="154"
-                                        height="43" />
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-contact col-md-6 mb-4 mb-lg-0">
-                            <div class="widget widget-contact">
-                                <h4 class="widget-title"> تماس با ما</h4>
-                                <ul class="widget-body ">
-                                    <li>
-                                        <label>آدرس</label> تهران ، خیابان آرژانتین 
-                                    </li>
-                                    <li>
-                                        <label>تلفن</label>
-                                        <a href="tel:#">09112345678 </a>
-                                    </li>
-                                    <li>
-                                        <label>ایمیل</label>
-                                        <a href="mailto:mail@example.com">mail@example.com</a>
-                                    </li>
-                                    <li>
-                                        <label>روزها/ساعت های کاری</label> از شنبه تا پنج شنبه /  8 صبح تا 9 شب
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-account col-md-6 mb-4 mb-lg-0">
-                            <div class="widget">
-                                <h4 class="widget-title">  حساب کاربری من</h4>
-                                <ul class="widget-body ">
-                                    <li>
-                                        <a href="contact-us.html">تماس با ما</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">سرویس های ما</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">روش های پرداخت</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">راهنمای خدمات</a>
-                                    </li>
-                                    <li>
-                                        <a href="faq.html">سوالات متداول</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">پشتیبانی سرویس</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"> تضمین ما</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="widget widget-newsletter form-wrapper">
-                                <div class="newsletter-info">
-                                    <h4 class="widget-title">عضویت در وبسایت</h4>
-                                    <p>جزء اولین کسانی باشید که از تخفیف ها و محصولات جدید ما باخبر می شوند.</p>
-                                </div>
-                                <form action="#" class="input-wrapper input-wrapper-inline">
-                                    <input type="email" class="form-control pl-4 ltr" name="email" id="email"
-                                        placeholder="آدرس ایمیل تان را وارد کنید ..." required />
-                                    <button class="btn btn-primary btn-rounded btn-md ls-m mr-2"
-                                        type="submit">عضویت<i class="d-icon-arrow-left"></i></button>
-                                </form>
-                            </div>
-                            <div class="social-links links">
-                                <a href="#" class="social-link social-facebook fab fa-facebook-f"
-                                    title="Social Link"></a>
-                                <a href="#" class="social-link social-twitter fab fa-twitter" title="Social Link"></a>
-                                <a href="#" class="social-link social-instagram fab fa-instagram"
-                                    title="Social Link"></a>
-                                <a href="#" class="social-link social-youtube fab fa-youtube" title="Social Link"></a>
-                                <a href="#" class="social-link social-pinterest fab fa-pinterest"
-                                    title="Social Link"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End FooterMiddle -->
-                <div class="footer-bottom">
-                    <div class="footer-right">
-                        <p class="copyright">فروشگاه  آنلاین  ریود 1402 &copy;  کلیه حقوق محفوظ است .</p>
-                    </div>
-                    <div class="footer-left">
-                        <figure class="payment">
-                            <img src="{% static 'images/payment.png' %}" alt="payment" width="159" height="29" />
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <!-- End FooterBottom -->
-        </footer>
-        <!-- End Footer -->
-    </div>
-    <!-- Sticky Footer -->
-    <div class="sticky-footer sticky-content fix-bottom rtl text-right">
-        <a href="demo-food2.html" class="sticky-link">
-            <i class="d-icon-home"></i>
-            <span>صفحه نخست</span>
-        </a>
-        <a href="demo-food2-shop.html" class="sticky-link">
-            <i class="d-icon-volume"></i>
-            <span>دسته بندی</span>
-        </a>
-        <a href="wishlist.html" class="sticky-link">
-            <i class="d-icon-heart"></i>
-            <span>علاقه مندی</span>
-        </a>
-        <a href="account.html" class="sticky-link">
-            <i class="d-icon-user"></i>
-            <span>حساب کاربری</span>
-        </a>
-        <div class="header-search hs-toggle dir-up">
-            <a href="#" class="search-toggle sticky-link">
-                <i class="d-icon-search"></i>
-                <span>جستجو</span>
-            </a>
-            <form action="#" class="input-wrapper">
-                <input type="text" class="form-control" name="search" autocomplete="off"
-                    placeholder="جستجو ..." required />
-                <button class="btn btn-search" type="submit" title="submit-button">
-                    <i class="d-icon-search"></i>
-                </button>
-            </form>
+        <footer class="custom-footer">
+  <div class="container">
+    <div class="row pt-4 pb-2">
+      <!-- اطلاعات سمت راست -->
+      <div class="col-md-6">
+        <div>
+          <h4 class="custom-footer-title">تماس با کلینیک دکتر رخشان</h4>
+          <ul class="custom-footer-contact-list">
+            <li><i class="fas fa-map-marker-alt"></i> تهران، خیابان آرژانتین</li>
+            <li><i class="fas fa-phone-alt"></i> <a href="tel:09112345678">۰۹۱۱۲۳۴۵۶۷۸</a></li>
+            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/989112345678" target="_blank">پیام در واتساپ</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:mail@example.com">mail@example.com</a></li>
+            <li><i class="fas fa-clock"></i> شنبه تا پنج‌شنبه: ۸ صبح تا ۹ شب</li>
+          </ul>
         </div>
+      </div>
+
+      <!-- نقشه سمت چپ -->
+      <div class="col-md-6 text-center">
+  <h4 class="custom-footer-title">موقعیت ما در نقشه</h4>
+  <a href="https://www.google.com/maps?q=35.732319,51.416708" target="_blank" rel="noopener">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12952.053189597008!2d51.416708!3d35.732319!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQzJzU2LjQiTiA1McKwMjUnMDAuMiJF!5e0!3m2!1sen!2s!4v1722168899000"
+      width="100%"
+      height="230"
+      style="border:0; border-radius: 12px; box-shadow: 0 0 10px rgba(255,255,255,0.2);"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+    <p class="custom-footer-map-text">برای مسیریابی در Google Maps کلیک کنید</p>
+  </a>
+</div>
     </div>
+
+    <!-- پایین فوتر -->
+    <div class="custom-footer-bottom mt-3">
+      <p class="mb-0">کلینیک دامپزشکی دکتر رخشان © ۱۴۰۲ - تمامی حقوق محفوظ است.</p>
+      
+    </div>
+  </div>
+</footer>
+
     <!-- Scroll Top -->
     <a id="scroll-top" href="#top" title="Top" role="button" class="scroll-top"><i class="d-icon-arrow-up"></i></a>
     <!-- MobileMenu -->
