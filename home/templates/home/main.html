@@ -399,7 +399,81 @@
   }
 </style>
 
-                
+
+<style>
+.booking-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 50px auto;
+    max-width: 1000px;
+    gap: 40px;
+    direction: rtl;
+    font-family: 'Vazirmatn', sans-serif;
+  }
+
+  .booking-box img {
+    max-width: 450px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .booking-form {
+    flex: 1;
+    background: #fafafa;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  }
+
+  .booking-form input,
+  .booking-form select,
+  .booking-form button {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+  }
+
+  .booking-form button {
+    background-color: #4CAF50;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+
+  #form-response {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #2e7d32;
+    text-align: center;
+  }
+</style>
+
+<div class="booking-box">
+  <img src="{% static 'img/cat-vet.jpg' %}" alt="cat at vet">
+
+  <form id="booking-form" method="POST" class="booking-form">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="نام کامل" required>
+    <input type="text" name="phone" placeholder="شماره تماس" required>
+    <input type="text" id="datepicker" name="date" placeholder="تاریخ" required readonly>
+
+    <select name="time" required>
+      <option value="">انتخاب ساعت</option>
+      {% for hour in hours %}
+        <option value="{{ hour }}">{{ hour }}</option>
+      {% endfor %}
+    </select>
+
+    <button type="submit">ثبت نوبت</button>
+    <div id="form-response"></div>
+  </form>
+</div>
+
                 <div class="container">
                     <section class="category-section mb-4 mb-lg-6 pb-7 appear-animate" data-animation-options="{
                         'name': 'fadeInLeftShorter',
