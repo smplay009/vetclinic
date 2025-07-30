@@ -24283,46 +24283,44 @@ blockquote {
     content: ""
 }
 .social-section {
-  position: relative;
   background: linear-gradient(to right, #2A1C6C, #542BBA);
-  padding: 60px 20px 100px;
+  padding: 40px 20px 0;
   border-radius: 24px;
   text-align: center;
   font-family: 'Vazirmatn', sans-serif;
   color: #fff;
-  overflow: hidden;
   margin: 40px auto;
   max-width: 1100px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
 .social-title {
-  font-size: 2.3rem;
-  margin-bottom: 30px;
+  font-size: 2rem;
+  margin-bottom: 20px;
   font-weight: 700;
 }
 
 .social-title span {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #FFD700;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .social-icons-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 40px;
   flex-wrap: wrap;
-  position: relative;
-  z-index: 2;
+  gap: 30px;
+  margin-bottom: 60px;
 }
 
 .social-icons a img {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
@@ -24332,17 +24330,22 @@ blockquote {
   transform: translateY(-10px) scale(1.05);
 }
 
-.corner-dog {
-  position: absolute;
-  bottom: 0;
-  left: 20px;
-  width: 300px;
-  height: auto;
-  pointer-events: none;
-  z-index: 1;
+.dog-bottom-wrapper {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 0;
+  margin-top: -20px;
 }
 
-/* ریسپانسیو برای نمایشگرهای کوچیک‌تر */
+.corner-dog {
+  width: 500px;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ریسپانسیو برای موبایل */
 @media (max-width: 768px) {
   .social-icons-wrapper {
     flex-direction: column;
@@ -24350,13 +24353,143 @@ blockquote {
   }
 
   .corner-dog {
-    position: relative;
-    margin-top: 30px;
-    left: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 220px;
+    width: 200px;
+    margin-top: 0px;
+  }
+}
+
+.custom-header-glass {
+  position: relative;
+  width: 100vw;
+  padding: 5px 5px 5px;
+  color: #fff;
+  font-family: 'Vazirmatn', sans-serif;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.header-glass-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(74,0,224,0.7), rgba(36,25,79,0.7));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+.custom-header-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.custom-info-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+
+.custom-info-card:hover {
+  transform: translateY(-5px);
+}
+
+.custom-icon {
+  font-size: 36px;
+  color: #FFD700;
+}
+
+.custom-info-text h3 {
+  margin: 0 0 10px;
+  font-size: 1.4rem;
+  color: #FFD700;
+}
+
+.custom-info-text p,
+.custom-info-text a {
+  margin: 4px 0;
+  font-size: 1.1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.custom-info-text a:hover {
+  text-decoration: underline;
+}
+
+.custom-clinic-card {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.custom-clinic-name {
+  font-size: 2rem;
+  margin: 12px 0 5px;
+  font-weight: bold;
+  color: #FFD700;
+}
+
+.custom-slogan {
+  font-size: 1.1rem;
+  color: #eee;
+}
+
+.clinic-logo {
+  font-size: 42px;
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* حذف موج */
+.header-wave-svg {
+  display: none;
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+  .custom-header-inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .custom-clinic-card {
+    order: -1;
+  }
+
+  .custom-info-text h3 {
+    font-size: 1.3rem;
+  }
+
+  .custom-info-text p,
+  .custom-info-text a {
+    font-size: 1rem;
+  }
+
+  .custom-clinic-name {
+    font-size: 1.6rem;
+  }
+
+  .custom-slogan {
+    font-size: 1rem;
   }
 }
 

@@ -511,7 +511,7 @@
 
     <!-- تصویر سگ -->
     <div class="appointment-image">
-      <img src="{% static 'images/pawcat.png' %}" alt="" />
+      <img src="{% static 'images/catpaw.png' %}" alt="" />
     </div>
     
   </div>
@@ -718,6 +718,32 @@
   #form-msg {
     font-size: 1rem;
   }
+  .select2-dropdown-custom .select2-results__option {
+    font-family: 'Vazirmatn', sans-serif;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: #333;
+  }
+
+  .select2-dropdown-custom .select2-results__option--highlighted {
+    background-color: #F44373;
+    color: white;
+  }
+
+  .select2-container--default .select2-selection--single {
+    border-radius: 14px;
+    padding: 10px 16px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 0 0 2px #FFD70066;
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 15px;
+    color: #333;
+  }
+
+  .select2-selection__arrow {
+    height: 100% !important;
+  }
 }
 </style>
                     <section class="pt-5 appear-animate" data-animation-options="{
@@ -804,24 +830,25 @@
                             </div>
                         </div>
                     </section>
-                    <section class="social-section">
+<section class="social-section">
   <h2 class="social-title">شبکه‌های اجتماعی <span>ما را دنبال کنید</span></h2>
 
   <div class="social-icons-wrapper">
     <div class="social-icons">
       <a href="https://instagram.com/yourpage" target="_blank">
-        <img src="{% static 'images/youtube.png' %}" alt="Instagram">
+        <img src="{% static 'images/insta.png' %}" alt="Instagram">
       </a>
       <a href="https://youtube.com/yourchannel" target="_blank">
-        <img src="{% static 'images/insta.png' %}" alt="YouTube">
+        <img src="{% static 'images/yy.png' %}" alt="YouTube">
       </a>
     </div>
   </div>
 
-  <img src="{% static 'images/dogy.png' %}" alt="سگ بامزه" class="corner-dog">
+  <!-- سگ بچسبه به پایین -->
+  <div class="dog-bottom-wrapper">
+    <img src="{% static 'images/mm.png' %}" alt="" class="corner-dog">
+  </div>
 </section>
-
-
                     
                 </div>
             </div>
