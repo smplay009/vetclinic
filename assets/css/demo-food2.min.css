@@ -190,7 +190,7 @@
 }
 
 .custom-footer {
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  background: linear-gradient(135deg, rgb(44, 34, 65),rgb(26, 54, 83));
   color: #f0f0f0;
   padding: 60px 20px 20px;
   font-family: 'Vazirmatn', sans-serif;
@@ -24599,12 +24599,11 @@ blockquote {
 .header-glass-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgb(161,111,116), rgb(53,83,204));
+  background: linear-gradient(135deg,rgb(44, 34, 65),rgb(73,148,222));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 1;
 }
-
 .custom-header-inner {
   position: relative;
   z-index: 2;
