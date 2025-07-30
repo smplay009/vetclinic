@@ -168,20 +168,10 @@
                 <section class="category-section mt-4 p-relative overflow-hidden rtl text-right">
                     <div class="shape-divider">
                         
-                        <div class="shape shape7">
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 39.281 100 2.406"
-                                 enable-background="new 0 39.281 100 2.406" xml:space="preserve">
-                            <path fill="#fefefe"
-                                  d="M100,41.471c0,0-24.975-2.083-49.96-2.083C25.026,39.388,0,41.471,0,41.471v19.14h100V41.471z">
-                                </path>
-                            </svg>
-                        </div>
+                        
                     </div>
                     <div class="title-wrapper title-white">
-                        <h1 style="color: #d1d1d1; font-size: 5rem; text-align: center; font-family: 'Estedad', 'Vazirmatn', sans-serif; font-weight: 900; letter-spacing: 0.5px; text-shadow: 0 0 8px rgba(255, 255, 255, 0.25);">
-  خدمات ما
-</h1>
+                        <h2 class="title-echo mb-lg-6 pl-1 pr-1"> خدمات دامپزشکی</h2>
 
                 
                     </div>
@@ -211,66 +201,69 @@
                         }">
                             <div class="category category-classic">
                                 <figure class="category-media">
-                                    <a href="demo-medical-shop.html">
-                                        <img src="{% static 'images/demos/demo-medical/category/1.jpg' %}" alt="category" width="280"
+                                    
+                                        <img src="{% static 'images/Designer (1).jpeg' %}" alt="category" width="280"
                                              height="175">
-                                    </a>
+                                    
                                 </figure>
                                 <div class="category-content rtl">
-                                    <h4 class="category-name">مراقبت های شخصی</h4>
-                                    <span class="category-count">6 محصول</span>
+                                    <h4 class="category-name">واکسیناسیون و پیشگیری</h4>
+                                    
+                                </div>
+                            </div>
+                            <div class="category category-classic">
+                                <figure class="category-media">
+                                    
+                                        <img src="{% static 'images/Designer.jpeg' %}" alt="category" width="280"
+                                             height="175">
+                                    
+                                </figure>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name">خدمات اورژانسی</h4>
+                                    
                                 </div>
                             </div>
                             <div class="category category-classic">
                                 <figure class="category-media">
                                     <a href="demo-medical-shop.html">
-                                        <img src="{% static 'images/demos/demo-medical/category/2.jpg' %}" alt="category" width="280"
-                                             height="175">
-                                    </a>
-                                </figure>
-                                <div class="category-content rtl">
-                                    <h4 class="category-name">پزشکی و سلامت</h4>
-                                    <span class="category-count">1 محصول</span>
-                                </div>
-                            </div>
-                            <div class="category category-classic">
-                                <figure class="category-media">
-                                    <a href="demo-medical-shop.html">
-                                        <img src="{% static 'images/demos/demo-medical/category/3.jpg' %}" alt="category" width="280"
+                                        <img src="{% static 'images/Designer4.jpeg' %}" alt="category" width="280"
                                              height="175">
                                     </a>
                                 </figure>
                                 <div class="category-content rtl">
                                     <h4 class="category-name">امکانات پزشکی</h4>
-                                    <span class="category-count">3 محصول</span>
+                                    
                                 </div>
                             </div>
                             <div class="category category-classic">
                                 <figure class="category-media">
                                     <a href="demo-medical-shop.html">
-                                        <img src="{% static 'images/demos/demo-medical/category/4.jpg' %}" alt="category" width="280"
+                                        <img src="{% static 'images/Designer5.jpeg' %}" alt="category" width="280"
                                              height="175">
                                     </a>
                                 </figure>
                                 <div class="category-content rtl">
-                                    <h4 class="category-name">تجهیزات پزشکی</h4>
-                                    <span class="category-count">2 محصول</span>
+                                    <h4 class="category-name">دندان‌پزشکی حیوانات</h4>
+                                    
+                                </div>
+                            </div>
+                            <div class="category category-classic">
+                                <figure class="category-media">
+                                    <a href="demo-medical-shop.html">
+                                        <img src="{% static 'images/Designer7.jpeg' %}" alt="category" width="280"
+                                             height="175">
+                                    </a>
+                                </figure>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name">جراحی تحصصی</h4>
+                                    
                                 </div>
                             </div>
                         </div>
-                        <a href="demo-medical-shop.html" class="btn btn-rounded btn-dark">مشاهده همه دسته ها</a>
+                        
                     </div>
                 </section>
-                <section class="banner">
-                    
-                        <figure>
-                            <img src="{% static 'images/mm.png' %}" alt="" width="1903" height="787">
-                        </figure>
-                       
-                        
-                        
-                    
-                </section>
+                
                 
                     <section class="products-section row gutter-no align-items-center">
                     <div class="col-lg-6">
@@ -763,63 +756,28 @@
                                 }
                             }
                         }">
+                          {% for blog in blogs %}
                             <div class="post drop-shadow mb-9 overlay-zoom">
                                 <figure class="post-media" style="background-color: #efedee;">
                                     <a href="post-single.html">
-                                        <img src="{% static 'images/demos/demo-food2/blog/blog1.jpg' %}" width="600" height="357"
+                                        <img src="{{ blog.image.url }}" width="600" height="357"
                                             alt="post" />
                                     </a>
                                 </figure>
                                 <div class="post-details text-center">
                                     <div class="post-meta">
-                                        <a href="#" class="post-date mr-1">2 آبان 1402</a> | <a href="#"
-                                            class="post-comment ml-1"><span>2</span> نظر</a>
+                                        
                                     </div>
-                                    <h4 class="post-title ls-m text-normal"><a href="post-single.html">%20 تخفیف 
-                                            برای این هفته </a>
+                                    <h4 class="post-title ls-m text-normal"><a href="post-single.html"> {{blog.name}}
+                                            </a>
                                     </h4>
+                                    <p class="post-short-desc font-primary mt-2">{{ blog.p_des }}</p>
                                     <a href="post-single.html" class="btn btn-link btn-underline btn-primary
                                 font-primary font-weight-bold ls-m">بیشتر<i class="d-icon-arrow-left"></i></a>
                                 </div>
                             </div>
-                            <div class="post drop-shadow mb-9 overlay-zoom">
-                                <figure class="post-media" style="background-color: #548b19;">
-                                    <a href="post-single.html">
-                                        <img src="{% static 'images/demos/demo-food2/blog/blog2.jpg' %}" width="600" height="357"
-                                            alt="post" />
-                                    </a>
-                                </figure>
-                                <div class="post-details text-center">
-                                    <div class="post-meta">
-                                        <a href="#" class="post-date mr-1">2 آبان 1402</a> | <a href="#"
-                                            class="post-comment ml-1"><span>2</span> نظر</a>
-                                    </div>
-                                    <h4 class="post-title ls-m text-normal"><a href="post-single.html">%20 تخفیف 
-                                            برای این هفته </a>
-                                    </h4>
-                                    <a href="post-single.html" class="btn btn-link btn-underline btn-primary
-                                    font-primary font-weight-bold ls-m">بیشتر<i class="d-icon-arrow-left"></i></a>
-                                </div>
-                            </div>
-                            <div class="post drop-shadow mb-9 overlay-zoom">
-                                <figure class="post-media" style="background-color: #ececec;">
-                                    <a href="post-single.html">
-                                        <img src="{% static 'images/demos/demo-food2/blog/blog3.jpg' %}" width="600" height="357"
-                                            alt="post" />
-                                    </a>
-                                </figure>
-                                <div class="post-details text-center">
-                                    <div class="post-meta">
-                                        <a href="#" class="post-date mr-1">2 آبان 1402</a> | <a href="#"
-                                            class="post-comment ml-1"><span>2</span> نظر</a>
-                                    </div>
-                                    <h4 class="post-title ls-m text-normal"><a href="post-single.html">%20 تخفیف 
-                                            برای این هفته </a>
-                                    </h4>
-                                    <a href="post-single.html" class="btn btn-link btn-underline btn-primary
-                                    font-primary font-weight-bold ls-m">بیشتر<i class="d-icon-arrow-left"></i></a>
-                                </div>
-                            </div>
+                          {% endfor %}
+                            
                         </div>
                     </section>
 <section class="social-section">

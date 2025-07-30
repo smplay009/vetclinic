@@ -1,15 +1,21 @@
 # home/views.py
 from django.shortcuts import render
 from django.http import JsonResponse
-from .models import Appointment
+from .models import *
 from datetime import datetime
+from django.shortcuts import render, get_object_or_404
+import jdatetime
 
 def booking_page(request):
     hours = [
         "06", "06:30", "07", "07:30", "08", "08:30",
         "09", "09:30", "10", "10:30", "11"
     ]
-    return render(request, 'home/main.html', {'hours': hours})
+    blogs = Blog.objects.all().order_by('-updated_date')
+    return render(request, 'home/main.html', {
+        'hours': hours,
+        'blogs': blogs
+    })
 def appointment_ajax(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -43,3 +49,15 @@ def check_slots(request):
             key = str(appt.time)
             data[key] = data.get(key, 0) + 1
     return JsonResponse(data)
+
+
+def blog_detail(request, slug):
+    blog = get_object_or_404(Blog, slug=slug)
+    
+    # تبدیل به تاریخ شمسی فقط (بدون زمان)
+    jalali_date = jdatetime.datetime.fromgregorian(datetime=blog.updated_date).strftime('%Y/%m/%d')
+
+    return render(request, 'home/blog_detail.html', {
+        'blog': blog,
+        'jalali_date': jalali_date
+    })
