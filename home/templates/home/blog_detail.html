@@ -4,19 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta property="og:title" content="">
-    <meta property="og:type" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-
+ 
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="{% static 'css.sh/normalize.css' %}">
@@ -53,7 +41,7 @@
     <div class="container-fluid">
         <nav aria-label="breadcrumb" class="my-lg-0 my-2">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="/shop" class="font-14 text-muted-two">خانه</a></li>
+                <li class="breadcrumb-item"><a href="/" class="font-14 text-muted-two">خانه</a></li>
                 <li class="breadcrumb-item"><a href="#" class="font-14 text-muted-two">وبلاگ</a></li>
                 <li class="breadcrumb-item active main-color-one-color font-14 fw-bold" aria-current="page">{{article.name}}
                 </li>
@@ -286,10 +274,43 @@
                         <div class="container-fluid">
                             <div class="blog-main-content-content-text">
                                 
-                                 <h6 class="font-26 mb-2 title-font">
-                                    {{blog.title}}
-                                 </h6> 
-                                <p>{{blog.description}}</p>
+<h6 class="font-30 mb-2 title-font" style="margin-left:120px;">{{blog.title}}</h6>
+                                <p class="blog-description-style">{{blog.description}}</p>
+
+<style>
+.blog-description-style {
+  font-size: 1.4rem;
+  line-height: 2;
+  color: #202b3fff;
+  font-family: 'Vazirmatn', 'IRANSansX', 'IRANSans', 'Tahoma', Arial, sans-serif;
+  text-align: right;
+  padding: 0;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  word-spacing: 0.08em;
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  transition: font-size 0.2s, color 0.2s;
+  max-width: 1350px;
+  margin-right: 25px;
+  margin-left: auto;
+  margin-bottom: 2rem;
+}
+@media (max-width: 600px) {
+  .blog-description-style {
+    font-size: 1.1rem;
+    line-height: 2.2;
+    margin-right: 5px;
+    max-width: 98vw;
+  }
+  .font-30.mb-2.title-font {
+    margin-left: 20px !important;
+  }
+}
+</style>
+
                                 
                                 <!-- متن بیشتر -->
                                 <div class="">

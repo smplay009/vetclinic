@@ -36,25 +36,217 @@
                                 <img src="{% static 'images/beautiful-pet-portrait-small-dog-cat.jpg' %}" alt="intro-banner" width="1903"
                                     height="540" style="background-color: #ececec;" />
                             </figure>
-                            <div class="container">
-                                
-                                
-                                <div class="banner-content pb-1 rtl">
-                                    <h2 class="banner-title mb-3 ls-m slide-animate"
-                                        data-animation-options="{'name': 'fadeInRightShorter', 'duration': '1s', 'delay': '.2s'}">
-                                        هر ضربان قلبی که نجات می‌دهیم،
-                                    </h2>
-                                    <h4 class="banner-subtitle text-uppercase mb-2 slide-animate"
-                                        data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '1s'}">
-                                        داستان یک خانواده را
-                                    </h4>
-                                    <h4 class="banner-subtitle text-uppercase mb-2 slide-animate"
-                                        data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '1s'}">
-                                         زنده نگه می‌دارد
-                                    </h4>
-                                    
-                                </div>
-                            </div>
+<div class="clinic-hero-content pb-1 rtl">
+  <h2 class="clinic-hero-title slide-animate"
+      data-animation-options="{'name': 'fadeInRightShorter', 'duration': '1s', 'delay': '.2s'}">
+    هر ضربان قلبی که نجات می‌دهیم،
+  </h2>
+  <div class="clinic-hero-center-group">
+    <h2 class="clinic-hero-subtitle slide-animate"
+        data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '1s'}">
+      داستان یک خانواده را
+    </h2>
+    <h2 class="clinic-hero-subtitle slide-animate"
+        data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '1s'}">
+      زنده نگه می‌دارد
+    </h2>
+    <a href="#contact" class="clinic-hero-button slide-animate"
+       data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '1.6s'}">
+      تماس با ما
+    </a>
+  </div>
+</div>
+
+
+<style>
+
+.clinic-hero-content {
+  position: absolute;
+  right: 80px;
+  top: 80px;
+  left: auto;
+  max-width: 800px;
+  margin: 0;
+  padding: 2rem 0 2rem 1rem;
+  text-align: right;
+  box-sizing: border-box;
+  z-index: 2;
+  background: none;
+}
+
+.clinic-hero-center-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.clinic-hero-title {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #000;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+}
+
+.clinic-hero-subtitle {
+  font-size: 4rem;
+  font-weight: 600;
+  color: #000;
+  line-height: 2;
+  margin-bottom: 1.2rem;
+  text-transform: none;
+}
+
+.clinic-hero-button {
+  display: inline-block;
+  padding: 1.25rem 3.5rem;
+  font-size: 1.7rem;
+  color: #fff;
+  border-radius: 22px;
+  text-decoration: none;
+  font-weight: 800;
+  background: linear-gradient(120deg, #2563eb 0%, #4a90e2 100%);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.28), 0 2px 24px 0 rgba(0,0,0,0.18);
+  border: 2.5px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(8px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
+  transition: all 0.22s cubic-bezier(.4,2,.6,1);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+}
+.clinic-hero-button:before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(74,144,226,0.10) 100%);
+  opacity: 0.7;
+  pointer-events: none;
+  border-radius: 22px;
+  z-index: 1;
+}
+.clinic-hero-button span, .clinic-hero-button {
+  position: relative;
+  z-index: 2;
+}
+.clinic-hero-button:hover {
+  background: linear-gradient(120deg, #1d4ed8 0%, #2563eb 100%);
+  box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.38), 0 4px 32px 0 rgba(0,0,0,0.22);
+  border-color: #fff;
+  transform: translateY(-4px) scale(1.06);
+}
+.clinic-hero-button:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 12px 0 rgba(31, 38, 135, 0.18);
+}
+
+@media (min-width: 768px) {
+  .clinic-hero-title {
+    font-size: 4.5rem;
+  }
+
+  .clinic-hero-subtitle {
+    font-size: 4rem;
+  }
+}
+</style>
+<style>
+/* Responsive styles for clinic-hero-content and children */
+@media (max-width: 1200px) {
+  .clinic-hero-content {
+    right: 40px;
+    top: 60px;
+    max-width: 600px;
+    padding: 1.5rem 0 1.5rem 0.5rem;
+  }
+  .clinic-hero-title {
+    font-size: 3.2rem;
+  }
+  .clinic-hero-subtitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .clinic-hero-subtitle {
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+  .clinic-hero-button {
+    font-size: 1.1rem;
+    padding: 0.8rem 2.2rem;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .clinic-hero-subtitle {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.15;
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+  .clinic-hero-title {
+    font-size: 2.45rem;
+    margin-bottom: 0.7rem;
+    line-height: 1.2;
+    text-align: right;
+  }
+  .clinic-hero-button {
+    font-size: 1.18rem;
+    padding: 0.7rem 1.7rem;
+    border-radius: 13px;
+    margin-top: 0.3rem;
+  }
+  .clinic-hero-center-group {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .clinic-hero-content {
+    right: 5vw;
+    left: auto;
+    top: 38px;
+    width: auto;
+    max-width: 98vw;
+    padding: 0.4rem 0.1rem 0.4rem 0.1rem;
+    text-align: right;
+  }
+  .clinic-hero-title {
+    font-size: 1.65rem;
+    margin-bottom: 0.4rem;
+    text-align: right;
+  }
+  .clinic-hero-subtitle {
+    font-size: 1.45rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.15;
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+  .clinic-hero-button {
+    font-size: 1.1rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 10px;
+    margin-top: 0.2rem;
+  }
+  .clinic-hero-center-group {
+    align-items: center;
+    text-align: center;
+  }
+}
+</style>
                         </div>
                         
                         {% comment %} <div class="banner banner-fixed intro-slide2" style="background-color: #39351a;">
@@ -148,15 +340,85 @@
                             <img src="{% static 'images/10 (1).jpg' %}" alt="" width="1903" height="787">
                         </figure>
                         <div class="container tea-banner-container">
-                            <div class="banner-content rtl" style="position:absolute; top:50%; right:5%; transform:translateY(-50%); z-index:2; text-align:right;">
-                                <h4 class="banner-subtitle font-secondary font-weight-light text-primary ls-normal">
-                                    محصول جدید
-                                </h4>
-                                <h2 class="banner-title font-weight-bold">کیفیت عالی <br> عطر و طعم بی نظیر</h2>
-                                <a href="demo-tea-shop.html" class="btn btn-link btn-underline ls-normal">
-                                   مشاهده و انتخاب 
-                                    <i class="d-icon-arrow-left"></i>
-                                </a>
+                            <div class="banner-content rtl banner-content-responsive" style="position:absolute; top:calc(50% - 60px); right:5%; transform:translateY(-50%); z-index:2; text-align:right;">
+                                
+<div class="banner-desc-right">
+  کلینیک دامپزشکی دکتر رخشان با تمرکز بر طب حیوانات کوچک، خدمات تخصصی را مبتنی بر دانش روز، شواهد بالینی و تجربه بالینی ارائه می‌دهد.<br>
+  در این مرکز، تشخیص و درمان نه یک فرایند فنی، بلکه حاصل پیوندی است میان دانش، تجربه و نگرش علمی مسئولانه.<br>
+  ما هر بیمار را نه صرفاً یک پرونده پزشکی، بلکه امانتی می‌دانیم که با اعتماد به ما سپرده شده است.
+</div>
+<style>
+.banner-desc-right {
+  font-size: 2.15rem;
+  font-weight: 700;
+  color: #555879;
+  text-align: right;
+  line-height: 2.1;
+  max-width: 700px;
+  margin-right: 0;
+  margin-left: auto;
+  background: none;
+  padding: 0;
+  direction: rtl;
+}
+
+@media (max-width: 1200px) {
+  .banner-desc-right {
+    font-size: 1.7rem;
+    max-width: 520px;
+  }
+}
+@media (max-width: 768px) {
+  .banner-content-responsive {
+    position: absolute !important;
+    top: 18px !important;
+    right: 5% !important;
+    left: 5% !important;
+    width: 90vw !important;
+    transform: none !important;
+    margin-top: 0 !important;
+    z-index: 2;
+    text-align: right;
+  }
+  .banner-desc-right br {
+    margin-bottom: 0.3em;
+    display: block;
+    content: "";
+  }
+  .banner-desc-right {
+    font-size: 0.82rem;
+    max-width: 54vw;
+    padding-left: 2vw;
+    padding-right: 0;
+    margin: 0 0 0 auto;
+    line-height: 1.3;
+    font-weight: 400;
+    color: #555879;
+  }
+  .banner-desc-right br {
+    margin-bottom: 0.18em;
+    display: block;
+    content: "";
+  }
+    pointer-events: auto;
+    max-height: 5.2em;
+    overflow: hidden;
+  }
+}
+@media (max-width: 480px) {
+  .banner-desc-right {
+    font-size: 0.74rem;
+    max-width: 62vw;
+    padding-left: 3vw;
+    padding-right: 0;
+    margin: 0 0 0 auto;
+    line-height: 1.15;
+    max-height: 4.2em;
+    overflow: hidden;
+  }
+}
+</style>
+                                
                             </div>
                         </div>
                         
@@ -219,7 +481,7 @@
                                     
                                 </figure>
                                 <div class="category-content rtl">
-                                    <h4 class="category-name">خدمات اورژانسی</h4>
+                                    <h4 class="category-name">آرایشگاه</h4>
                                     
                                 </div>
                             </div>
@@ -268,7 +530,7 @@
                     <section class="products-section row gutter-no align-items-center">
                     <div class="col-lg-6">
                         <div class="intro-media appear-animate" style="background-color: #EFEFEF;">
-                            <img src="{% static 'images/49ae09181f0430f0b8021afd4d451263.jpg' %}" alt="banner" width="951" height="645" />
+                            <img src="{% static 'images/close-up-veterinarian-taking-care-pet.jpg' %}" alt="banner" width="951" height="645" />
                         </div>
                     </div>
                     
@@ -282,6 +544,72 @@
     </p>
   </div>
 </section>
+<style>
+/* فلش‌های اسلایدر وبلاگ */
+.post-slider .owl-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 10;
+}
+.post-slider .owl-nav button.owl-prev,
+.post-slider .owl-nav button.owl-next {
+  pointer-events: all;
+  background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 50%, #1e3c72 100%);
+  color: #fff !important;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2.1rem;
+  box-shadow: 0 4px 18px rgba(33,147,176,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  opacity: 0.95;
+}
+.post-slider .owl-nav button.owl-prev:hover,
+.post-slider .owl-nav button.owl-next:hover {
+  background: linear-gradient(135deg, #1e3c72 0%, #2193b0 50%, #6dd5ed 100%);
+  box-shadow: 0 8px 32px rgba(33,147,176,0.25);
+  transform: scale(1.12);
+}
+  /* فلش راست (بعدی) */
+.post-slider .owl-nav button.owl-prev:before {
+  content: '\203A'; /* Right arrow */
+  font-family: inherit;
+  font-size: 2.2rem;
+  font-weight: bold;
+  display: block;
+  line-height: 1;
+}
+/* فلش چپ (قبلی) */
+.post-slider .owl-nav button.owl-next:before {
+  content: '\2039'; /* Left arrow */
+  font-family: inherit;
+  font-size: 2.2rem;
+  font-weight: bold;
+  display: block;
+  line-height: 1;
+}
+.post-slider .owl-nav button span {
+  display: none;
+}
+@media (max-width: 767px) {
+  .post-slider .owl-nav button.owl-prev,
+  .post-slider .owl-nav button.owl-next {
+    width: 38px;
+    height: 38px;
+    font-size: 1.5rem;
+  }
+}
+</style>
 
 
 
@@ -418,9 +746,8 @@
                                         <p>جرم‌گیری، ترمیم، و پیشگیری از مشکلات دهان و دندان، با تکنیک‌های مدرن و بدون استرس برای حیوانات خانگی شما. دهان سالم، حیوان شاد!</p></div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-12 mt-1 order-first order-lg-auto">
-                                <figure class="d-flex justify-content-center floating"
-                                    data-options='{"invertX":false, "invertY":false}' data-floating-depth=".1">
+                            <div class="col-lg-6 col-12 d-flex justify-content-center align-items-center flex-column">
+                                <figure class="floating about-center-img" style="margin-top: 60px; margin-bottom: 32px;" data-options='{"invertX":false, "invertY":false}' data-floating-depth=".1">
                                     <img class="layer" src="{% static 'images/snapedit_1753287500109.png' %}"
                                         alt="about-us" width="574" height="452" />
                                 </figure>
@@ -461,7 +788,7 @@
     
     <!-- فرم نوبت‌دهی -->
     <div class="appointment-form">
-      <h2 class="title">گرفتن یک <span class="highlight">نوبت</span></h2>
+      <h2 class="title"><span class="highlight"> نوبت </span>دهی</h2>
       <form id="form-main">
         <div class="form-group">
           <label>نام و نام خانوادگی</label>
@@ -739,27 +1066,32 @@
                         <h2 class="title-echo">وبلاگ <span>وبلاگ </span></h2>
                         <div class="owl-carousel owl-shadow-carousel owl-theme post-slider row cols-lg-3 cols-sm-2 cols-1"
                             data-owl-options="{
-                             'rtl':true,
-                            'nav': false,
-                            'dots': true,
-                            'margin': 20,
-                            'responsive': {
-                                '0': {
-                                    'items': 1
-                                },
-                                '576': {
-                                    'items': 2
-                                },
-                                '992': {
-                                    'items': 3,
-                                    'dots': false
-                                }
-                            }
-                        }">
+                             'rtl':false,
+                             'nav': true,
+                             'dots': true,
+                             'margin': 20,
+                             'responsive': {
+                                 '0': {
+                                     'items': 1,
+                                     'nav': true,
+                                     'dots': true
+                                 },
+                                 '576': {
+                                     'items': 2,
+                                     'nav': true,
+                                     'dots': true
+                                 },
+                                 '992': {
+                                     'items': 3,
+                                     'nav': true,
+                                     'dots': false
+                                 }
+                             }
+                         }">
                           {% for blog in blogs %}
                             <div class="post drop-shadow mb-9 overlay-zoom">
                                 <figure class="post-media" style="background-color: #efedee;">
-                                    <a href="post-single.html">
+                                    <a href="{% url 'blog_detail' blog.slug %}">
                                         <img src="{{ blog.image.url }}" width="600" height="357"
                                             alt="post" />
                                     </a>
@@ -768,16 +1100,17 @@
                                     <div class="post-meta">
                                         
                                     </div>
-                                    <h4 class="post-title ls-m text-normal"><a href="post-single.html"> {{blog.name}}
+                                    <h4 class="post-title ls-m text-normal"><a href="{% url 'blog_detail' blog.slug %}"> {{blog.name}}
                                             </a>
                                     </h4>
                                     <p class="post-short-desc font-primary mt-2">{{ blog.p_des }}</p>
-                                    <a href="post-single.html" class="btn btn-link btn-underline btn-primary
+                                    <a href="{% url 'blog_detail' blog.slug %}" class="btn btn-link btn-underline btn-primary
                                 font-primary font-weight-bold ls-m">بیشتر<i class="d-icon-arrow-left"></i></a>
                                 </div>
                             </div>
                           {% endfor %}
                             
+                        
                         </div>
                     </section>
 <section class="social-section">
