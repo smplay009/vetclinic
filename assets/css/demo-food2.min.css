@@ -191,7 +191,7 @@
 }
 
 .custom-footer {
-  background: linear-gradient(135deg, rgb(44, 34, 65),rgb(26, 54, 83));
+  background: linear-gradient(135deg, rgb(158, 148, 135), rgb(50, 50, 50));
   color: #f0f0f0;
   padding: 80px 20px 20px;
   font-family: 'Vazirmatn', sans-serif;
@@ -24601,7 +24601,7 @@ blockquote {
 .header-glass-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg,rgb(44, 34, 65),rgb(73,148,222));
+  background: linear-gradient(135deg, rgb(184, 170, 149),rgb(92, 92, 92));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 1;
@@ -27533,6 +27533,32 @@ button.mfp-arrow {
 
 @media (max-width: 767px) {
     .title-echo {
+        font-size: 3.2em;
+    }
+}
+.title-echo1 {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 7px;
+    color: #f3f3f3;
+    font-size: 6.89rem;
+    letter-spacing: -0.2px;
+}
+
+    .title-echo1 span {
+        position: absolute;
+        font-size: 3.74rem;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #222;
+    }
+
+@media (max-width: 767px) {
+    .title-echo1 {
         font-size: 3.2em;
     }
 }
