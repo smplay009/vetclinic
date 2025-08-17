@@ -1,12 +1,34 @@
 {% extends "shared/base.html" %}
-
 {% load static %}
-
-
-
 
 {% block main %}
 
+<!-- سئو: هدر مخفی فقط برای گوگل -->
+<h1 style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+  کلینیک دامپزشکی دکتر رخشان | بهترین خدمات دامپزشکی تهران
+</h1>
+
+<!-- سئو: اسکیما کلینیک دامپزشکی -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "کلینیک دامپزشکی دکتر رخشان",
+  "image": "https://YOURDOMAIN.com/static/images/nn.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "آدرس کلینیک",
+    "addressLocality": "تهران",
+    "addressCountry": "IR"
+  },
+  "telephone": "09002777080",
+  "url": "https://YOURDOMAIN.com/",
+  "openingHours": "Sa-Th 18:00-00:00",
+  "priceRange": "متوسط"
+}
+</script>
+
+<!-- ادامه کد سایت شما بدون تغییر -->
     <main class="main home">
             <div class="page-content">
                 <section class="intro-section">
@@ -1127,17 +1149,12 @@
     </div>
   </div>
 
-  <!-- سگ بچسبه به پایین -->
+  
   <div class="dog-bottom-wrapper">
     <img src="{% static 'images/mm.png' %}" alt="" class="corner-dog">
   </div>
 </section>
                     
-                </div>
-            </div>
-        </main>
-
-
                 </div>
             </div>
         </main>
