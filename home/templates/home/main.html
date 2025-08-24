@@ -55,10 +55,14 @@
                     }">
                         <div class="intro-slide1 banner banner-fixed" style="background-color: #f6f6f6;">
                             <figure>
-                                <img src="{% static 'images/nn.png' %}" alt="intro-banner" width="1903"
-                                    height="540" style="background-color: #ececec;" />
-                            </figure>
-<div class="clinic-hero-content pb-1 rtl">
+  <picture>
+    <!-- عکس مخصوص موبایل (max-width: 768px) -->
+    <source srcset="{% static 'images/simple_pet.png' %}" media="(max-width: 768px)">
+    <!-- عکس اصلی برای دسکتاپ -->
+    <img src="{% static 'images/nn.png' %}" alt="intro-banner" width="1903" height="540" style="background-color: #ececec;" />
+  </picture>
+</figure>
+<div class="clinic-hero-content pb-1 rtl hero-center-mobile">
   <h2 class="clinic-hero-title slide-animate"
       data-animation-options="{'name': 'fadeInRightShorter', 'duration': '1s', 'delay': '.2s'}">
     هر ضربان قلبی که نجات می‌دهیم،
