@@ -31,247 +31,70 @@
     <main class="main home">
             <div class="page-content">
                 <section class="intro-section">
-                    <div class="owl-carousel owl-nav-inside owl-theme row owl-nav-fade intro-slider animation-slider cols-1 gutter-no owl-nav-arrow"
-                        data-owl-options="{
-                         'rtl':true,
-                        'loop': true,
-                        'items': 1,
-                        'autoplay': true,
-                        'autoplayTimeout': 10000,
-                        'responsive': {
-                            '0': {
-                                'items': 1
-                            },
-                            '768': {
-                                'nav': false,
-                                'dots': true
-                            },
-                            '992': {
-                                'nav': true,
-                                'dots': false
-                            }
-                        }
-                    }">
-                        <div class="intro-slide1 banner banner-fixed" style="background-color: #f6f6f6;">
-                            <figure>
-  <picture>
-    <!-- عکس مخصوص موبایل (max-width: 768px) -->
-    <source srcset="{% static 'images/photo-1450778869180-41d0601e046e.jpg' %}" media="(max-width: 768px)">
-    <!-- عکس اصلی برای دسکتاپ -->
-    <img src="{% static 'images/photo-1450778869180-41d0601e046e.jpg' %}" alt="intro-banner" width="1903" height="540" style="background-color: #ececec;" />
-  </picture>
-</figure>
-<div class="clinic-hero-content pb-1 rtl hero-center-mobile">
-  <h2 class="clinic-hero-title slide-animate"
-      data-animation-options="{'name': 'fadeInRightShorter', 'duration': '1s', 'delay': '.2s'}">
-    هر ضربان قلبی که نجات می‌دهیم،
-  </h2>
-  <div class="clinic-hero-center-group">
-    <h2 class="clinic-hero-subtitle slide-animate"
-        data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '1s'}">
-      داستان یک خانواده را
-    </h2>
-    <h2 class="clinic-hero-subtitle slide-animate"
-        data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '1s'}">
-      زنده نگه می‌دارد
-    </h2>
-    <a href="#contact" class="clinic-hero-button slide-animate"
-       data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '1.6s'}">
-      تماس با ما
-    </a>
-  </div>
-</div>
-
-
-<style>
-
-.clinic-hero-content {
-  position: absolute;
-  right: 40px;
-  top: 180px;
-  left: auto;
-  max-width: 800px;
-  margin: 0;
-  padding: 2rem 0 2rem 1rem;
-  text-align: right;
-  box-sizing: border-box;
-  z-index: 2;
-  background: none;
-}
-
-.clinic-hero-center-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.clinic-hero-title {
-  font-size: 4rem;
-  font-weight: 900;
-  color: #000;
-  line-height: 1.4;
-  margin-bottom: 2rem;
-}
-
-.clinic-hero-subtitle {
-  font-size: 4rem;
-  font-weight: 600;
-  color: #000;
-  line-height: 2;
-  margin-bottom: 1.2rem;
-  text-transform: none;
-}
-
-.clinic-hero-button {
-  display: inline-block;
-  padding: 1.25rem 3.5rem;
-  font-size: 1.7rem;
-  color: #fff;
-  border-radius: 22px;
-  text-decoration: none;
-  font-weight: 800;
-  background: linear-gradient(120deg, #2563eb 0%, #4a90e2 100%);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.28), 0 2px 24px 0 rgba(0,0,0,0.18);
-  border: 2.5px solid rgba(255,255,255,0.35);
-  backdrop-filter: blur(8px) saturate(180%);
-  -webkit-backdrop-filter: blur(8px) saturate(180%);
-  transition: all 0.22s cubic-bezier(.4,2,.6,1);
-  position: relative;
-  overflow: hidden;
-  letter-spacing: 0.5px;
-}
-.clinic-hero-button:before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(74,144,226,0.10) 100%);
-  opacity: 0.7;
-  pointer-events: none;
-  border-radius: 22px;
-  z-index: 1;
-}
-.clinic-hero-button span, .clinic-hero-button {
-  position: relative;
-  z-index: 2;
-}
-.clinic-hero-button:hover {
-  background: linear-gradient(120deg, #1d4ed8 0%, #2563eb 100%);
-  box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.38), 0 4px 32px 0 rgba(0,0,0,0.22);
-  border-color: #fff;
-  transform: translateY(-4px) scale(1.06);
-}
-.clinic-hero-button:active {
-  transform: scale(0.97);
-  box-shadow: 0 4px 12px 0 rgba(31, 38, 135, 0.18);
-}
-
-@media (min-width: 768px) {
-  .clinic-hero-title {
-    font-size: 4.5rem;
-  }
-
-  .clinic-hero-subtitle {
-    font-size: 4rem;
-  }
-}
-</style>
-<style>
-/* Responsive styles for clinic-hero-content and children */
-@media (max-width: 1200px) {
-  .clinic-hero-content {
-    right: 40px;
-    top: 60px;
-    max-width: 600px;
-    padding: 1.5rem 0 1.5rem 0.5rem;
-  }
-  .clinic-hero-title {
-    font-size: 3.2rem;
-  }
-  .clinic-hero-subtitle {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .clinic-hero-subtitle {
-    font-size: 2.3rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.3;
-    text-align: center;
-    width: 100%;
-    display: block;
-  }
-  .clinic-hero-button {
-    font-size: 1.1rem;
-    padding: 0.8rem 2.2rem;
-    border-radius: 16px;
-  }
-}
-
-@media (max-width: 768px) {
-  .clinic-hero-subtitle {
-    font-size: 2rem;
-    margin-bottom: 0.3rem;
-    line-height: 1.15;
-    text-align: center;
-    width: 100%;
-    display: block;
-  }
-  .clinic-hero-title {
-    font-size: 2.45rem;
-    margin-bottom: 0.7rem;
-    line-height: 1.2;
-    text-align: right;
-  }
-  .clinic-hero-button {
-    font-size: 1.18rem;
-    padding: 0.7rem 1.7rem;
-    border-radius: 13px;
-    margin-top: 0.3rem;
-  }
-  .clinic-hero-center-group {
-    align-items: center;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .clinic-hero-content {
-    right: 5vw;
-    left: auto;
-    top: 38px;
-    width: auto;
-    max-width: 98vw;
-    padding: 0.4rem 0.1rem 0.4rem 0.1rem;
-    text-align: right;
-  }
-  .clinic-hero-title {
-    font-size: 1.65rem;
-    margin-bottom: 0.4rem;
-    text-align: right;
-  }
-  .clinic-hero-subtitle {
-    font-size: 1.45rem;
-    margin-bottom: 0.3rem;
-    line-height: 1.15;
-    text-align: center;
-    width: 100%;
-    display: block;
-  }
-  .clinic-hero-button {
-    font-size: 1.1rem;
-    padding: 0.5rem 1.2rem;
-    border-radius: 10px;
-    margin-top: 0.2rem;
-  }
-  .clinic-hero-center-group {
-    align-items: center;
-    text-align: center;
-  }
-}
-</style>
+    <div class="owl-carousel owl-nav-inside owl-theme row owl-nav-fade intro-slider animation-slider cols-1 gutter-no owl-nav-arrow"
+        data-owl-options="{
+            'rtl':true,
+            'loop': true,
+            'items': 1,
+            'autoplay': true,
+            'autoplayTimeout': 10000,
+            'responsive': {
+                '0': {
+                    'items': 1
+                },
+                '768': {
+                    'nav': false,
+                    'dots': true
+                },
+                '992': {
+                    'nav': true,
+                    'dots': false
+                }
+            }
+        }">
+        <div class="intro-slide1 banner banner-fixed" style="background-color: #f6f6f6;">
+            <figure>
+                <picture>
+                    <source srcset="{% static 'images/photo-1450778869180-41d0601e046e.jpg' %}" media="(max-width: 768px)">
+                    <img src="{% static 'images/photo-1450778869180-41d0601e046e.jpg' %}" alt="کلینیک دامپزشکی دکتر رخشان" width="1903" height="540" />
+                </picture>
+            </figure>
+            
+            <!-- لایه برای خوانایی -->
+            <div class="vet-hero-overlay"></div>
+            
+            <!-- محتوای اصلی -->
+            <div class="vet-hero-content">
+                <div class="vet-hero-text">
+                    <!-- متن اصلی -->
+                    <h1 class="vet-hero-title">
+                        <span class="vet-title-line vet-line-1">هر ضربان قلبی که نجات می‌دهیم،</span>
+                        <span class="vet-title-line vet-line-2">داستان یک خانواده را</span>
+                        <span class="vet-title-line vet-line-3">زنده نگه می‌دارد</span>
+                    </h1>
+                    
+                    <!-- دکمه -->
+                    <div class="vet-btn-container">
+                        <a href="#contact" class="vet-main-btn">
+                            
+                            <span class="vet-btn-text">تماس با ما</span>
+                            <span class="vet-btn-arrow">⟶</span>
+                            <div class="vet-btn-shine"></div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- المان‌های شناور -->
+                <div class="vet-floating-elements">
+                    <div class="vet-float-heart">💙</div>
+                    <div class="vet-float-paw">🐾</div>
+                    <div class="vet-float-star">⭐</div>
+                    <div class="vet-float-plus">✨</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
                         </div>
                         
                         {% comment %} <div class="banner banner-fixed intro-slide2" style="background-color: #39351a;">
@@ -815,336 +638,538 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         </div>
                     </section>
-<section id="appointment-section">
-  <div class="appointment-row">
-    
-    <!-- فرم نوبت‌دهی -->
-    <div class="appointment-form">
-      <h2 class="title"><span class="highlight"> نوبت </span>دهی</h2>
-      <form id="form-main">
-        <div class="form-group">
-          <label>نام و نام خانوادگی</label>
-          <input type="text" name="name" required />
+<section id="appointment-section" class="appointment-section">
+    <div class="appointment-container">
+        <!-- هدر بخش -->
+        <div class="appointment-header">
+            <h2 class="appointment-title">
+                <span class="title-main">نوبت‌دهی آنلاین</span>
+                <span class="title-sub">کلینیک دکتر رخشان</span>
+            </h2>
+            <div class="title-decoration">
+                <div class="decoration-line"></div>
+                <div class="decoration-paw">🐾</div>
+                <div class="decoration-line"></div>
+            </div>
         </div>
-        <div class="form-group">
-          <label>شماره تماس</label>
-          <input type="tel" name="phone" required />
-        </div>
-        <div class="form-group">
-          <label>تاریخ مراجعه</label>
-          <input type="text" id="datepicker" name="date" required />
-        </div>
-        <div class="form-group">
-          <label>ساعت</label>
-          <select name="time" required>
-            <option value="">انتخاب ساعت</option>
-            <option>10:00</option>
-            <option>12:00</option>
-            <option>14:00</option>
-            <option>16:00</option>
-          </select>
-        </div>
-        <div class="form-submit">
-          <button type="submit">
-            نوبت‌دهی <span class="arrow">➜</span>
-          </button>
-        </div>
-        <div id="form-message"></div>
-      </form>
-    </div>
 
-    <!-- تصویر سگ -->
-    <div class="appointment-image">
-      <img src="{% static 'images/catpaw.png' %}" alt="" />
+        <div class="appointment-content">
+            <!-- فرم نوبت‌دهی -->
+            <div class="appointment-form-wrapper">
+                <div class="form-header">
+                    <div class="form-icon">📅</div>
+                    <h3>رزرو نوبت</h3>
+                    <p>برای دریافت نوبت، اطلاعات زیر را تکمیل کنید</p>
+                </div>
+
+                <form id="appointment-form" class="appointment-form">
+                    <div class="form-grid">
+                        <div class="form-group floating-group">
+                            <input type="text" id="name" name="name" class="floating-input" placeholder=" " required>
+                            <label for="name" class="floating-label">نام و نام خانوادگی</label>
+                            <div class="input-icon">👤</div>
+                            <div class="input-focus-border"></div>
+                        </div>
+
+                        <div class="form-group floating-group">
+                            <input type="tel" id="phone" name="phone" class="floating-input" placeholder=" " required>
+                            <label for="phone" class="floating-label">شماره تماس</label>
+                            <div class="input-icon">📱</div>
+                            <div class="input-focus-border"></div>
+                        </div>
+
+                        <div class="form-group floating-group">
+                            <input type="text" id="date" name="date" class="floating-input date-input" placeholder=" " required readonly>
+                            <label for="date" class="floating-label">تاریخ مراجعه</label>
+                            <div class="input-icon">📅</div>
+                            <div class="input-focus-border"></div>
+                        </div>
+
+                        <div class="form-group floating-group">
+                            <select id="time" name="time" class="floating-select" required disabled>
+                                <option value="" selected disabled>انتخاب ساعت</option>
+                                <option value="08:00">۸:۰۰ صبح</option>
+                                <option value="09:00">۹:۰۰ صبح</option>
+                                <option value="10:00">۱۰:۰۰ صبح</option>
+                            </select>
+                            <div class="input-icon">⏰</div>
+                            <div class="input-focus-border"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn" disabled>
+                            <span class="btn-text">ثبت نوبت</span>
+                            <span class="btn-icon">➜</span>
+                            <div class="btn-shine"></div>
+                            <div class="btn-particles">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- پیام به زودی فعال می‌شود -->
+                <div class="coming-soon-message">
+                    <div class="message-icon">🚧</div>
+                    <div class="message-content">
+                        <h4>سیستم نوبت‌دهی به زودی فعال می‌شود</h4>
+                        <p>در حال حاضر می‌توانید از طریق شماره زیر نوبت دریافت کنید:</p>
+                        <a href="tel:09002777080" class="contact-phone">
+                            <span class="phone-icon">📞</span>
+                            ۰۹۰۰۲۷۷۷۰۸۰
+                        </a>
+                    </div>
+                    <div class="message-pulse"></div>
+                    <div class="message-sparkles">
+                        <span>✨</span>
+                        <span>✨</span>
+                        <span>✨</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بخش تصویر و اطلاعات -->
+            <div class="appointment-info">
+                <div class="info-visual">
+                    <div class="floating-pet">
+                        <img src="{% static 'images/catpaw.png' %}" alt="Pet Care" class="pet-image">
+                        <div class="pet-glow"></div>
+                        <div class="floating-element element-1">❤️</div>
+                        <div class="floating-element element-2">❤️</div>
+                        <div class="floating-element element-3">❤️</div>
+                        <div class="floating-element element-4">❤️</div>
+                    </div>
+                </div>
+
+                <div class="info-content">
+                    <div class="info-item">
+                        <div class="info-icon">⏱️</div>
+                        <div class="info-text">
+                            <h4>ساعات کاری</h4>
+                            <p>شنبه تا پنج‌شنبه: ۱۸:۰۰ تا ۰۰:۰۰</p>
+                            <p>جمعه: ادامه درمان ۱۶:۰۰ تا ۱۸:۰۰</p>
+                        </div>
+                        <div class="info-badge">جدید</div>
+                    </div>
+
+                    <div class="info-item highlighted">
+                        <div class="info-icon">📞</div>
+                        <div class="info-text">
+                            <h4>تماس تلفنی</h4>
+                            <p><a href="tel:09002777080" class="phone-link">۰۹۰۰۲۷۷۷۰۸۰</a></p>
+                            <p class="info-note">پاسخگویی سریع</p>
+                        </div>
+                        <div class="info-pulse"></div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <h4>آدرس کلینیک</h4>
+                            <p>تهران، سعادت آباد</p>
+                            <p class="info-note">دسترسی آسان</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('appointment-form');
+    const inputs = form.querySelectorAll('input, select');
+    const submitBtn = document.querySelector('.submit-btn');
     
-  </div>
+    // غیرفعال کردن تمام فیلدها
+    inputs.forEach(input => {
+        input.disabled = true;
+        input.addEventListener('focus', (e) => {
+            e.preventDefault();
+            showComingSoonMessage();
+        });
+        
+        // افزودن افکت hover به فیلدها
+        input.addEventListener('mouseenter', function() {
+            if (this.disabled) {
+                this.style.cursor = 'not-allowed';
+                this.parentElement.style.transform = 'translateY(-2px)';
+            }
+        });
+        
+        input.addEventListener('mouseleave', function() {
+            this.parentElement.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // جلوگیری از سابمیت فرم
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        showComingSoonMessage();
+    });
+    
+    // افکت‌های تعاملی برای دکمه
+    submitBtn.addEventListener('mouseenter', function() {
+        if (this.style.opacity !== '1') {
+            this.style.transform = 'translateY(-3px) scale(1.05)';
+            this.style.boxShadow = '0 20px 40px rgba(102, 126, 234, 0.4)';
+        }
+    });
+    
+    submitBtn.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+        this.style.boxShadow = '0 15px 35px rgba(102, 126, 234, 0.3)';
+    });
+    
+    // نمایش پیام به زودی فعال می‌شود
+    function showComingSoonMessage() {
+        const message = document.querySelector('.coming-soon-message');
+        
+        // افزودن انیمیشن به پیام
+        message.style.animation = 'none';
+        void message.offsetWidth;
+        message.style.animation = 'shake 0.5s ease';
+        
+        // ایجاد افکت ریپل
+        createRippleEffect();
+        
+        // نمایش نوتیفیکیشن
+        showNotification();
+    }
+    
+    function createRippleEffect() {
+        const ripple = document.createElement('div');
+        ripple.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: rgba(102, 126, 234, 0.2);
+            border-radius: 50%;
+            animation: rippleEffect 0.6s ease-out;
+            pointer-events: none;
+            z-index: 10000;
+        `;
+        document.body.appendChild(ripple);
+        
+        setTimeout(() => {
+            ripple.remove();
+        }, 600);
+    }
+    
+    function showNotification() {
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            z-index: 10000;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            opacity: 0;
+            transition: all 0.5s ease;
+        `;
+        notification.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.4rem;">🚧</span>
+                <span>سیستم نوبت‌دهی به زودی فعال می‌شود</span>
+            </div>
+        `;
+        document.body.appendChild(notification);
+        
+        // انیمیشن ورود
+        setTimeout(() => {
+            notification.style.opacity = '1';
+            notification.style.transform = 'translateX(-50%) translateY(0)';
+        }, 100);
+        
+        // انیمیشن خروج
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateX(-50%) translateY(-100px)';
+            setTimeout(() => notification.remove(), 500);
+        }, 3000);
+    }
+    
+    // افزودن استایل برای انیمیشن ریپل
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes rippleEffect {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(4);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+});
+</script>
+                    <section class="pt-5 mt-8 pb-2 appear-animate" data-animation-options="{
+    'name': 'fadeInUpShorter',
+    'duration': '1.2s',
+    'delay': '.2s'
+}">
+    <h2 class="title-echo">وبلاگ <span>وبلاگ </span></h2>
+    <div class="owl-carousel owl-shadow-carousel owl-theme post-slider row cols-lg-3 cols-sm-2 cols-1"
+        data-owl-options="{
+            'rtl':true,
+            'nav': true,
+            'dots': true,
+            'margin': 20,
+            'responsive': {
+                '0': {
+                    'items': 1,
+                    'nav': true,
+                    'dots': true
+                },
+                '576': {
+                    'items': 2,
+                    'nav': true,
+                    'dots': true
+                },
+                '992': {
+                    'items': 3,
+                    'nav': true,
+                    'dots': false
+                }
+            }
+        }">
+        
+        {% for blog in blogs %}
+        <div class="post drop-shadow mb-9 overlay-zoom blog-card">
+            <figure class="post-media blog-media">
+                <a href="{% url 'blog_detail' blog.slug %}">
+                    <img src="{{ blog.image.url }}" width="600" height="357" alt="post" />
+                    <div class="blog-overlay">
+                        <span class="blog-date">
+                            <i class="d-icon-calendar"></i>
+                            {% now "Y/m/d" %}
+                        </span>
+                    </div>
+                </a>
+            </figure>
+            <div class="post-details text-center blog-content">
+                
+                <h4 class="post-title ls-m text-normal blog-title">
+                    <a href="{% url 'blog_detail' blog.slug %}">{{ blog.name }}</a>
+                </h4>
+                <p class="post-short-desc font-primary mt-2 blog-excerpt">{{ blog.p_des }}</p>
+                <div class="blog-footer">
+                    <a href="{% url 'blog_detail' blog.slug %}" class="btn btn-link btn-underline btn-primary font-primary font-weight-bold ls-m read-more">
+                        بیشتر
+                        <i class="d-icon-arrow-left"></i>
+                    </a>
+                    <div class="blog-stats">
+                        <span class="view-count">
+                            <i class="d-icon-eye"></i>
+                            {{ forloop.counter|add:100 }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </section>
 
 <style>
-#appointment-section {
-  padding: 60px 40px;
-  direction: rtl;
-  font-family: 'Vazirmatn', sans-serif;
-}
-.select2-container .select2-selection--single {
-  background: #fff;
-  border: none;
-  border-radius: 14px;
-  height: 48px;
-  padding: 10px 16px;
-  font-size: 1rem;
-  color: #333;
-  box-shadow: 0 0 0 2px #FFD70066;
+/* استایل‌های جدید بدون تداخل با CSS اصلی */
+.blog-card {
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-  height: 100%;
-  right: 10px;
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.select2-dropdown.select2-dropdown-custom {
-  border-radius: 14px;
-  border: none;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+.blog-media {
+    position: relative;
+    overflow: hidden;
 }
 
-.select2-results__option {
-  padding: 10px 14px;
-  font-size: 1rem;
-  text-align: right;
-}
-.appointment-row {
-  display: flex;
-  gap: 60px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+.blog-media img {
+    transition: transform 0.5s ease;
 }
 
-.appointment-form {
-  flex: 1 1 400px;
-  background: #DDDAD0;
-  backdrop-filter: blur(12px);
-  border-radius: 24px;
-  padding: 40px 30px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255,255,255,0.3);
-  max-width: 500px;
+.blog-card:hover .blog-media img {
+    transform: scale(1.05);
 }
 
-.appointment-image {
-  flex: 1 1 400px;
-  display: flex;
-  justify-content: center;
+.blog-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 64, 175, 0.2) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.appointment-image img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  animation: floaty 4s ease-in-out infinite;
+.blog-card:hover .blog-overlay {
+    opacity: 1;
 }
 
-@keyframes floaty {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.blog-date {
+    background: rgba(255,255,255,0.9);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    color: #1e293b;
+    font-weight: 600;
 }
 
-.title {
-  font-size: 2rem;
-  margin-bottom: 24px;
-  color: #333;
+.blog-date i {
+    margin-left: 5px;
+    color: #3b82f6;
 }
 
-.highlight {
-  color: #799EFF;
-  font-weight: bold;
+.blog-content {
+    padding: 20px 15px;
 }
 
-.form-group {
-  margin-bottom: 18px;
+.blog-meta {
+    margin-bottom: 10px;
 }
 
-.form-group label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 5px;
+.blog-category {
+    background: #eff6ff;
+    color: #3b82f6;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: inline-block;
 }
 
-.form-group input,
-.form-group select {
-  width: 100%;
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: none;
-  font-size: 1rem;
-  background: #fff;
-  color: #333;
+.blog-category i {
+    margin-left: 5px;
 }
 
-.form-submit {
-  text-align: center;
-  margin-top: 20px;
+.blog-title a {
+    transition: color 0.3s ease;
 }
 
-.form-submit button {
-  background: #799EFF;
-  color: #fff;
-  border: none;
-  padding: 12px 36px;
-  border-radius: 50px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 10px 25px #9FB3DF;
-  cursor: pointer;
+.blog-card:hover .blog-title a {
+    color: #3b82f6;
 }
 
-.form-submit button:hover {
-  background: #4ED7F1;
+.blog-excerpt {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
-.arrow {
-  font-size: 1.2rem;
-}
-
-#form-message {
-  margin-top: 20px;
-  font-size: 1rem;
-  color: #28a745;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .appointment-row {
-    flex-direction: column-reverse;
-  }
-
-  .appointment-form, .appointment-image {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  #appointment-section {
-    padding: 24px 16px;
-  }
-
-  .appointment-row {
-    flex-direction: column-reverse;
+.blog-footer {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 30px;
-  }
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+}
 
-  .appointment-form {
-    padding: 20px 16px;
-    max-width: 100%;
-    width: 100%;
-  }
+.read-more {
+    color: #3b82f6;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
 
-  .appointment-image {
-    max-width: 240px;
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-    max-height: 180px;
-    object-fit: contain;
-  }
+.read-more:hover {
+    color: #1e40af;
+    transform: translateX(-3px);
+}
 
-  .form-submit {
-    margin-top: 20px;
-  }
+.read-more i {
+    transition: transform 0.3s ease;
+}
 
-  .title {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    text-align: center;
-  }
+.read-more:hover i {
+    transform: translateX(-3px);
+}
 
-  .form-group {
-    margin-bottom: 12px;
-  }
+.blog-stats {
+    display: flex;
+    align-items: center;
+    color: #94a3b8;
+    font-size: 1.2rem;
+}
 
-  .form-group input,
-  .form-group select {
-    font-size: 0.95rem;
-    padding: 10px 12px;
-  }
+.view-count {
+    display: flex;
+    align-items: center;
+}
 
-  .form-submit button {
-    padding: 10px 28px;
-    font-size: 1.1rem;
-  }
+.view-count i {
+    margin-left: 5px;
+}
 
-  #form-msg {
-    font-size: 1rem;
-  }
-  .select2-dropdown-custom .select2-results__option {
-    font-family: 'Vazirmatn', sans-serif;
-    padding: 10px 12px;
-    font-size: 14px;
-    color: #333;
-  }
+/* بهبود دکمه‌های کاروسل */
+.owl-carousel .owl-nav button {
+    background: #3b82f6 !important;
+    color: white !important;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
 
-  .select2-dropdown-custom .select2-results__option--highlighted {
-    background-color: #799EFF;
-    color: white;
-  }
+.owl-carousel .owl-nav button:hover {
+    background: #1e40af !important;
+    transform: scale(1.1);
+}
 
-  .select2-container--default .select2-selection--single {
-    border-radius: 14px;
-    padding: 10px 16px;
-    background-color: #fff;
-    border: none;
-    box-shadow: 0 0 0 2px #FFD70066;
-    font-family: 'Vazirmatn', sans-serif;
-    font-size: 15px;
-    color: #333;
-  }
+.owl-carousel .owl-dots .owl-dot span {
+    transition: all 0.3s ease;
+}
 
-  .select2-selection__arrow {
-    height: 100% !important;
-  }
+.owl-carousel .owl-dots .owl-dot.active span {
+    background: #3b82f6;
+    transform: scale(1.2);
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+    .blog-content {
+        padding: 15px 10px;
+    }
+    
+    .blog-footer {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .blog-stats {
+        margin-top: 5px;
+    }
 }
 </style>
-                    <section class="pt-5 appear-animate" data-animation-options="{
-                        'name': 'fadeInUpShorter',
-                        'duration': '1.2s',
-                        'delay': '.2s'
-                    }">
-                        <h2 class="title-echo">وبلاگ <span>وبلاگ </span></h2>
-                        <div class="owl-carousel owl-shadow-carousel owl-theme post-slider row cols-lg-3 cols-sm-2 cols-1"
-                            data-owl-options="{
-                             'rtl':false,
-                             'nav': true,
-                             'dots': true,
-                             'margin': 20,
-                             'responsive': {
-                                 '0': {
-                                     'items': 1,
-                                     'nav': true,
-                                     'dots': true
-                                 },
-                                 '576': {
-                                     'items': 2,
-                                     'nav': true,
-                                     'dots': true
-                                 },
-                                 '992': {
-                                     'items': 3,
-                                     'nav': true,
-                                     'dots': false
-                                 }
-                             }
-                         }">
-                          {% for blog in blogs %}
-                            <div class="post drop-shadow mb-9 overlay-zoom">
-                                <figure class="post-media" style="background-color: #efedee;">
-                                    <a href="{% url 'blog_detail' blog.slug %}">
-                                        <img src="{{ blog.image.url }}" width="600" height="357"
-                                            alt="post" />
-                                    </a>
-                                </figure>
-                                <div class="post-details text-center">
-                                    <div class="post-meta">
-                                        
-                                    </div>
-                                    <h4 class="post-title ls-m text-normal"><a href="{% url 'blog_detail' blog.slug %}"> {{blog.name}}
-                                            </a>
-                                    </h4>
-                                    <p class="post-short-desc font-primary mt-2">{{ blog.p_des }}</p>
-                                    <a href="{% url 'blog_detail' blog.slug %}" class="btn btn-link btn-underline btn-primary
-                                font-primary font-weight-bold ls-m">بیشتر<i class="d-icon-arrow-left"></i></a>
-                                </div>
-                            </div>
-                          {% endfor %}
-                            
-                        
-                        </div>
-                    </section>
 <section class="social-section">
   <h2 class="social-title">شبکه‌های اجتماعی <span>ما را دنبال کنید</span></h2>
 
