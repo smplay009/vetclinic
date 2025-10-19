@@ -762,7 +762,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p><a href="tel:09002777080" class="phone-link">۰۹۰۰۲۷۷۷۰۸۰</a></p>
                             <p class="info-note">پاسخگویی سریع</p>
                         </div>
-                        <div class="info-pulse"></div>
+                        <div class="info-pulse1"></div>
                     </div>
 
                     <div class="info-item">
@@ -1130,61 +1130,255 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 /* بهبود دکمه‌های کاروسل */
-.owl-carousel .owl-nav button {
-    background: #3b82f6 !important;
+.custom-carousel-nav {
+    position: absolute;
+    top: -70px;
+    right: 0;
+    margin-top: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.custom-carousel-nav button {
+    background: linear-gradient(135deg, #3b82f6, #1e40af) !important;
     color: white !important;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    border-radius: 12px !important;
+    width: 48px;
+    height: 48px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    border: 2px solid transparent !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-carousel-nav button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.custom-carousel-nav button:hover::before {
+    left: 100%;
+}
+
+.custom-carousel-nav button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    border-color: rgba(255,255,255,0.3) !important;
+}
+
+.custom-carousel-nav button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.custom-carousel-nav button.custom-prev,
+.custom-carousel-nav button.custom-next {
+    font-size: 20px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-carousel-nav button.custom-prev::after {
+    content: "←";
+    font-weight: bold;
+}
+
+.custom-carousel-nav button.custom-next::after {
+    content: "→";
+    font-weight: bold;
+}
+
+.custom-carousel-nav button i {
+    display: none;
+}
+
+/* دکمه غیرفعال */
+.custom-carousel-nav button.disabled {
+    background: linear-gradient(135deg, #cbd5e1, #94a3b8) !important;
+    box-shadow: 0 2px 8px rgba(148, 163, 184, 0.2);
+    transform: none !important;
+    cursor: not-allowed;
+}
+
+.custom-carousel-nav button.disabled:hover {
+    transform: none !important;
+    box-shadow: 0 2px 8px rgba(148, 163, 184, 0.2) !important;
+}
+
+/* نقاط پایین شخصی */
+.custom-carousel-dots {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.custom-carousel-dots .custom-dot {
+    width: 32px;
+    height: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-carousel-dots .custom-dot span {
+    width: 100%;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
     transition: all 0.3s ease;
+    margin: 0;
 }
 
-.owl-carousel .owl-nav button:hover {
-    background: #1e40af !important;
-    transform: scale(1.1);
+.custom-carousel-dots .custom-dot.active span {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    transform: scaleX(1.2);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
 }
 
-.owl-carousel .owl-dots .owl-dot span {
-    transition: all 0.3s ease;
-}
-
-.owl-carousel .owl-dots .owl-dot.active span {
+.custom-carousel-dots .custom-dot:hover span {
     background: #3b82f6;
-    transform: scale(1.2);
+    transform: scaleX(1.1);
 }
 
 /* ریسپانسیو */
 @media (max-width: 768px) {
-    .blog-content {
-        padding: 15px 10px;
+    .custom-carousel-nav {
+        position: relative;
+        top: 0;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
     }
     
-    .blog-footer {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
+    .custom-carousel-nav button {
+        width: 44px;
+        height: 44px;
     }
     
-    .blog-stats {
-        margin-top: 5px;
+    .custom-carousel-dots {
+        margin-top: 30px;
+    }
+    
+    .custom-carousel-dots .custom-dot {
+        width: 28px;
+        height: 6px;
+    }
+    
+    .custom-carousel-dots .custom-dot span {
+        height: 5px;
     }
 }
+
+@media (max-width: 480px) {
+    .custom-carousel-nav button {
+        width: 40px;
+        height: 40px;
+        font-size: 18px !important;
+    }
+    
+    .custom-carousel-dots .custom-dot {
+        width: 24px;
+        height: 5px;
+    }
+}
+
+/* انیمیشن برای دکمه‌ها */
+@keyframes custom-pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(59, 130, 246, 0.5);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+}
+
+.custom-carousel-nav button:not(.disabled) {
+    animation: custom-pulse 2s infinite;
+}
+
+.custom-carousel-nav button:hover {
+    animation: none;
+}
 </style>
+<script>
+    $(document).ready(function(){
+    $('.post-slider').on('initialized.owl.carousel', function(){
+        // اضافه کردن کلاس‌های شخصی
+        $('.owl-nav').addClass('custom-carousel-nav');
+        $('.owl-dots').addClass('custom-carousel-dots');
+        $('.owl-prev').addClass('custom-prev');
+        $('.owl-next').addClass('custom-next');
+        $('.owl-dot').addClass('custom-dot');
+    });
+});
+</script>
 <section class="social-section">
-  <h2 class="social-title">شبکه‌های اجتماعی <span>ما را دنبال کنید</span></h2>
+  <!-- افکت‌های پشت‌زمینه -->
+  <div class="floating-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  
+  <div class="light-beam"></div>
+  
+  <!-- محتوای اصلی -->
+  <h2 class="social-title">شبکه‌های اجتماعی</h2>
+  <p class="social-subtitle">ما را دنبال کنید و از آخرین مطالب، آموزش‌ها و رویدادهای ویژه باخبر شوید. در شبکه‌های اجتماعی همراه ما باشید.</p>
 
   <div class="social-icons-wrapper">
-    <div class="social-icons">
-      <a href="https://instagram.com/dr.yaserrakhshan" target="_blank">
-        <img src="{% static 'images/insta.png' %}" alt="Instagram">
-      </a>
-      <a href="https://youtube.com/@dr.yaserrakhshan" target="_blank">
-        <img src="{% static 'images/yy.png' %}" alt="YouTube">
-      </a>
+    <div class="social-icon-card">
+      <div class="social-icon-card-inner">
+        <div class="social-icon-card-front">
+          <img src="{% static 'images/insta.png' %}" alt="Instagram" class="social-icon">
+          <span class="social-name">اینستاگرام</span>
+        </div>
+        <div class="social-icon-card-back">
+          <span class="social-name-back">اینستاگرام</span>
+          <div class="follow-animation">
+            <div class="pulse-ring"></div>
+            <i class="fas fa-heart follow-icon"></i>
+            <span class="follow-text">دنبال کنید</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="social-icon-card">
+      <div class="social-icon-card-inner">
+        <div class="social-icon-card-front">
+          <img src="{% static 'images/yy.png' %}" alt="YouTube" class="social-icon">
+          <span class="social-name">یوتیوب</span>
+        </div>
+        <div class="social-icon-card-back">
+          <span class="social-name-back">یوتیوب</span>
+          <div class="follow-animation">
+            <div class="pulse-ring"></div>
+            <i class="fas fa-play-circle follow-icon"></i>
+            <span class="follow-text">مشترک شوید</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  
   <div class="dog-bottom-wrapper">
     <img src="{% static 'images/mm.png' %}" alt="" class="corner-dog">
   </div>

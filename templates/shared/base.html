@@ -46,7 +46,7 @@
     <!-- Main CSS File -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/demo-food2.min.css' %}">
     <link rel="preload" href="fonts/riode.ttf?5gap68" as="font" type="font/woff2" crossorigin="anonymous">
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
   
 </head>
@@ -96,50 +96,324 @@
         {% endblock main %}
 
         <!-- End of Main -->
-        <footer class="custom-footer">
-  <div class="container">
-    <div class="row pt-4 pb-2">
-      <!-- اطلاعات سمت راست -->
-      <div class="col-md-6">
-        <div>
-          <h4 class="custom-footer-title">تماس با کلینیک دکتر رخشان</h4>
-          <ul class="custom-footer-contact-list">
-            <li><i class="fas fa-map-marker-alt"></i> تهران، سعادت آباد</li>
-            <li><i class="fas fa-phone-alt"></i> <a href="tel:09002777080">09002777080</a></li>
-            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/989112345678" target="_blank">پیام در واتساپ</a></li>
-            <li><i class="fas fa-envelope"></i> <a href="mailto:mail@example.com">mail@example.com</a></li>
-            <li><i class="fas fa-clock"></i> شنبه تا پنج‌شنبه: 18:00 تا 00:00</li>
-            <li><i class="fas fa-clock"></i> جمعه ها ادامه درمان: 16:00 تا 18:00</li>
-          </ul>
+<footer class="vet-footer">
+  <div class="vet-container">
+    <div class="vet-footer-row vet-pt-4 vet-pb-2">
+      <!-- نقشه سمت چپ -->
+      <div class="vet-col-md-6 vet-text-center">
+        <div class="vet-map-section">
+          <h4 class="vet-footer-title">
+            <i class="fas fa-map-marked-alt"></i>
+            موقعیت ما در نقشه
+          </h4>
+          <div class="vet-map-container">
+            <a href="https://www.google.com/maps?q=35.79232062352055,51.35068069926035" target="_blank" rel="noopener">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12946.790000000002!2d51.35068069926035!3d35.79232062352055!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1sen!2s!4v1722168899000"
+                width="100%"
+                height="230"
+                style="border:0; border-radius: 16px;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <div class="vet-map-overlay">
+                <i class="fas fa-directions"></i>
+              </div>
+            </a>
+          </div>
+          <p class="vet-map-text">برای مسیریابی در Google Maps کلیک کنید</p>
         </div>
       </div>
 
-      <!-- نقشه سمت چپ -->
-      <div class="col-md-6 text-center">
-  <h4 class="custom-footer-title">موقعیت ما در نقشه</h4>
-  <a href="https://www.google.com/maps?q=35.79232062352055,51.35068069926035" target="_blank" rel="noopener">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12946.790000000002!2d51.35068069926035!3d35.79232062352055!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1sen!2s!4v1722168899000"
-      width="100%"
-      height="230"
-      style="border:0; border-radius: 12px; box-shadow: 0 0 10px rgba(255,255,255,0.2);"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
-    <p class="custom-footer-map-text">برای مسیریابی در Google Maps کلیک کنید</p>
-  </a>
-</div>
+      <!-- اطلاعات سمت راست -->
+      <div class="vet-col-md-6">
+        <div class="vet-contact-section">
+          <h4 class="vet-footer-title">
+            <i class="fas fa-clinic-medical"></i>
+            تماس با کلینیک دکتر رخشان
+          </h4>
+          <ul class="vet-contact-list">
+            <li class="vet-contact-item">
+              <div class="vet-contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <span>تهران، سعادت آباد</span>
+            </li>
+            <li class="vet-contact-item vet-highlight">
+              <div class="vet-contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <a href="tel:09002777080">09002777080</a>
+            </li>
+            <li class="vet-contact-item">
+              <div class="vet-contact-icon">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <a href="https://wa.me/989112345678" target="_blank">پیام در واتساپ</a>
+            </li>
+            <li class="vet-contact-item">
+              <div class="vet-contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <a href="mailto:mail@example.com">mail@example.com</a>
+            </li>
+            <li class="vet-contact-item">
+              <div class="vet-contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <span>شنبه تا پنج‌شنبه: 18:00 تا 00:00</span>
+            </li>
+            <li class="vet-contact-item">
+              <div class="vet-contact-icon">
+                <i class="fas fa-clock vet-weekend"></i>
+              </div>
+              <span>جمعه ها ادامه درمان: 16:00 تا 18:00</span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <!-- پایین فوتر -->
-    <div class="custom-footer-bottom mt-3">
-      <p class="mb-0">کلینیک دامپزشکی دکتر رخشان © ۱۴۰۲ - تمامی حقوق محفوظ است.</p>
-      
+    <div class="vet-footer-bottom">
+      <p>کلینیک دامپزشکی دکتر رخشان © ۱۴۰۲ - تمامی حقوق محفوظ است.</p>
     </div>
   </div>
 </footer>
+<style>
+/* طراحی مدرن فوتر با کلاس‌های منحصربفرد */
+.vet-footer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #f0f0f0;
+  padding: 40px 0 20px;
+  font-family: Vazirmatn, sans-serif;
+  position: relative;
+  overflow: hidden;
+  border-top: 3px solid #ffd700;
+}
 
+.vet-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.vet-footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+  direction: ltr;
+}
+
+.vet-col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 10px;
+}
+
+.vet-pt-4 { padding-top: 2rem; }
+.vet-pb-2 { padding-bottom: 1rem; }
+.vet-text-center { text-align: center; }
+
+/* طراحی مدرن بخش تماس */
+.vet-contact-section {
+  padding: 20px;
+}
+
+.vet-footer-title {
+  color: #ffd700;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+  direction: rtl;
+}
+
+.vet-footer-title i {
+  font-size: 1.6rem;
+}
+
+.vet-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+}
+
+.vet-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  direction: rtl;
+}
+
+.vet-contact-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  padding-right: 10px;
+  border-radius: 8px;
+}
+
+.vet-contact-item.vet-highlight {
+  background: rgba(255, 215, 0, 0.1);
+  border-right: 3px solid #ffd700;
+}
+
+.vet-contact-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffd700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.vet-contact-item:hover .vet-contact-icon {
+  background: rgba(255, 215, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.vet-contact-item.vet-highlight .vet-contact-icon {
+  background: rgba(255, 215, 0, 0.2);
+  animation: vet-pulse 2s infinite;
+}
+
+.vet-contact-item a {
+  color: #f0f0f0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.vet-contact-item a:hover {
+  color: #ffd700;
+}
+
+.vet-contact-item.vet-highlight a {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.vet-contact-icon.vet-weekend {
+  color: #ff6b6b;
+}
+
+/* طراحی مدرن نقشه */
+.vet-map-section {
+  padding: 20px;
+  direction: rtl;
+}
+
+.vet-map-container {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.vet-map-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(255, 215, 0, 0.2);
+}
+
+.vet-map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vet-map-container:hover .vet-map-overlay {
+  opacity: 1;
+}
+
+.vet-map-overlay i {
+  color: #ffd700;
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.vet-map-text {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* طراحی مدرن پایین فوتر */
+.vet-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
+  text-align: center;
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  direction: rtl;
+}
+
+/* انیمیشن‌ها */
+@keyframes vet-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 215, 0, 0);
+  }
+}
+
+/* رسپانسیو */
+@media (max-width: 768px) {
+  .vet-footer {
+    padding: 30px 0 15px;
+  }
+  
+  .vet-col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .vet-contact-section,
+  .vet-map-section {
+    padding: 15px;
+  }
+  
+  .vet-footer-title {
+    font-size: 1.2rem;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  
+  .vet-contact-item {
+    gap: 12px;
+    padding: 10px 0;
+  }
+}
+</style>
     <!-- Scroll Top -->
     <a id="scroll-top" href="#top" title="Top" role="button" class="scroll-top"><i class="d-icon-arrow-up"></i></a>
     <!-- MobileMenu -->

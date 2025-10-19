@@ -21436,6 +21436,759 @@ h2 {
     color: #a0aec0;
 }
 
+/* طراحی با رنگ‌های جالب و پررنگ برای دامپزشکی */
+.icon-box {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 24px;
+    padding: 40px 30px;
+    margin-bottom: 30px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.1),
+        0 4px 15px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border: 2px solid;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+/* افکت نور پس‌زمینه رنگی */
+.icon-box::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: 
+        radial-gradient(circle at 30% 30%, var(--primary-glow) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, var(--secondary-glow) 0%, transparent 50%);
+    opacity: 0.15;
+    animation: colorPulse 6s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes colorPulse {
+    0%, 100% {
+        opacity: 0.15;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.25;
+        transform: scale(1.05);
+    }
+}
+
+/* طراحی ایکون‌ها با رنگ‌های پررنگ */
+.icon-box-icon {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 0 0 2px;
+    transition: all 0.4s ease;
+    position: relative;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+/* افکت درخشان دور ایکون */
+.icon-box-icon::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 23px;
+    background: conic-gradient(
+        from 0deg,
+        var(--primary-glow),
+        var(--secondary-glow),
+        var(--primary-glow)
+    );
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: -1;
+    filter: blur(8px);
+}
+
+/* ایکون‌ها */
+.icon-box-icon img {
+    width: 45px !important;
+    height: 45px !important;
+    object-fit: contain;
+    transition: all 0.4s ease;
+    filter: none;
+    position: relative;
+    z-index: 2;
+}
+
+/* رنگ‌های جالب و پررنگ برای هر باکس */
+.icon-box1 {
+    --primary-color: #dc2626; /* قرمز پرانرژی */
+    --secondary-color: #ea580c; /* نارنجی گرم */
+    --primary-glow: rgba(220, 38, 38, 0.4);
+    --secondary-glow: rgba(234, 88, 12, 0.3);
+    border-color: rgba(220, 38, 38, 0.2);
+}
+
+.icon-box2 {
+    --primary-color: #16a34a; /* سبز زمردی */
+    --secondary-color: #0d9488; /* فیروزه‌ای */
+    --primary-glow: rgba(22, 163, 74, 0.4);
+    --secondary-glow: rgba(13, 148, 136, 0.3);
+    border-color: rgba(22, 163, 74, 0.2);
+}
+
+.icon-box3 {
+    --primary-color: #9333ea; /* بنفش جذاب */
+    --secondary-color: #c026d3; /* ارغوانی */
+    --primary-glow: rgba(147, 51, 234, 0.4);
+    --secondary-glow: rgba(192, 38, 211, 0.3);
+    border-color: rgba(147, 51, 234, 0.2);
+}
+
+.icon-box4 {
+    --primary-color: #2563eb; /* آبی درخشان */
+    --secondary-color: #06b6d4; /* فیروزه‌ای روشن */
+    --primary-glow: rgba(37, 99, 235, 0.4);
+    --secondary-glow: rgba(6, 182, 212, 0.3);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* استایل ایکون‌ها با رنگ‌های پررنگ */
+.icon-box1 .icon-box-icon {
+    border-color: var(--primary-color);
+    box-shadow: 
+        0 8px 25px rgba(220, 38, 38, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 0 0 2px var(--primary-color);
+}
+
+.icon-box2 .icon-box-icon {
+    border-color: var(--primary-color);
+    box-shadow: 
+        0 8px 25px rgba(22, 163, 74, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 0 0 2px var(--primary-color);
+}
+
+.icon-box3 .icon-box-icon {
+    border-color: var(--primary-color);
+    box-shadow: 
+        0 8px 25px rgba(147, 51, 234, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 0 0 2px var(--primary-color);
+}
+
+.icon-box4 .icon-box-icon {
+    border-color: var(--primary-color);
+    box-shadow: 
+        0 8px 25px rgba(37, 99, 235, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 0 0 2px var(--primary-color);
+}
+
+/* محتوای کارت */
+.icon-box-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.icon-box-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    line-height: 1.4;
+    position: relative;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icon-box p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* انیمیشن ورود پررنگ */
+.appear-animate .icon-box {
+    animation: vibrantEntrance 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+    opacity: 0;
+}
+
+.appear-animate .icon-box1 {
+    animation-delay: 0.1s;
+}
+
+.appear-animate .icon-box2 {
+    animation-delay: 0.2s;
+}
+
+.appear-animate .icon-box3 {
+    animation-delay: 0.3s;
+}
+
+.appear-animate .icon-box4 {
+    animation-delay: 0.4s;
+}
+
+@keyframes vibrantEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9) rotateX(-10deg);
+        filter: brightness(1.5) saturate(2);
+    }
+    70% {
+        filter: brightness(1.1) saturate(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotateX(0);
+        filter: brightness(1) saturate(1);
+    }
+}
+
+/* افکت hover پررنگ و جذاب */
+.icon-box:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 8px 20px var(--primary-glow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border-color: var(--primary-color);
+}
+
+.icon-box:hover::before {
+    opacity: 0.3;
+    animation-duration: 3s;
+}
+
+.icon-box:hover .icon-box-icon {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 
+        0 15px 35px var(--primary-glow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 0 0 3px var(--primary-color);
+}
+
+.icon-box:hover .icon-box-icon::after {
+    opacity: 0.6;
+    animation: rotate 2s linear infinite;
+}
+
+.icon-box:hover .icon-box-icon img {
+    transform: scale(1.2);
+    filter: 
+        drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2))
+        brightness(1.1);
+}
+
+.icon-box:hover .icon-box-title {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleColorShift 2s ease-in-out infinite;
+}
+
+@keyframes titleColorShift {
+    0%, 100% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(10deg);
+    }
+}
+
+/* ریسپانسیو */
+@media (max-width: 991px) {
+    .icon-box {
+        padding: 35px 25px;
+        margin-bottom: 25px;
+        height: 300px;
+    }
+    
+    .icon-box-icon {
+        width: 85px;
+        height: 85px;
+        padding: 22px;
+    }
+    
+    .icon-box-icon img {
+        width: 42px !important;
+        height: 42px !important;
+    }
+    
+    .icon-box-title {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .icon-box {
+        height: 280px;
+        padding: 30px 20px;
+    }
+    
+    .icon-box-icon {
+        width: 80px;
+        height: 80px;
+        padding: 20px;
+    }
+    
+    .icon-box-title {
+        font-size: 1.6rem;
+    }
+    
+    .icon-box p {
+        font-size: 1.3rem;
+    }
+}
+/* طراحی خفن و مدرن برای شبکه‌های اجتماعی - نسخه فشرده */
+.social-section {
+  position: relative;
+  background: linear-gradient(135deg, #1a2a80 0%, #2193b0 100%);
+  padding: 50px 20px 20px;
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 800px;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 40px -10px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: Vazirmatn, sans-serif;
+}
+
+.social-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.2) 0%, transparent 50%);
+  animation: 8s ease-in-out infinite gradientShift;
+  z-index: 1;
+}
+
+@keyframes gradientShift {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.social-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #fff 0%, #a5d8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+  animation: 3s ease-in-out infinite titleFloat;
+}
+
+@keyframes titleFloat {
+  0%, 100% { 
+    transform: translateY(0);
+  }
+  50% { 
+    transform: translateY(-8px);
+  }
+}
+
+.social-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.5;
+  position: relative;
+  z-index: 2;
+  font-weight: 500;
+}
+
+.social-icons-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+
+.social-icon-card {
+  position: relative;
+  width: 150px;
+  height: 180px;
+  perspective: 800px;
+}
+
+.social-icon-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-icon-card:hover .social-icon-card-inner {
+  transform: rotateY(180deg);
+}
+
+.social-icon-card-front,
+.social-icon-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icon-card-front {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(15px);
+}
+
+.social-icon-card-back {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  transform: rotateY(180deg);
+  color: #1a2a80;
+  font-weight: 700;
+}
+
+.social-icon {
+  width: 100px; /* افزایش سایز فقط عکس */
+  height: 100px; /* افزایش سایز فقط عکس */
+  margin-bottom: 15px;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+  object-fit: contain; /* اضافه کردن برای حفظ نسبت عکس */
+}
+
+.social-icon-card:hover .social-icon {
+  transform: scale(1.1);
+}
+
+.social-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+}
+
+.social-name-back {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a2a80;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* انیمیشن‌های جدید برای پشت کارت */
+.follow-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.follow-icon {
+  font-size: 2rem;
+  color: #1a2a80;
+  animation: 2s ease-in-out infinite followBounce;
+}
+
+@keyframes followBounce {
+  0%, 100% { 
+    transform: translateY(0) scale(1);
+  }
+  25% { 
+    transform: translateY(-8px) scale(1.1);
+  }
+  50% { 
+    transform: translateY(0) scale(1);
+  }
+  75% { 
+    transform: translateY(-4px) scale(1.05);
+  }
+}
+
+.follow-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a2a80;
+  text-align: center;
+}
+
+.pulse-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px; /* افزایش متناسب با عکس */
+  height: 90px; /* افزایش متناسب با عکس */
+  border: 2px solid #1a2a80;
+  border-radius: 50%;
+  animation: 2s linear infinite pulseEffect;
+}
+
+@keyframes pulseEffect {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0;
+  }
+}
+
+.dog-bottom-wrapper {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.corner-dog {
+  width: 250px;
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+}
+
+/* افکت‌های پشت‌زمینه */
+.floating-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: 6s linear infinite particleFloat;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ایجاد ذرات تصادفی */
+.particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+.particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+.particle:nth-child(4) { left: 40%; animation-delay: 3s; }
+.particle:nth-child(5) { left: 50%; animation-delay: 4s; }
+.particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+.particle:nth-child(7) { left: 70%; animation-delay: 0s; }
+.particle:nth-child(8) { left: 80%; animation-delay: 1s; }
+.particle:nth-child(9) { left: 90%; animation-delay: 2s; }
+
+/* افکت نورپردازی */
+.light-beam {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 10%,
+    transparent 20%,
+    transparent 100%
+  );
+  animation: 8s linear infinite rotateBeam;
+  z-index: 1;
+}
+
+@keyframes rotateBeam {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* طراحی واکنش‌گرا */
+@media (max-width: 768px) {
+  .social-section {
+    padding: 40px 15px 15px;
+    margin: 30px 15px;
+  }
+  
+  .social-title {
+    font-size: 2rem;
+  }
+  
+  .social-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .social-icons-wrapper {
+    gap: 20px;
+    flex-wrap: nowrap; /* جلوگیری از رفتن به خط جدید */
+    justify-content: center;
+  }
+  
+  .social-icon-card {
+    width: 140px;
+    height: 170px;
+    flex-shrink: 0; /* جلوگیری از فشرده شدن */
+  }
+  
+  .social-icon {
+    width: 85px; /* عکس بزرگ در موبایل */
+    height: 85px; /* عکس بزرگ در موبایل */
+  }
+  
+  .social-name {
+    font-size: 1rem;
+  }
+  
+  .corner-dog {
+    width: 200px;
+  }
+  
+  .follow-icon {
+    font-size: 1.8rem;
+  }
+  
+  .pulse-ring {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-section {
+    padding: 30px 10px 10px;
+  }
+  
+  .social-title {
+    font-size: 1.8rem;
+  }
+  
+  .social-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+  
+  .social-icons-wrapper {
+    gap: 15px;
+    flex-wrap: nowrap; /* همچنان کنار هم */
+    justify-content: center;
+  }
+  
+  .social-icon-card {
+    width: 130px;
+    height: 160px;
+  }
+  
+  .social-icon {
+    width: 80px; /* عکس همچنان بزرگ */
+    height: 80px; /* عکس همچنان بزرگ */
+  }
+  
+  .social-name {
+    font-size: 0.95rem;
+  }
+  
+  .corner-dog {
+    width: 180px;
+  }
+  
+  .follow-icon {
+    font-size: 1.6rem;
+  }
+  
+  .follow-text {
+    font-size: 0.85rem;
+  }
+  
+  .pulse-ring {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+/* برای صفحات بسیار کوچک */
+@media (max-width: 360px) {
+  .social-icons-wrapper {
+    gap: 10px;
+  }
+  
+  .social-icon-card {
+    width: 120px;
+    height: 150px;
+  }
+  
+  .social-icon {
+    width: 70px; /* عکس بزرگ حتی در صفحات کوچک */
+    height: 70px; /* عکس بزرگ حتی در صفحات کوچک */
+  }
+  
+  .social-name {
+    font-size: 0.9rem;
+  }
+}
+
+
+
 .floating-select option {
     color: #4a5568;
     font-size: 1.1rem;
@@ -30016,7 +30769,7 @@ button.mfp-arrow {
     align-items: center;
     text-align: center;
     margin-bottom: 7px;
-    color: #f3f3f3;
+    color: #B2CEDB;
     font-size: 8.89rem;
     letter-spacing: -0.2px;
 }
