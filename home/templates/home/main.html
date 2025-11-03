@@ -954,7 +954,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }">
         
-        {% for blog in blog %}
+        {% for blog in blogs %}
         <div class="post drop-shadow mb-9 overlay-zoom blog-card">
             <figure class="post-media blog-media">
                 <a href="{% url 'blog_detail' blog.slug %}">
