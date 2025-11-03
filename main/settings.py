@@ -1,3 +1,5 @@
+import environ
+import os
 """
 Django settings for main project.
 
@@ -20,7 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-o=py(0#x%3@9_g8$cmg$9u$%e*r$j+g(z&w*di7knrzwe(+2qe'
+
+SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -73,8 +76,6 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-import environ
-import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
