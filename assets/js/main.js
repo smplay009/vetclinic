@@ -1271,20 +1271,7 @@ window.Riode = {};
     /**
      * @function initPurchasedMinipopup
      */
-    Riode.initPurchasedMinipopup = function () {
-        setInterval(function () {
-            Riode.Minipopup.open({
-                message: 'نام محصول خریداری شده ',
-                productClass: 'product-cart',
-                name: 'Daisy کفش Sonia by Sonia-Blue',
-                nameLink: 'product.html',
-                imageSrc: 'images/cart/product-1.jpg',
-                isPurchased: true
-            }, function ($box) {
-                Riode.ratingTooltip($box[0]);
-            });
-        }, 60000);
-    }
+    
     /**
      * @function initScrollTopButton
      */
