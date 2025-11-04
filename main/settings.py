@@ -121,21 +121,14 @@ USE_I18N = True
 USE_TZ = True
 
 
-
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'assets']
 
-
+# Static files storage (Whitenoise for production)
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Media files (user uploads)
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = BASE_DIR / 'mediafiles'
-
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+# Media files (user uploads) with Cloudinary
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dzzrwrygp',
     'API_KEY': '811756234651548',
@@ -143,3 +136,5 @@ CLOUDINARY_STORAGE = {
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
