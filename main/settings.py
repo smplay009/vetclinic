@@ -1,5 +1,8 @@
 import environ
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 """
 Django settings for main project.
 
@@ -39,10 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'home',
     'cloudinary',
     'cloudinary_storage',
+    'django.contrib.staticfiles',
+    'home',
     
 ]
 
@@ -132,7 +135,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dzzrwrygp',
     'API_KEY': '811756234651548',
-    'API_SECRET': '08IFc094UuQxD5m93BL1wrMVOCw'
+    'API_SECRET': '08IFc094UuQxD5m93BL1wrMVOCw',
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
