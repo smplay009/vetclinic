@@ -73,14 +73,25 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# Add these at the top of your settings.py
+import os
+from dotenv import load_dotenv
+from urllib.parse import urlparse, parse_qsl
+
+load_dotenv()
+
+# Replace the DATABASES section of your settings.py with this
+tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'clinic',
-        'USER': 'root',
-        'PASSWORD': '123456',
-        'HOST':'127.0.0.1',
-        'PORT':'3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': tmpPostgres.path.replace('/', ''),
+        'USER': tmpPostgres.username,
+        'PASSWORD': tmpPostgres.password,
+        'HOST': tmpPostgres.hostname,
+        'PORT': 5432,
+        'OPTIONS': dict(parse_qsl(tmpPostgres.query)),
     }
 }
 
