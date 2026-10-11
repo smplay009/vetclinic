@@ -1,0 +1,556 @@
+
+.rk-header {
+  --rk-container: 1280px;
+  --rk-font: var(--font-fa, 'Vazirmatn', 'IRANSansX', Tahoma, sans-serif);
+  --rk-bg: #B08D3C;
+  --rk-ivory: #17263c;
+  --rk-muted: #30291d;
+  --rk-gold: #ffffff;
+  --rk-gold-light: #fff8e8;
+  --rk-line: rgba(255, 255, 255, 0.35);
+
+  direction: rtl;
+  text-align: right;
+  font-family: var(--rk-font);
+  background: #B08D3C;
+  color: #17263c;
+  border-bottom: 1px solid #96752f;
+  position: relative;
+  isolation: isolate;
+}
+
+.rk-header,
+.rk-header *,
+.rk-header *::before,
+.rk-header *::after {
+  box-sizing: border-box;
+}
+
+.rk-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.rk-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* ساختار اصلی هدر */
+.rk-header__inner {
+  width: 100%;
+  max-width: var(--rk-container);
+  margin-inline: auto;
+  padding: 15px 30px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 1.3fr) minmax(0, 1fr);
+  grid-template-areas: "contact brand location";
+  align-items: center;
+  gap: 24px;
+}
+
+/* لوگو و نام کلینیک */
+.rk-header__brand {
+  grid-area: brand;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 0;
+  text-align: center;
+  padding-inline: 22px;
+  border-inline: 1px solid var(--rk-line);
+}
+
+.rk-brand__mark {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: #fff8e8;
+}
+
+.rk-brand__mark svg {
+  display: block;
+  width: 60px;
+  height: 60px;
+}
+
+.rk-brand__text {
+  min-width: 0;
+}
+
+.rk-brand__name {
+  margin: 0;
+  color: #17263c;
+  font-size: clamp(1.55rem, 2.2vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.rk-brand__slogan {
+  margin: 3px 0 0;
+  color: #30291d;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+/* جایگاه دکمه تماس */
+.rk-header__contact {
+  grid-area: contact;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+}
+
+/* دکمه تماس */
+.rk-cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  min-height: 66px;
+  width: 200px;
+  padding: 12px 17px;
+  margin: 0;
+  background: transparent;
+  color: #fffdf7;
+  border: 1px solid rgba(255, 253, 247, 0.85);
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 3px rgba(255, 253, 247, 0.12);
+  transition: background 250ms ease, transform 250ms ease;
+}
+
+.rk-cta__icon {
+  order: 0;
+  flex: 0 0 43px;
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #17263c;
+  background: #fffdf7;
+  border: 2px solid #fffdf7;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #b08d3c, 0 0 0 5px rgba(255,255,255,.8);
+}
+
+.rk-cta__icon svg {
+  transform: scaleX(-1);
+}
+
+.rk-cta__text {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.rk-cta__label {
+  color: #fff5d9;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.rk-cta__number {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  white-space: nowrap;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.rk-cta__arrow {
+  display: none;
+}
+
+.rk-cta:hover {
+  background: rgba(255, 253, 247, 0.14);
+  transform: translateY(-2px);
+}
+
+.rk-cta:hover .rk-cta__icon {
+  color: #fff;
+  background: #17263c;
+  border-color: #17263c;
+}
+
+.rk-cta:focus-visible,
+.rk-map-link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+/* جایگاه دکمه نقشه */
+.rk-header__location {
+  grid-area: location;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+/* دکمه شیشه‌ای نقشه */
+.rk-header .rk-map-link {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  flex-direction: row;
+  direction: rtl;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  width: fit-content;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 72px;
+  padding: 10px 12px;
+  margin: 0;
+  color: #ffffff;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 18px;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.12),
+    0 6px 20px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.rk-map-link::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.09),
+    transparent 50%,
+    rgba(255, 255, 255, 0.025)
+  );
+  pointer-events: none;
+}
+
+.rk-map-link::after {
+  display: none;
+}
+
+/* آیکون نقشه: اندازه دایره */
+.rk-header .rk-map-link .rk-map-icon,
+.rk-header .rk-map-link .rk-map-link__icon {
+  order: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.3),
+    0 3px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 250ms ease, background 250ms ease;
+}
+
+/* خود SVG داخل دایره */
+.rk-header .rk-map-link .rk-map-icon svg,
+.rk-header .rk-map-link .rk-map-link__icon svg,
+.rk-header .rk-map-link > svg {
+  display: block;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  min-height: 34px;
+  max-width: none;
+  max-height: none;
+  flex-shrink: 0;
+}
+
+/* متن؛ نزدیک آیکون، بدون پخش شدن در عرض دکمه */
+.rk-header .rk-map-link .rk-map-link__text {
+  order: 1;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.rk-map-link__title {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.6;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.rk-map-link__subtitle {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.rk-map-link__external {
+  font-size: 1rem;
+}
+
+.rk-map-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.55),
+    0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.rk-map-link:hover .rk-map-icon,
+.rk-map-link:hover .rk-map-link__icon {
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.03);
+}
+
+/* تبلت */
+@media (max-width: 1023px) {
+  .rk-header__inner {
+    padding: 14px 20px;
+    gap: 12px;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 1.2fr) minmax(0, 1fr);
+  }
+
+  .rk-header__brand {
+    padding-inline: 12px;
+    gap: 8px;
+  }
+
+  .rk-brand__mark svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  .rk-cta {
+    gap: 8px;
+    padding-inline: 9px;
+  }
+}
+
+/* موبایل */
+@media (max-width: 700px) {
+  .rk-header__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "brand brand"
+      "contact location";
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .rk-header__brand {
+    border-inline: none;
+    border-bottom: 1px solid var(--rk-line);
+    padding: 0 0 12px;
+    gap: 10px;
+  }
+
+  .rk-brand__mark svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .rk-brand__name {
+    font-size: 1.15rem;
+  }
+
+  .rk-brand__slogan {
+    font-size: .72rem;
+  }
+
+  .rk-header__contact {
+    justify-content: flex-start;
+  }
+
+  .rk-header__location {
+    justify-content: flex-end;
+  }
+
+  .rk-cta {
+    width: auto;
+    min-width: 0;
+    min-height: 44px;
+    gap: 7px;
+    padding: 7px;
+  }
+
+  .rk-cta__icon {
+    flex-basis: 33px;
+    width: 33px;
+    height: 33px;
+  }
+
+  .rk-cta__icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .rk-cta__label {
+    font-size: .67rem;
+  }
+
+  .rk-cta__number {
+    font-size: .78rem;
+  }
+
+  .rk-header .rk-map-link {
+    width: 100%;
+    max-width: 280px;
+    min-width: 0;
+    min-height: 48px;
+    gap: 5px;
+    padding: 6px;
+    border-radius: 14px;
+  }
+
+  .rk-map-link::before {
+    border-radius: 12px;
+  }
+
+  .rk-header .rk-map-link .rk-map-icon,
+  .rk-header .rk-map-link .rk-map-link__icon {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+  }
+
+  .rk-header .rk-map-link .rk-map-icon svg,
+  .rk-header .rk-map-link .rk-map-link__icon svg,
+  .rk-header .rk-map-link > svg {
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+    min-height: 25px;
+  }
+
+  .rk-header .rk-map-link .rk-map-link__text {
+    gap: 2px;
+  }
+
+  .rk-map-link__title {
+    font-size: .76rem;
+  }
+
+  .rk-map-link__subtitle {
+    font-size: .63rem;
+  }
+
+  .rk-map-link__external {
+    font-size: .72rem;
+  }
+}
+
+/* موبایل‌های خیلی کوچک */
+@media (max-width: 360px) {
+  .rk-header__inner {
+    padding-inline: 9px;
+    gap: 7px;
+  }
+
+  .rk-cta,
+  .rk-map-link {
+    gap: 4px;
+    padding: 5px;
+  }
+
+  .rk-cta__number {
+    font-size: .72rem;
+  }
+
+  .rk-brand__name {
+    font-size: 1.05rem;
+  }
+}
+
+/* کاهش حرکت */
+@media (prefers-reduced-motion: reduce) {
+  .rk-cta,
+  .rk-map-link,
+  .rk-map-link .rk-map-icon,
+  .rk-map-link .rk-map-link__icon {
+    transition: none;
+  }
+}
+
+/* سفید نگه داشتن متن و آیکون‌های نقشه */
+.rk-header .rk-map-link,
+.rk-header .rk-map-link * {
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+}
+/* اصلاح چیدمان دکمه نقشه */
+.rk-header .rk-map-link {
+direction: rtl;
+display: inline-flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+gap: 8px;
+}
+
+/* آیکون اصلی نقشه در سمت راست */
+.rk-header .rk-map-link .rk-map-icon,
+.rk-header .rk-map-link .rk-map-link__icon {
+order: 1;
+flex-shrink: 0;
+}
+
+/* متن در وسط */
+.rk-header .rk-map-link .rk-map-link__text {
+order: 2;
+flex-shrink: 1;
+}
+
+/* آیکون خارجی در سمت چپ */
+.rk-header .rk-map-link .rk-map-link__external {
+order: 3;
+flex-shrink: 0;
+margin-inline-start: auto;
+margin-inline-end: 0;
+}
+
+/* حفظ چیدمان در موبایل */
+@media (max-width: 700px) {
+.rk-header .rk-map-link {
+gap: 5px;
+}
+}

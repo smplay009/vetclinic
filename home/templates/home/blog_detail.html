@@ -1,346 +1,733 @@
-{% load static %}
-<!doctype html>
-<html class="no-js" lang="Fa_IR" dir="rtl">
-
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 <head>
-    <meta charset="utf-8">
- 
-    <!-- Place favicon.ico in the root directory -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{blog.name}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* متغیرهای رنگ - پالت مدرن و لوکس */
+        :root {
+            --primary: #6366F1;
+            --primary-light: #818CF8;
+            --primary-dark: #4F46E5;
+            --secondary: #F59E0B;
+            --secondary-light: #FBBF24;
+            --accent: #8B5CF6;
+            --dark: #1E293B;
+            --darker: #0F172A;
+            --light: #F8FAFC;
+            --text: #334155;
+            --text-light: #64748B;
+            --gradient-primary: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+            --gradient-secondary: linear-gradient(135deg, #F59E0B 0%, #F97316 100%);
+            --gradient-dark: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+            --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-lg: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
+            --glow: 0 0 50px rgba(99, 102, 241, 0.15);
+        }
 
-    <link rel="stylesheet" href="{% static 'css.sh/normalize.css' %}">
-    <link rel="stylesheet" href="{% static 'font.sh/bootstrap-icon/bootstrap-icons.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css.sh/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'js.sh/plugin/swiper/swiper-bundle.min.css' %}">
-    <link rel="stylesheet" href="{% static 'js.sh/plugin/countdown/countdown.css' %}">
-    <link rel="stylesheet" href="{% static 'js.sh/plugin/rasta-contact/style.css' %}">
-    <link rel="stylesheet" href="{% static 'js.sh/plugin/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css.sh/main.css' %}">
-    <link rel="stylesheet" href="{% static 'css.sh/responsive.css' %}">
+        /* فونت‌های لوکس */
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-    <meta name="theme-color" content="#f4f5f9">
+        /* ریست و پایه */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Vazirmatn', sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(245, 158, 11, 0.05) 0%, transparent 50%);
+            z-index: -2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* انیمیشن‌های حرفه‌ای */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-20px) rotate(120deg);
+            }
+            66% {
+                transform: translateY(10px) rotate(240deg);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(99, 102, 241, 0.6);
+            }
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes textGlow {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(99, 102, 241, 0.8), 0 0 30px rgba(99, 102, 241, 0.6);
+            }
+        }
+
+        /* استایل اصلی مقاله */
+        .main-content {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
+            position: relative;
+        }
+
+        .luxury-article {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            animation: fadeInUp 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.2s both;
+            position: relative;
+            max-width: 1100px;
+            width: 100%;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .luxury-article::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, transparent 50%, rgba(139, 92, 246, 0.1) 100%);
+            z-index: 0;
+        }
+
+        /* هیرو سکشن - افکت بنفش حذف شده */
+        .article-hero {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        /* این بخش حذف شده - افکت بنفش روی عکس */
+        /* .hero-gradient {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0.8;
+            z-index: 1;
+        } */
+
+        .article-hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* فیلتر brightness و contrast حذف شده */
+            transition: transform 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .luxury-article:hover .article-hero-image {
+            transform: scale(1.08);
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            padding: 50px;
+            z-index: 2;
+            background: linear-gradient(transparent 0%, rgba(15, 23, 42, 0.9) 100%);
+        }
+
+        .article-category {
+            background: var(--gradient-secondary);
+            color: var(--darker);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        /* محتوای مقاله */
+        .article-content {
+            padding: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .article-header {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .article-title {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--light) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: textGlow 4s ease-in-out infinite;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .meta-item:hover {
+            background: rgba(99, 102, 241, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.2);
+        }
+
+        .meta-item i {
+            color: var(--primary-light);
+            font-size: 18px;
+        }
+
+        /* بدنه مقاله */
+        .article-body {
+            line-height: 2;
+            font-size: 18px;
+            color: rgba(248, 250, 252, 0.9);
+        }
+
+        .article-body p {
+            margin-bottom: 30px;
+            text-align: justify;
+            position: relative;
+            padding-right: 20px;
+        }
+
+        .article-body p::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 10px;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .article-body h2 {
+            font-size: 32px;
+            margin: 50px 0 25px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            padding-right: 25px;
+        }
+
+        .article-body h2::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 15px;
+            width: 12px;
+            height: 12px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+        }
+
+        .article-body h3 {
+            font-size: 24px;
+            margin: 40px 0 20px;
+            color: var(--secondary-light);
+            font-weight: 600;
+            position: relative;
+            padding-right: 20px;
+        }
+
+        .article-body h3::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: -5px;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+
+        .article-body blockquote {
+            background: rgba(99, 102, 241, 0.1);
+            border-right: 4px solid var(--primary);
+            padding: 40px;
+            margin: 45px 0;
+            border-radius: 20px;
+            font-style: italic;
+            font-size: 20px;
+            line-height: 1.8;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            box-shadow: var(--glow);
+        }
+
+        .article-body blockquote::before {
+            content: '\201C';
+            font-size: 100px;
+            position: absolute;
+            top: -20px;
+            right: 30px;
+            color: rgba(99, 102, 241, 0.3);
+            line-height: 1;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 30px 0;
+            padding-right: 30px;
+        }
+
+        .article-body li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-right: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .article-body li:hover {
+            transform: translateX(-10px);
+            color: var(--primary-light);
+        }
+
+        .article-body ul li::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 12px;
+            width: 8px;
+            height: 8px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+        }
+
+        .article-body ol {
+            counter-reset: item;
+        }
+
+        .article-body ol li {
+            counter-increment: item;
+        }
+
+        .article-body ol li::before {
+            content: counter(item);
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--gradient-primary);
+            color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        /* تگ‌های مقاله */
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        .tag {
+            background: rgba(99, 102, 241, 0.1);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .tag:hover {
+            transform: translateY(-5px) scale(1.05);
+            color: var(--light);
+            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .tag:hover::before {
+            opacity: 1;
+        }
+
+        /* المان‌های دکوراتیو */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+            filter: blur(40px);
+        }
+
+        .element-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .element-2 {
+            width: 200px;
+            height: 200px;
+            top: 70%;
+            right: 80%;
+            animation-delay: 5s;
+            background: var(--gradient-secondary);
+        }
+
+        .element-3 {
+            width: 250px;
+            height: 250px;
+            top: 20%;
+            right: 80%;
+            animation-delay: 10s;
+            background: var(--accent);
+        }
+
+        /* افکت‌های ویژه */
+        .particles {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        /* ریسپانسیو */
+        @media (max-width: 1024px) {
+            .article-hero {
+                height: 400px;
+            }
+            
+            .article-content {
+                padding: 40px;
+            }
+            
+            .article-title {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .article-hero {
+                height: 300px;
+            }
+            
+            .hero-content {
+                padding: 30px;
+            }
+            
+            .article-content {
+                padding: 30px;
+            }
+            
+            .article-title {
+                font-size: 32px;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .article-body h2 {
+                font-size: 26px;
+            }
+            
+            .article-body blockquote {
+                padding: 25px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-hero {
+                height: 250px;
+            }
+            
+            .article-content {
+                padding: 20px;
+            }
+            
+            .article-title {
+                font-size: 28px;
+            }
+            
+            .article-body {
+                font-size: 16px;
+            }
+            
+            .article-body h2 {
+                font-size: 22px;
+            }
+            
+            .article-body blockquote {
+                padding: 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-<!-- start header code -->
-
-
-<!-- start mega menu -->
-
-
-
-<!-- end mega menu -->
-
-
-<!-- end header code -->
-
-
-<!-- start breadcroumb -->
-
-<div class="bread-crumb py-4">
-    <div class="container-fluid">
-        <nav aria-label="breadcrumb" class="my-lg-0 my-2">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="/" class="font-14 text-muted-two">خانه</a></li>
-                <li class="breadcrumb-item"><a href="#" class="font-14 text-muted-two">وبلاگ</a></li>
-                <li class="breadcrumb-item active main-color-one-color font-14 fw-bold" aria-current="page">{{article.name}}
-                </li>
-            </ol>
-        </nav>
+    <!-- المان‌های شناور دکوراتیو -->
+    <div class="floating-elements">
+        <div class="floating-element element-1"></div>
+        <div class="floating-element element-2"></div>
+        <div class="floating-element element-3"></div>
     </div>
-</div>
 
-<!-- end breadcroumb -->
+    <!-- ذرات متحرک -->
+    <div class="particles" id="particles"></div>
 
-<!-- main content page -->
-{% comment %} <div class="content">
-    <div class="container-fluid">
-        <div class="blog-heeader">
-            <div class="row gy-3">
-                <div class="col-md-8">
-                    <div class="blog-header-title slider-title-desc">
-                        <h2 class="">وبلاگ <span class="main-color-one-color title-font">شاهان</span></h2>
-                    </div>
+    <!-- محتوای اصلی -->
+    <main class="main-content">
+        <div class="container">
+            <article class="luxury-article">
+                <div class="article-hero">
+                    <!-- افکت بنفش حذف شده -->
+                    <img src="{{blog.image.url}}" 
+                         alt="" 
+                         class="article-hero-image">
+                    
                 </div>
-                <div class="col-md-4">
-                    <div class="header-form">
-                        <form action="">
-                            <input type="search" class="form-control input-search" placeholder="جستجوی محصول">
-                            <button type="submit" class="btn input-btn-search"><i class="bi bi-search"></i></button>
-                        </form>
+                
+                <div class="article-content">
+                    <div class="article-header">
+                        <h1 class="article-title">{{blog.name}}</h1>
+                        <div class="article-meta">
+                            <div class="meta-item">
+                                <i class="far fa-clock"></i>
+                                <span>زمان مطالعه: ۵ دقیقه</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>آخرین بروزرسانی {{ jalali_date }}</span>
+                            </div>
+                            
+                        </div>
                     </div>
+                    
+                    <div class="article-body">
+                        
+                        <h2>{{blog.title}}</h2>
+                        
+                        
+                        <p>{{blog.description}}</p>
+                        
+                        </div>
+                    
+                   
                 </div>
-            </div>
+            </article>
         </div>
-        <div class="blog-menu my-4 d-lg-block d-none">
-            <div class="content-box py-2">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col-lg-8">
-                            <div class="blog-menu-items">
-                                <nav class="navbar navbar-expand">
-                                    <ul class="navbar-nav">
-                                        <li class="nav-item"><a href="" class="nav-link border-animate fromRight">ویدیو
-                                            های معرفی محصول</a></li>
-                                        <li class="nav-item"><a href=""
-                                                                class="nav-link border-animate fromRight">آموزش</a></li>
-                                        <li class="nav-item parent-blog-menu-level-2"><a href=""
-                                                                                         class="nav-link border-animate fromRight">خلاقیت
-                                            <i class="bi font-12 ms-1 bi-chevron-down"></i></a>
-                                            <ul class="navbar-nav flex-column blog-menu-level-2">
-                                                <li class="nav-item"><a href="" class="nav-link">منو شماره 1</a></li>
-                                                <li class="nav-item"><a href="" class="nav-link">منو شماره 2</a></li>
-                                                <li class="nav-item parent-blog-menu-level-3"><a href=""
-                                                                                                 class="nav-link"> <i
-                                                        class="bi bi-chevron-left font-12"></i> منو شماره 3</a>
+    </main>
 
-                                                    <ul class="navbar-nav flex-column blog-menu-level-3">
-                                                        <li class="nav-item"><a href="" class="nav-link">منو شماره 1</a>
-                                                        </li>
-                                                        <li class="nav-item"><a href="" class="nav-link">منو شماره 2</a>
-                                                        </li>
-                                                        <li class="nav-item"><a href="" class="nav-link"> منو شماره
-                                                            3</a></li>
-                                                    </ul>
+    <script>
+        // ایجاد ذرات متحرک
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // موقعیت تصادفی
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                
+                // اندازه تصادفی
+                const size = Math.random() * 3 + 1;
+                
+                // انیمیشن تصادفی
+                const duration = Math.random() * 20 + 10;
+                const delay = Math.random() * 20;
+                
+                particle.style.left = `${left}%`;
+                particle.style.top = `${top}%`;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${delay}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
 
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item"><a href="" class="nav-link border-animate fromRight">تکنولوژی</a>
-                                        </li>
-                                        <li class="nav-item"><a href="" class="nav-link border-animate fromRight">کریپتوگرافی</a>
-                                        </li>
-                                        <li class="nav-item"><a href="" class="nav-link border-animate fromRight">رمزنگاری</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="blog-menu-social">
-                                <nav class="navbar navbar-expand justify-content-end">
-                                    <ul class="navbar-nav">
-                                        <li class="nav-item"><a href="" class="nav-link text-muted-two"><i
-                                                class="bi bi-instagram"></i></a></li>
-                                        <li class="nav-item"><a href="" class="nav-link text-muted-two"><i
-                                                class="bi bi-twitter"></i></a></li>
-                                        <li class="nav-item"><a href="" class="nav-link text-muted-two"><i
-                                                class="bi bi-linkedin"></i></a></li>
-                                        <li class="nav-item"><a href="" class="nav-link text-muted-two"><i
-                                                class="bi bi-telegram"></i></a></li>
-                                        <li class="nav-item"><a href="" class="nav-link text-muted-two"><i
-                                                class="bi bi-whatsapp"></i></a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="blog-menu-responsive d-lg-none d-block mt-4">
-            <div class="content-box">
-                <div class="container-fluid">
-                    <div class="blog-menu-responsive-menu responsive-menu">
-                        <ul class="rm-item-menu navbar-nav">
-                            <li class="nav-item bg-ul-f7"><a href="index.html" class="nav-link">ویدیو معرفی محصول</a>
-                            </li>
-                            <li class="nav-item bg-ul-f7">
-                                <a href="" class="nav-link">آموزش</a>
-                            </li>
-                            <li class="nav-item bg-ul-f7">
-                                <a href="" class="nav-link">خلاقیت</a>
-                                <span class="showSubMenu"><i class="bi bi-chevron-left"></i></span>
-                                <ul class="navbar-nav h-0">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="">منو شماره 1</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="">منو شماره 2</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="">منو شماره 3</a>
-                                        <span class="showSubMenu"><i class="bi bi-chevron-left"></i></span>
-                                        <ul class="navbar-nav h-0 bg-ul-f7">
-                                            <li class="nav-item"><a href="" class="nav-link">منو شماره 1</a></li>
-                                            <li class="nav-item"><a href="" class="nav-link">منو شماره 2</a>
-                                            </li>
-                                            <li class="nav-item"><a href="" class="nav-link">منو شماره 3</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item bg-ul-f7">
-                                <a href="" class="nav-link">تکنولوژی</a>
-                            </li>
-                            <li class="nav-item bg-ul-f7">
-                                <a href="" class="nav-link">کریپتو گرافی</a>
-                            </li>
-                            <li class="nav-item bg-ul-f7">
-                                <a href="" class="nav-link">رمز نگاری</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> {% endcomment %}
-<!-- end main content page -->
-
-
-<!-- start blog-content -->
-
-<div class="blog-content">
-    <div class="content">
-        <div class="container-fluid">
-            <div class="blog-content-meta">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="blog-content-meta-thumbnail slider-parent">
-                            <img src="{{blog.image.url}}" class="img-thumbnail" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="blog-content-meta-detail">
-                            <div class="blog-content-meta-detail-title">
-                                <h2 class="title-font">{{blog.name}}</h2>
-                            </div>
-                            <div class="blog-content-meta-detail-detail">
-                                {% comment %} <div class="blog-content-meta-detail-detail-item">
-                                    <i class="bi bi-stack"></i>
-                                    <h6>دسته بندی: </h6>
-                                    <a href="">تکنولوژی</a>
-                                </div> {% endcomment %}
-                                <div class="blog-content-meta-detail-detail-item">
-                                    <i class="bi bi-clock"></i>
-                                    <h6>زمان مطالعه: </h6>
-                                    <span>3 دقیقه</span>
-                                </div>
-                                <div class="blog-content-meta-detail-detail-item">
-                                    <i class="bi bi-calendar-check"></i>
-                                    <h6>آخرین بروزرسانی: </h6>
-                                    <span>{{ jalali_date }}</span>
-                                </div>
-                                {% comment %} <div class="blog-content-meta-detail-detail-item">
-                                    <i class="bi bi-send"></i>
-                                    <h6>نظرات: </h6>
-                                    <a href="">17 نظر</a>
-                                </div> {% endcomment %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="blog-main-content">
-                <div class="blog-content-list-parent">
-                    <div class="container-fluid">
-                        <div class="row justify-content-center">
-                            {% comment %} <div class="col-lg-8">
-                                <div class="blog-main-content-list slider-parent">
-                                    <div class="container-fluid">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                <div class="blog-main-content-list-icon">
-                                                    <div class="blog-main-content-list-icon-icon">
-                                                        <i class="bi bi-list"></i>
-                                                    </div>
-                                                    <h5>فهرست مطالب</h5>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-8">
-                                                <div class="blog-main-content-menu">
-                                                    <nav>
-                                                        <ul class="navbar-nav">
-                                                            <li class=nav-item><a class="nav-link" href="#" title="چرا بک لینک رایگان؟">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></li>
-                                                            <li class=nav-item><a class="nav-link" href="#" title="چرا بک لینک رایگان؟">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></li>
-                                                            <li class=nav-item><a class="nav-link" href="#" title="چرا بک لینک رایگان؟">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></li>
-                                                            <li class=nav-item><a class="nav-link" href="#" title="چرا بک لینک رایگان؟">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></li>
-                                                        </ul>
-                                                    </nav>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> {% endcomment %}
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-main-content-content">
-                    <div class="content-box">
-                        <div class="container-fluid">
-                            <div class="blog-main-content-content-text">
-                                
-<h6 class="font-30 mb-2 title-font" style="margin-left:120px;">{{blog.title}}</h6>
-                                <p class="blog-description-style">{{blog.description}}</p>
-
-<style>
-.blog-description-style {
-  font-size: 1.4rem;
-  line-height: 2;
-  color: #202b3fff;
-  font-family: 'Vazirmatn', 'IRANSansX', 'IRANSans', 'Tahoma', Arial, sans-serif;
-  text-align: right;
-  padding: 0;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  word-spacing: 0.08em;
-  background: none !important;
-  box-shadow: none !important;
-  border: none !important;
-  outline: none !important;
-  transition: font-size 0.2s, color 0.2s;
-  max-width: 1350px;
-  margin-right: 25px;
-  margin-left: auto;
-  margin-bottom: 2rem;
-}
-@media (max-width: 600px) {
-  .blog-description-style {
-    font-size: 1.1rem;
-    line-height: 2.2;
-    margin-right: 5px;
-    max-width: 98vw;
-  }
-  .font-30.mb-2.title-font {
-    margin-left: 20px !important;
-  }
-}
-</style>
-
-                                
-                                <!-- متن بیشتر -->
-                                <div class="">
-                                    {% comment %} <p>البته که با توجه به قیمت ارزان این گوشی نیاید انتظار زیادی از
-                                        این
-                                        محصول داشته
-                                        باشید. روی صفحه نمایش ناچ قطره‌ ای قرار گرفته که داخل
-                                        آن دوربین
-                                        سلفی
-                                        دیده
-                                        می‌شود. روی لبه بالای گوشی جک ۳.۵ میلی صدا قرار گرفته و
-                                        روی لبه
-                                        پایین
-                                        هم
-                                        پورت micro-USB و اسپیکر گوشی &nbsp;و میکروفن را مشاهده
-                                        می‌کنید.
-                                        خیلی
-                                        دوست
-                                        داشتیم که روی این گوشی پورت USB C مشاهده می کردیم. روی لبه
-                                        سمت چپ
-                                        گوشی محل
-                                        قرار
-                                        گرفتن سیم کارت و کارت حافظه را مشاهده می‌کنید. همچنین
-                                        باید به
-                                        این موضوع
-                                        اشاره کنیم که این گوشی در سه رنگ آبی و سبز و مشکی راهی بازار
-                                        شده
-                                        است.</p>
-                                    <p>&nbsp;</p> {% endcomment %}
-                                    
-                                    <p>&nbsp;</p>
-                                
-                                    
+        // افکت‌های تعاملی
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            
+            // افکت hover برای تگ‌ها
+            const tags = document.querySelectorAll('.tag');
+            tags.forEach(tag => {
+                tag.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.1)';
+                });
+                tag.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // افکت پارالاکس برای تصویر اصلی
+            const heroImage = document.querySelector('.article-hero-image');
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.3;
+                heroImage.style.transform = `translateY(${rate}px) scale(1.08)`;
+            });
+            
+            // افکت تایپ برای عنوان (شبیه تایپ کردن)
+            const title = document.querySelector('.article-title');
+            const text = title.textContent;
+            title.textContent = '';
+            let i = 0;
+            
+            function typeWriter() {
+                if (i < text.length) {
+                    title.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            }
+            
+            // شروع تایپ پس از لود صفحه
+            setTimeout(typeWriter, 1000);
+        });
+    </script>
+</body>
+</html>

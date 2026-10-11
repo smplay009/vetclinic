@@ -6,3 +6,5 @@ from .models import *
 
 admin.site.register(Appointment)
 admin.site.register(Blog)
+admin.site.register(Category)
+admin.site.register(CategoryFeature)

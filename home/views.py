@@ -5,6 +5,7 @@ from .models import *
 from datetime import datetime
 from django.shortcuts import render, get_object_or_404
 import jdatetime
+from django.db.models import Case, When, Value, IntegerField
 
 def booking_page(request):
     hours = [
@@ -60,4 +61,32 @@ def blog_detail(request, slug):
     return render(request, 'home/blog_detail.html', {
         'blog': blog,
         'jalali_date': jalali_date
+    })
+
+
+def category_detail(request, slug):
+    category = get_object_or_404(Category, slug=slug)
+
+    features_raw = category.features.all()
+
+    def normalize(f):
+        val = f.order
+
+        # هر مقدار None، صفر، منفی، یا غیرعددی → بفرست آخر
+        if not val or val <= 0:
+            return 9999
+        
+        return val
+
+    features = sorted(features_raw, key=lambda f: normalize(f))
+
+    # Debug
+    print("======= NORMALIZED ORDER =======")
+    for f in features:
+        print(f"{normalize(f)} → {f.title}")
+    print("================================")
+
+    return render(request, "home/category_detail.html", {
+        "category": category,
+        "features": features,
     })

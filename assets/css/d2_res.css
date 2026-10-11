@@ -1,0 +1,393 @@
+/* ریسپانسیو برای بنر دامپزشکی - d2_res.css */
+
+/* دسکتاپ بزرگ - 1367px به بالا */
+@media (min-width: 1367px) {
+    #main-banner1.banner {
+        height: 730px !important;
+    }
+    
+    #main-banner1 .hero-figure {
+        height: 730px !important;
+    }
+    
+    #main-banner1 .responsive-hero-img {
+        height: 730px !important;
+        object-position: top center !important; /* این خط رو اضافه کنید */
+    }
+
+    #main-banner1 .vet-banner-content {
+        left: 4% !important;
+        top: 45% !important;
+    }
+    
+    #main-banner1 .vet-parallax-container {
+        width: 800px !important;
+        height: 500px !important;
+    }
+    
+    #main-banner1 .vet-text-box {
+        width: 480px !important;
+        padding: 30px !important;
+    }
+    
+    #main-banner1 .vet-box-1 {
+        top: 60px !important;
+        left: 40px !important;
+    }
+    
+    #main-banner1 .vet-box-2 {
+        top: 215px !important;
+        left: 90px !important;
+    }
+    
+    #main-banner1 .vet-box-3 {
+        top: 340px !important;
+        left: 140px !important;
+    }
+    
+    #main-banner1 .vet-card p {
+        font-size: 1.5rem !important;
+    }
+    
+    #main-banner1 .vet-icon {
+        font-size: 2.2rem !important;
+    }
+}
+
+
+    
+    /* آیپد پرو پرتره - 1024px تا 1366px */
+@media (max-width: 1366px) and (min-width: 1024px) and (orientation: portrait) {
+    #main-banner1 .vet-banner-content {
+        left: 7% !important;
+        top: 70% !important;
+    }
+    
+    #main-banner1 .vet-parallax-container {
+        width: 1200px !important;
+        height: 600px !important;
+    }
+    
+    #main-banner1 .vet-text-box {
+        width: 550px !important;
+        height: 220px !important;
+        padding: 15px !important;
+    }
+    
+    #main-banner1 .vet-box-1 {
+        top: 40px !important;
+        left: 30px !important;
+    }
+    
+    #main-banner1 .vet-box-2 {
+        top: 235px !important;
+        left: 70px !important;
+    }
+    
+    #main-banner1 .vet-box-3 {
+        top: 425px !important;
+        left: 110px !important;
+    }
+    
+    #main-banner1 .vet-card p {
+        font-size: 2.2rem !important;
+    }
+    
+    #main-banner1 .vet-icon {
+        font-size: 3rem !important;
+        padding: 5px !important;
+    }
+}
+
+/* تبلت لنداسکیپ - 768px تا 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+    #main-banner1 .vet-banner-content {
+        left: 6% !important;
+        top: 65% !important;
+    }
+    
+    #main-banner1 .vet-parallax-container {
+        width: 550px !important;
+        height: 380px !important;
+    }
+    
+    #main-banner1 .vet-text-box {
+        width: 580px !important;
+        height: 190px !important;
+        padding: 15px !important;
+    }
+    
+    #main-banner1 .vet-box-1 {
+        top: 30px !important;
+        left: 15px !important;
+    }
+    
+    #main-banner1 .vet-box-2 {
+        top: 200px !important;
+        left: 40px !important;
+    }
+    
+    #main-banner1 .vet-box-3 {
+        top: 370px !important;
+        left: 65px !important;
+    }
+    
+    #main-banner1 .vet-card p {
+        font-size: 2.0rem !important;
+        padding: 0px !important;
+    }
+    
+    #main-banner1 .vet-icon {
+        font-size: 3.0rem !important;
+        padding: 0px !important;
+    }
+}
+
+/* تبلت پرتره - 481px تا 767px */
+@media (max-width: 767px) and (min-width: 600px) {
+    #main-banner1 .vet-banner-content {
+        left: 4% !important;
+        top: 66% !important;
+    }
+    
+    #main-banner1 .vet-parallax-container {
+        width: 450px !important;
+        height: 290px !important;
+    }
+    
+    #main-banner1 .vet-text-box {
+        width: 350px !important;
+        padding: 18px !important;
+    }
+    
+    #main-banner1 .vet-box-1 {
+        top: 30px !important;
+        left: 10px !important;
+    }
+    
+    #main-banner1 .vet-box-2 {
+        top: 130px !important;
+        left: 30px !important;
+    }
+    
+    #main-banner1 .vet-box-3 {
+        top: 230px !important;
+        left: 50px !important;
+    }
+    
+    #main-banner1 .vet-card p {
+        font-size: 1.1rem !important;
+    }
+    
+    #main-banner1 .vet-icon {
+        font-size: 1.5rem !important;
+    }
+}
+
+@media (max-width: 599px) and (min-width: 480px) {
+    #main-banner1 .vet-banner-content {
+        left: 4% !important;
+        top: 66% !important;
+    }
+    
+    #main-banner1 .vet-parallax-container {
+        width: 450px !important;
+        height: 290px !important;
+    }
+    
+    #main-banner1 .vet-text-box {
+        width: 350px !important;
+        padding: 18px !important;
+    }
+    
+    #main-banner1 .vet-box-1 {
+        top: 30px !important;
+        left: 10px !important;
+    }
+    
+    #main-banner1 .vet-box-2 {
+        top: 130px !important;
+        left: 30px !important;
+    }
+    
+    #main-banner1 .vet-box-3 {
+        top: 230px !important;
+        left: 50px !important;
+    }
+    
+    #main-banner1 .vet-card p {
+        font-size: 1.1rem !important;
+    }
+    
+    #main-banner1 .vet-icon {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* سایز کمتر از 400px */
+@media (max-width: 479px) and (min-width: 413px) {
+    #main-banner1 .vet-banner-content {
+        left: 2% !important;
+        top: 66% !important;
+    }
+    
+    #main-banner1 .vet-parallax-container {
+        width: 450px !important;
+        height: 290px !important;
+    }
+    
+    #main-banner1 .vet-text-box {
+        width: 280px !important;
+        height: 90px !important;
+        padding: 10px !important;
+    }
+    
+    #main-banner1 .vet-box-1 {
+        top: 60px !important;
+        left: 10px !important;
+    }
+    
+    #main-banner1 .vet-box-2 {
+        top: 135px !important;
+        left: 30px !important;
+    }
+    
+    #main-banner1 .vet-box-3 {
+        top: 210px !important;
+        left: 50px !important;
+    }
+    
+    #main-banner1 .vet-card p {
+        font-size: 0.9rem !important;
+    }
+    
+    #main-banner1 .vet-icon {
+        font-size: 1.5rem !important;
+        padding: 0px !important;
+    }
+}
+
+/* سایز کمتر از 375px - آیفون SE */
+@media (max-width: 412px) and (min-width: 376px) {
+    #main-banner1 .vet-banner-content {
+        left: 2% !important;
+        top: 66% !important;
+    }
+    
+    #main-banner1 .vet-parallax-container {
+        width: 450px !important;
+        height: 290px !important;
+    }
+    
+    #main-banner1 .vet-text-box {
+        width: 280px !important;
+        height: 90px !important;
+        padding: 10px !important;
+    }
+    
+    #main-banner1 .vet-box-1 {
+        top: 60px !important;
+        left: 10px !important;
+    }
+    
+    #main-banner1 .vet-box-2 {
+        top: 135px !important;
+        left: 30px !important;
+    }
+    
+    #main-banner1 .vet-box-3 {
+        top: 210px !important;
+        left: 50px !important;
+    }
+    
+    #main-banner1 .vet-card p {
+        font-size: 0.9rem !important;
+    }
+    
+    #main-banner1 .vet-icon {
+        font-size: 1.5rem !important;
+        padding: 0px !important;
+    }
+}
+@media (max-width: 375px) {
+    #main-banner1 .vet-banner-content {
+        left: 2% !important;
+        top: 66% !important;
+    }
+    
+    #main-banner1 .vet-parallax-container {
+        width: 450px !important;
+        height: 290px !important;
+    }
+    
+    #main-banner1 .vet-text-box {
+        width: 250px !important;
+        height: 90px !important;
+        padding: 10px !important;
+    }
+    
+    #main-banner1 .vet-box-1 {
+        top: 60px !important;
+        left: 10px !important;
+    }
+    
+    #main-banner1 .vet-box-2 {
+        top: 135px !important;
+        left: 30px !important;
+    }
+    
+    #main-banner1 .vet-box-3 {
+        top: 210px !important;
+        left: 50px !important;
+    }
+    
+    #main-banner1 .vet-card p {
+        font-size: 0.9rem !important;
+    }
+    
+    #main-banner1 .vet-icon {
+        font-size: 1.5rem !important;
+        padding: 0px !important;
+    }
+}
+@media (375px <= width <= 376px) {
+   #main-banner1 .vet-banner-content {
+        left: 2% !important;
+        top: 66% !important;
+    }
+    
+    #main-banner1 .vet-parallax-container {
+        width: 450px !important;
+        height: 290px !important;
+    }
+    
+    #main-banner1 .vet-text-box {
+        width: 250px !important;
+        height: 90px !important;
+        padding: 10px !important;
+    }
+    
+    #main-banner1 .vet-box-1 {
+        top: 60px !important;
+        left: 10px !important;
+    }
+    
+    #main-banner1 .vet-box-2 {
+        top: 135px !important;
+        left: 30px !important;
+    }
+    
+    #main-banner1 .vet-box-3 {
+        top: 210px !important;
+        left: 50px !important;
+    }
+    
+    #main-banner1 .vet-card p {
+        font-size: 0.9rem !important;
+    }
+    
+    #main-banner1 .vet-icon {
+        font-size: 1.5rem !important;
+        padding: 0px !important;
+    }
+}

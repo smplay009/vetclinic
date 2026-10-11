@@ -9,7 +9,7 @@ env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 SECRET_KEY = env('SECRET_KEY')
-DEBUG = env.bool('DEBUG', default=False)
+DEBUG = env.bool('DEBUG', default=True)
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost'])
 
 
@@ -64,7 +64,10 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 # ==== دیتابیس ====
 DATABASES = {
-    'default': env.db(),  # از DATABASE_URL در .env می‌خونه
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 # ==== Cloudinary ====

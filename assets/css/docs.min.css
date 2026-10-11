@@ -27,35 +27,10 @@
     margin-top: 4rem
 }
 
-.owl-theme .owl-nav .owl-next, .owl-theme .owl-nav .owl-prev {
-    margin: 0;
-    transform: translateY(-50%);
-    font-size: 20px;
-    font-weight: 400;
-    color: #42A4E8
-}
 
-    .owl-theme .owl-nav .owl-next i:before, .owl-theme .owl-nav .owl-prev i:before {
-        margin: 0
-    }
 
-    .owl-theme .owl-nav .owl-next:not(.disabled):active .owl-theme .owl-nav .owl-next:not(.disabled):focus, .owl-theme .owl-nav .owl-next:not(.disabled):active .owl-theme .owl-nav .owl-prev:not(.disabled):focus, .owl-theme .owl-nav .owl-next:not(.disabled):hover, .owl-theme .owl-nav .owl-prev:not(.disabled):active .owl-theme .owl-nav .owl-next:not(.disabled):focus, .owl-theme .owl-nav .owl-prev:not(.disabled):active .owl-theme .owl-nav .owl-prev:not(.disabled):focus, .owl-theme .owl-nav .owl-prev:not(.disabled):hover {
-        background-color: #42A4E8;
-        border-color: #42A4E8;
-        color: #fff
-    }
+    
 
-    .owl-theme .owl-nav .owl-next.disabled, .owl-theme .owl-nav .owl-prev.disabled {
-        color: #ccc
-    }
-
-.owl-theme .owl-nav .owl-prev {
-    left: -40px
-}
-
-.owl-theme .owl-nav .owl-next {
-    right: -40px
-}
 
 .owl-theme .owl-dots .owl-dot.active span {
     background-color: #42A4E8;
@@ -66,190 +41,7 @@
     margin: 5px
 }
 
-@media (max-width:1300px) {
-    .owl-theme .owl-nav .owl-prev {
-        left: 20px
-    }
 
-    .owl-theme .owl-nav .owl-next {
-        right: 20px
-    }
-}
-
-.owl-nav-full .owl-nav {
-    opacity: 0;
-    transition: opacity 0.4s
-}
-
-    .owl-nav-full .owl-nav .owl-next, .owl-nav-full .owl-nav .owl-prev {
-        margin: 0;
-        top: 0;
-        height: 100%;
-        transform: none;
-        border: 0;
-        font-size: 3rem;
-        font-weight: 400;
-        color: #333;
-        border-radius: 0;
-        background-color: rgba(255,255,255,0.8);
-        transition: 0.4s
-    }
-
-        .owl-nav-full .owl-nav .owl-next:not(.disabled):hover, .owl-nav-full .owl-nav .owl-prev:not(.disabled):hover {
-            color: #42A4E8;
-            background-color: rgba(255,255,255,0.8)
-        }
-
-        .owl-nav-full .owl-nav .owl-next.disabled, .owl-nav-full .owl-nav .owl-prev.disabled {
-            visibility: hidden;
-            opacity: 0
-        }
-
-    .owl-nav-full .owl-nav .owl-prev {
-        left: 0;
-        box-shadow: 4px 0px 7px -5px rgba(0,0,0,0.2)
-    }
-
-    .owl-nav-full .owl-nav .owl-next {
-        right: 0;
-        box-shadow: -4px 0px 7px -5px rgba(0,0,0,0.2)
-    }
-
-.owl-nav-full:hover .owl-nav {
-    opacity: 1
-}
-
-.owl-nav-full:hover .owl-prev {
-    left: 0
-}
-
-.owl-nav-full:hover .owl-next {
-    right: 0
-}
-
-.owl-nav-arrow .owl-nav .owl-next, .owl-nav-arrow .owl-nav .owl-prev {
-    margin: 0;
-    color: #666;
-    font-weight: 400;
-    width: 1em;
-    height: 1em;
-    font-size: 4.5rem;
-    border: none
-}
-
-    .owl-nav-arrow .owl-nav .owl-next i, .owl-nav-arrow .owl-nav .owl-prev i {
-        display: none
-    }
-
-    .owl-nav-arrow .owl-nav .owl-next:before, .owl-nav-arrow .owl-nav .owl-prev:before {
-        font-family: "riode"
-    }
-
-    .owl-nav-arrow .owl-nav .owl-next:not(.disabled):active, .owl-nav-arrow .owl-nav .owl-next:not(.disabled):focus, .owl-nav-arrow .owl-nav .owl-next:not(.disabled):hover, .owl-nav-arrow .owl-nav .owl-prev:not(.disabled):active, .owl-nav-arrow .owl-nav .owl-prev:not(.disabled):focus, .owl-nav-arrow .owl-nav .owl-prev:not(.disabled):hover {
-        background-color: transparent;
-        color: #42A4E8
-    }
-
-    .owl-nav-arrow .owl-nav .owl-next.disabled, .owl-nav-arrow .owl-nav .owl-prev.disabled {
-        color: #aaa
-    }
-
-.owl-nav-arrow .owl-nav .owl-next {
-    right: 5%
-}
-
-    .owl-nav-arrow .owl-nav .owl-next:before {
-        content: ""
-    }
-
-.owl-nav-arrow .owl-nav .owl-prev {
-    left: 5%;
-    margin-right: 20px
-}
-
-    .owl-nav-arrow .owl-nav .owl-prev:before {
-        content: ""
-    }
-
-.owl-nav-inner .owl-nav .owl-next, .owl-nav-inner .owl-nav .owl-prev {
-    opacity: 0;
-    visibility: hidden
-}
-
-.owl-nav-inner .owl-nav .owl-prev {
-    left: 0
-}
-
-.owl-nav-inner .owl-nav .owl-next {
-    right: 0
-}
-
-.owl-nav-inner:hover .owl-next, .owl-nav-inner:hover .owl-prev {
-    opacity: 1;
-    visibility: visible
-}
-
-.owl-nav-inner:hover .owl-prev {
-    left: 2rem
-}
-
-.owl-nav-inner:hover .owl-next {
-    right: 2rem
-}
-.owl-nav-top .owl-nav {
-    position: absolute;
-    display: flex;
-    top: -5.3rem;
-    left: -0.4rem;
-    color: #ccc
-}
-
-    .owl-nav-top .owl-nav .owl-next:not(.disabled) .owl-prev:not(.disabled) {
-        color: #777
-    }
-
-    .owl-nav-top .owl-nav .owl-next, .owl-nav-top .owl-nav .owl-prev {
-        position: static;
-        transform: translateY(-11%)
-    }
-
-    .owl-nav-top .owl-nav .owl-next {
-        margin-left: 5px
-    }
-
-    .owl-nav-top .owl-nav i {
-        padding: 0.1rem 0.5rem;
-        font-size: 1.8rem;
-        font-weight: 700
-    }
-
-        .owl-nav-top .owl-nav i:before {
-            margin: 0
-        }
-
-.owl-nav-top.owl-nav-arrow .owl-nav {
-    font-size: 3.4rem
-}
-
-.owl-nav-bottom .owl-nav {
-    position: absolute;
-    bottom: 1.7rem;
-    left: -0.4rem;
-    color: #999
-}
-
-    .owl-nav-bottom .owl-nav i {
-        font-size: 2rem;
-        font-weight: 700
-    }
-
-        .owl-nav-bottom .owl-nav i:before {
-            margin: 0
-        }
-
-.owl-nav-bottom .owl-prev {
-    margin-left: 0.8rem
-}
 
 .owl-dot-white .owl-dots .owl-dot span {
     background-color: #fff;
@@ -337,51 +129,9 @@
     padding: 30px
 }
 
-.owl-nav-bg .owl-nav .owl-prev {
-    right: 15.4%
-}
 
-.owl-nav-bg .owl-nav .owl-next {
-    left: 15.4%
-}
 
-.owl-nav-bg .owl-nav [class*=owl-] {
-    width: 4.8rem;
-    height: 4.8rem;
-    border-width: 2px;
-    font-size: 3.2rem;
-    color: #666;
-    border-color: #666
-}
 
-    .owl-nav-bg .owl-nav [class*=owl-].disabled {
-        border-color: #acabab
-    }
-
-.owl-nav-bg .owl-nav i {
-    line-height: 1;
-    margin-bottom: 2px
-}
-
-.owl-nav-fade .owl-nav .owl-prev {
-    opacity: 0;
-    margin-right: 4rem
-}
-
-.owl-nav-fade .owl-nav .owl-next {
-    opacity: 0;
-    margin-left: 4rem
-}
-
-.owl-nav-fade:hover .owl-nav .owl-prev {
-    opacity: 1;
-    margin-right: 0
-}
-
-.owl-nav-fade:hover .owl-nav .owl-next {
-    opacity: 1;
-    margin-left: 0
-}
 
 .owl-split .owl-item:not(:last-child) {
     position: relative
@@ -423,27 +173,7 @@
             transform-origin: left
         }
 
-    .rotate-slider .owl-nav .owl-next {
-        right: auto;
-        left: 40px;
-        font-size: 36px
-    }
-
-        .rotate-slider .owl-nav .owl-next:before {
-            content: ""
-        }
-
-    .rotate-slider .owl-nav .owl-prev {
-        display: none
-    }
-
-@media (max-width:479px) {
-    .rotate-slider .owl-nav .owl-next {
-        right: auto;
-        left: 15px;
-        font-size: 24px
-    }
-}
+    
 .noUi-target {
     background: #eee;
     margin: 4px 16px 3rem 9px
@@ -9939,19 +9669,6 @@ button.mfp-arrow {
     left: 0
 }
 
-.mfp-product .owl-nav .owl-next, .mfp-product .owl-nav .owl-prev {
-    width: 3.6rem;
-    height: 3.6rem;
-    font-size: 3rem
-}
-.mfp-product .owl-nav .owl-next {
-    right: 1rem;
-}
-
-.mfp-product .owl-nav .owl-prev {
-    left: 1rem;
-}
-
 .dark-theme .mfp-content .product-divider {
     border-color: #e1e1e1
 }
@@ -11045,10 +10762,7 @@ button.mfp-arrow {
     max-width: 100%
 }
 
-    .product-single-carousel .owl-nav .owl-next, .product-single-carousel .owl-nav .owl-prev {
-        color: #222;
-        border: 0
-    }
+    
 
 .product-image {
     position: relative
@@ -11091,11 +10805,7 @@ button.mfp-arrow {
         display: none
     }
 
-    .product-thumbs-wrap button, .product-thumbs .owl-nav .owl-next, .product-thumbs .owl-nav .owl-prev {
-        background-color: #fff;
-        color: #666;
-        font-size: 1.6rem
-    }
+    
 
     .product-thumb:before, .product-thumbs-wrap button {
         position: absolute;
@@ -16564,10 +16274,7 @@ aside + div .product-single .product-details {
     list-style-type: none
 }
 
-.owl-nav-top .owl-nav i {
-    padding-right: 0;
-    padding-left: 0
-}
+
 
 .cta-simple {
     position: relative;
@@ -18608,19 +18315,6 @@ aside .banner-title {
     line-height: 1.4em
 }
 
-aside .owl-nav-top .owl-nav {
-    direction: ltr;
-    top: -5.1rem
-}
-
-    aside .owl-nav-top .owl-nav i {
-        padding: 0.1rem;
-        font-size: 1.3rem
-    }
-
-        aside .owl-nav-top .owl-nav i:before {
-            font-weight: 600
-        }
 
 .review-form-section .review-medias {
     margin-top: 3rem;
@@ -19532,3 +19226,4 @@ h6 {
 .header-left {
     justify-content: flex-start;
 }
+
