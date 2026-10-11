@@ -1,0 +1,1390 @@
+{% extends "shared/base.html" %}
+{% load static %}
+
+{% block main %}
+
+<!-- سئو: هدر مخفی فقط برای گوگل -->
+<h1 style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+  کلینیک دامپزشکی دکتر رخشان | بهترین خدمات دامپزشکی تهران
+</h1>
+
+<!-- سئو: اسکیما کلینیک دامپزشکی -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "کلینیک دامپزشکی دکتر رخشان",
+  "image": "https://YOURDOMAIN.com/static/images/nn.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "آدرس کلینیک",
+    "addressLocality": "تهران",
+    "addressCountry": "IR"
+  },
+  "telephone": "09002777080",
+  "url": "https://YOURDOMAIN.com/",
+  "openingHours": "Sa-Th 18:00-00:00",
+  "priceRange": "متوسط"
+}
+</script>
+
+    <main class="main home">
+            <div class="page-content">
+                <section class="intro-section">
+    <div class="owl-carousel owl-nav-inside owl-theme row owl-nav-fade intro-slider animation-slider cols-1 gutter-no owl-nav-arrow"
+        data-owl-options="{
+            'rtl':true,
+            'loop': true,
+            'items': 1,
+            'autoplay': true,
+            'autoplayTimeout': 10000,
+            'responsive': {
+                '0': {
+                    'items': 1
+                },
+                '768': {
+                    'nav': false,
+                    'dots': true
+                },
+                '992': {
+                    'nav': true,
+                    'dots': false
+                }
+            }
+        }">
+        <div class="intro-slide1 banner banner-fixed" style="background-color: #f6f6f6;">
+            <figure>
+                <picture>
+                    <source srcset="{% static 'images/photo-1450778869180-41d0601e046e.jpg' %}" media="(max-width: 768px)">
+                    <img src="{% static 'images/photo-1450778869180-41d0601e046e.jpg' %}" alt="کلینیک دامپزشکی دکتر رخشان" width="1903" height="540" />
+                </picture>
+            </figure>
+            
+            <!-- لایه برای خوانایی -->
+            <div class="vet-hero-overlay"></div>
+            
+            <!-- محتوای اصلی -->
+            <div class="vet-hero-content">
+                <div class="vet-hero-text">
+                    <!-- متن اصلی -->
+                    <h1 class="vet-hero-title">
+                        <span class="vet-title-line vet-line-1">هر ضربان قلبی که نجات می‌دهیم،</span>
+                        <span class="vet-title-line vet-line-2">داستان یک خانواده را</span>
+                        <span class="vet-title-line vet-line-3">زنده نگه می‌دارد</span>
+                    </h1>
+                    
+                    <!-- دکمه -->
+                    <div class="vet-btn-container">
+                        <a href="#contact" class="vet-main-btn">
+                            
+                            <span class="vet-btn-text">تماس با ما</span>
+                            <span class="vet-btn-arrow">⟶</span>
+                            <div class="vet-btn-shine"></div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- المان‌های شناور -->
+                <div class="vet-floating-elements">
+                    <div class="vet-float-heart">💙</div>
+                    <div class="vet-float-paw">🐾</div>
+                    <div class="vet-float-star">⭐</div>
+                    <div class="vet-float-plus">✨</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                        </div>
+                        
+                        {% comment %} <div class="banner banner-fixed intro-slide2" style="background-color: #39351a;">
+                            <figure>
+                                <img src="{% static 'images/demos/demo-food2/slides/slide2.jpg' %}" alt="intro-banner" width="1903"
+                                    height="540" style="background-color: #39351a;" />
+                            </figure>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="banner-content x-50 y-50 text-center p-absolute mt-lg-4 rtl">
+                                        <h4 class="banner-subtitle slide-animate font-weight-light text-white mb-3"
+                                            data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1s', 'delay': '.2s'}">
+                                           کمیاب ترین میوه ها را ازما بخواهید
+                                        </h4>
+                                        <h2 class="banner-title mb-10 text-white slide-animate"
+                                            data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '.4s'}">
+                                            <span class="text-primary">تازه </span> و ارگانیک را <br> برای شما گرد آورده ایم
+                                        </h2>
+                                        <a href="demo-food2-shop.html"
+                                           class="btn btn-lg btn-shadow btn-ellipse btn-solid btn-primary slide-animate btn-icon-right ls-m mb-9"
+                                           data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1s', 'delay': '.8s'}">
+                                            مشاهده و انتخاب  <i class="d-icon-arrow-left"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> {% endcomment %}
+                        {% comment %} <div class="banner banner-fixed intro-slide3" style="background-color: #f1f1f4;">
+                            <figure>
+                                <img src="{% static 'images/demos/demo-food2/slides/slide3.jpg' %}" alt="intro-banner" width="1903"
+                                    height="540" style="background-color: #f1f1f4;" />
+                            </figure>
+                            <div class="container">
+                                <div class="banner-content y-50 offset-lg-7 pl-lg-3 text-right rtl">
+                                    <h4 class="banner-subtitle slide-animate text-uppercase font-weight-normal ls-normal mb-3"
+                                        data-animation-options="{'name': 'fadeInRightShorter', 'duration': '1s', 'delay': '.2s'}">
+                                       سلامت را با ما تجربه کنید 
+                                    </h4>
+                                    <h2 class="banner-title font-weight-bold mb-0 slide-animate"
+                                        data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '1s'}">
+                                         سبزیجات ،</h2>
+                                    <h3 class="font-weight-normal slide-animate"
+                                        data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '1s'}">
+                                        میوه ها  <span class="text-primary">مغزیجات </span>
+                                    </h3>
+                                    <p class="pb-7 slide-animate"
+                                        data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '1s'}">
+                                       ارسال سراسر کشور رایگان </p>
+                                    <a href="demo-food2-shop.html"
+                                        class="btn btn-ellipse btn-shadow btn-solid btn-primary slide-animate btn-icon-right ls-m mb-1"
+                                        data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1s', 'delay': '.8s'}">
+                                        مشاهده و انتخاب<i class="d-icon-arrow-left"></i></a>
+                                </div>
+                            </div>
+                        </div> {% endcomment %}
+                    </div>
+                    <div class="shape-divider">
+                        <div class="shape1">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1920px"
+                                 height="317.318px" viewBox="0 0 1920 317.318" enable-background="new 0 0 1920 317.318"
+                                 xml:space="preserve" preserveAspectRatio="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF"
+                                  d="M1920.5,321.029L-0.493,319.064V188.854
+                                    c0,0,266.042,282.328,851.688,0C1483.531-115.985,1817.728,72.4,1920.5,153.396V321.029z" style="opacity: .2;"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF"
+                                  d="M-0.5,270.412V113.073
+                                    c98.208-70.839,407.683-228.759,985.305,29.000 7c593.667,264.928,935.688,0,935.688,0v128.332H-0.5z" style="opacity: .2;"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M1920.5,234.867c-401.555-0.201-766.128-0.385-766.128-0.385
+                                    s346.533-156.566,765.94-199.011c0.063-0.000 6,0.125-0.012,0.188-0.019V234.867z"
+                                  style="opacity: .2;"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF"
+                                  d="M-0.5,288.449V13.697
+                                    c163.401-0.867,337.865,32.776,510.441,125.717c160.954,86.684,317.758,63.473,422.06,59.639v88.85L-0.5,288.449z" style="opacity: .2;"></path>
+                            </svg>
+                        </div>
+                        <div class="shape2">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-0.6 23.7 100 6"
+                                 enable-background="new -0.6 23.7 100 6" xml:space="preserve">
+                            <path fill="#FFFFFF" d="M99.4,24.5c0,0-8.7,3.7-16.1,4c-7.4,0.3-16.6-5-27.9-3.9c-8.7,0.8-9.5,4.4-23.4,4.9
+                                    c-7.8,0.3-17.4-4.6-23.7-5.5c-6.3-0.8-9,0.3-9,0.3v5.4h100V24.5z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="banner">
+    <figure>
+        <img src="{% static 'images/10 (1).jpg' %}" alt="" width="1903" height="787">
+    </figure>
+    
+    <div class="container tea-banner-container">
+        <div class="banner-content rtl banner-content-responsive" style="position:absolute; top:50%; right:5%; transform:translateY(-50%); z-index:2; text-align:right;">
+            
+            <!-- طراحی جدید با افکت پارالاکس -->
+            <div class="parallax-text-container">
+                <div class="text-scroll-wrapper">
+                    <div class="text-layer layer-1" data-speed="0.1">
+                        <div class="text-card">
+                            <div class="text-icon">🐾</div>
+                            <p>کلینیک دامپزشکی دکتر رخشان با تمرکز بر طب حیوانات کوچک، خدمات تخصصی را مبتنی بر دانش روز، شواهد بالینی و تجربه بالینی ارائه می‌دهد.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-layer layer-2" data-speed="0.2">
+                        <div class="text-card">
+                            <div class="text-icon">🔬</div>
+                            <p>در این مرکز، تشخیص و درمان نه یک فرایند فنی، بلکه حاصل پیوندی است میان دانش، تجربه و نگرش علمی مسئولانه.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-layer layer-3" data-speed="0.3">
+                        <div class="text-card">
+                            <div class="text-icon">💝</div>
+                            <p>ما هر بیمار را نه صرفاً یک پرونده پزشکی، بلکه امانتی می‌دانیم که با اعتماد به ما سپرده شده است.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+
+
+/* اسکریپت پارالاکس */
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const textLayers = document.querySelectorAll('.text-layer');
+    
+    function handleParallax() {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+        
+        textLayers.forEach(layer => {
+            const speed = layer.getAttribute('data-speed');
+            const yPos = -(rate * speed);
+            layer.style.transform = `translateY(${yPos}px) rotate(${layer.classList.contains('layer-1') ? '-2deg' : layer.classList.contains('layer-2') ? '1deg' : '-1deg'})`;
+        });
+    }
+    
+    window.addEventListener('scroll', handleParallax);
+});
+</script>
+</style>
+                
+                <section class="category-section mt-4 p-relative overflow-hidden rtl text-right">
+                    <div class="shape-divider">
+                        
+                        
+                    </div>
+                    <div class="title-wrapper title-white">
+                        <h2 class="title-echo1 mb-lg-6 pl-1 pr-1"> خدمات دامپزشکی</h2>
+
+                
+                    </div>
+                    <div class="container text-center">
+                        <div class="owl-carousel owl-theme owl-nav-fade row cols-lg-4 cols-md-3 cols-2 mb-6"
+                             data-owl-options="{
+                             'rtl':true,
+                            'items': 4,
+                            'nav': false,
+                            'dots': false,
+                            'margin': 20,
+                            'loop': true,
+                            'autoplay': true,
+                            'autoplayTimeout': 4000,
+                            'responsive': {
+                                '0': {
+                                    'items': 2
+                                },
+                                '768': {
+                                    'items': 3
+                                },
+                                '992': {
+                                    'items': 4,
+                                    'nav': true
+                                }
+                            }
+                        }">
+                            <div class="category category-classic">
+                                <figure class="category-media">
+                                    
+                                        <img src="{% static 'images/Designer (1).jpeg' %}" alt="category" width="280"
+                                             height="175">
+                                    
+                                </figure>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name">واکسیناسیون و پیشگیری</h4>
+                                    
+                                </div>
+                            </div>
+                            <div class="category category-classic">
+                                <figure class="category-media">
+                                    
+                                        <img src="{% static 'images/Designer.jpeg' %}" alt="category" width="280"
+                                             height="175">
+                                    
+                                </figure>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name">آزمایشات تخصصی</h4>
+                                    
+                                </div>
+                            </div>
+                            <div class="category category-classic">
+                                <figure class="category-media">
+                                    <a href="demo-medical-shop.html">
+                                        <img src="{% static 'images/Designer4.jpeg' %}" alt="category" width="280"
+                                             height="175">
+                                    </a>
+                                </figure>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name">آرایشگاه</h4>
+                                    
+                                </div>
+                            </div>
+                            <div class="category category-classic">
+                                <figure class="category-media">
+                                    <a href="demo-medical-shop.html">
+                                        <img src="{% static 'images/Designer5.jpeg' %}" alt="category" width="280"
+                                             height="175">
+                                    </a>
+                                </figure>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name">دندان‌پزشکی حیوانات</h4>
+                                    
+                                </div>
+                            </div>
+                            <div class="category category-classic">
+                                <figure class="category-media">
+                                    <a href="demo-medical-shop.html">
+                                        <img src="{% static 'images/Designer7.jpeg' %}" alt="category" width="280"
+                                             height="175">
+                                    </a>
+                                </figure>
+                                <div class="category-content rtl">
+                                    <h4 class="category-name">جراحی تحصصی</h4>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </section>
+                
+<section class="products-section row gutter-no align-items-center" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 60px 0; border-radius: 30px;">
+    <div class="col-lg-6">
+        <div class="surgery-visual-showcase">
+            <!-- تصویر اصلی -->
+            <div class="main-image-container">
+                <img src="{% static 'images/close-up-veterinarian-taking-care-pet.jpg' %}" alt="جراحی دامپزشکی" width="951" height="645" />
+            </div>
+            
+            <!-- لایه‌های شناور -->
+            <div class="floating-elements">
+                <div class="floating-card card-1">
+                    <div class="floating-icon">🔬</div>
+                    <span>تجهیزات پیشرفته</span>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="floating-icon">👨‍⚕️</div>
+                    <span>تیم متخصص</span>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="floating-icon">📊</div>
+                    <span>نظارت دقیق</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 order-lg-first">
+        <div class="surgery-content-pro">
+            <!-- هدر با افکت -->
+            <div class="content-header">
+                
+                <h1 class="main-title">
+                    <span class="title-line-1">جراحی پیشرفته</span>
+                    <span class="title-line-2">با تجربه و مهارت بی‌رقیب</span>
+                </h1>
+                <div class="title-underline">
+                    <div class="line"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+
+            <!-- آمار و ارقام -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">+500</div>
+                    <div class="stat-label">جراحی موفق</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">رضایت مراجعان</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">پشتیبانی</div>
+                </div>
+            </div>
+
+            <!-- متن اصلی با افکت -->
+            <div class="content-paragraphs">
+                <div class="paragraph-with-icon">
+                    <div class="paragraph-icon">⚡</div>
+                    <p class="paragraph-text">
+                        واحد جراحی کلینیک، مجهز به مدرن‌ترین فناوری‌های جراحی و پایش بیهوشی، میزبان یکی از برجسته‌ترین تیم‌های جراحی دامپزشکی کشور است.
+                    </p>
+                </div>
+                
+                <div class="paragraph-with-icon">
+                    <div class="paragraph-icon">🎯</div>
+                    <p class="paragraph-text">
+                        تجربه‌ی بالینی گسترده، مهارت فنی بی‌نظیر و سابقه‌ی موفق در جراحی‌های پیچیده، این تیم را به مرجع اطمینان بسیاری از صاحبان حیوانات خانگی تبدیل کرده است.
+                    </p>
+                </div>
+            </div>
+
+            <!-- جمله پایانی ویژه -->
+            <div class="featured-quote">
+                <div class="quote-mark">“</div>
+                <p class="quote-text">
+                    اینجا جراحی تنها یک عمل نیست؛ تلفیقی‌ست از دقت، تصمیم‌گیری لحظه‌ای و دانش عمیق از آناتومی و فیزیولوژی حیوان.
+                </p>
+                <div class="quote-author">
+                    <div class="author-line"></div>
+                    <span>تیم جراحی دکتر رخشان</span>
+                </div>
+            </div>
+
+            <!-- CTA دکمه -->
+           
+        </div>
+    </div>
+</section>
+
+                <section class="banner banner-cta summer-banner parallax mt-10 rtl text-right" style="background-color: #5d4136"
+                         data-image-src="{% static 'images/cats.dog.jpg' %}">
+    <div class="container-fluid">
+        <div class="banner-content d-inline-block">
+            <div class="vibrant-glass-design">
+                <div class="vibrant-text-group">
+                    <div class="vibrant-main">
+                        <div class="vibrant-dot"></div>
+                        <h3 class="vibrant-main-text">
+                            ما می‌دانیم که مراجعه به دامپزشک می‌تواند برای حیوانات خانگی استرس‌زا باشد.
+                        </h3>
+                    </div>
+                    
+                    <div class="vibrant-sub">
+                        <h4 class="vibrant-sub-text">
+                            تیم ما با تکیه بر تجربه، آرام‌سازی محیط، و برخوردی ملایم تلاش می‌کند
+                        </h4>
+                    </div>
+                    
+                    <div class="vibrant-sub">
+                        <h4 class="vibrant-sub-text">
+                            هر بار حضور در کلینیک، برای حیوان شما تجربه‌ای ایمن و آرام باشد
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="products-section row gutter-no align-items-center" style="background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%); padding: 60px 0; border-radius: 30px;">
+    <div class="col-lg-6 order-lg-first">
+        <div class="internal-visual-showcase">
+            <div class="internal-image-frame">
+                
+                <img src="{% static 'images/4ad6ec9fedfdce0076ed6dcd9c0c21a9.jpg' %}" alt="درمان بیماری‌های داخلی" width="960" height="664" />
+                <div class="image-glow"></div>
+            </div>
+            
+            <div class="internal-floating-elements">
+                <div class="internal-card internal-card-1">
+                    <div class="internal-icon">❤️</div>
+                    <span>تخصص قلبی</span>
+                    <div class="pulse-dot"></div>
+                </div>
+                <div class="internal-card internal-card-2">
+                    <div class="internal-icon">🦠</div>
+                    <span>درمان ویروسی</span>
+                    <div class="pulse-dot"></div>
+                </div>
+                <div class="internal-card internal-card-3">
+                    <div class="internal-icon">🔍</div>
+                    <span>تشخیص دقیق</span>
+                    <div class="pulse-dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6">
+        <div class="internal-content-pro">
+            <div class="internal-header">
+                
+                <h1 class="internal-main-title">
+                    <span class="internal-title-line-1">درمان تخصصی بیماری‌های داخلی</span>
+                    <span class="internal-title-line-2">پیشرفت در تشخیص و درمان</span>
+                </h1>
+                <div class="medical-underline">
+                    <div class="medical-line"></div>
+                    <div class="stethoscope">🩺</div>
+                </div>
+            </div>
+
+            <div class="medical-stats-grid">
+                <div class="medical-stat">
+                    <div class="stat-pulse"></div>
+                    <div class="medical-stat-number">FIP</div>
+                    <div class="medical-stat-label">درمان تخصصی</div>
+                </div>
+                <div class="medical-stat">
+                    <div class="stat-pulse"></div>
+                    <div class="medical-stat-number">قلبی</div>
+                    <div class="medical-stat-label">بیماری‌های پیچیده</div>
+                </div>
+                <div class="medical-stat">
+                    <div class="stat-pulse"></div>
+                    <div class="medical-stat-number">متابولیک</div>
+                    <div class="medical-stat-label">اختلالات داخلی</div>
+                </div>
+            </div>
+
+            <div class="medical-content">
+                <div class="medical-card">
+                    <div class="card-heartbeat">📈</div>
+                    <div class="medical-card-content">
+                        <h3 class="medical-card-title">تشخیص پیشرفته</h3>
+                        <p class="medical-card-text">
+                            بخش بیماری‌های داخلی کلینیک با حضور دکتر رخشان، مرجع تشخیص و درمان بیماری‌های ویروسی، متابولیک و قلبی پیچیده است.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="medical-card">
+                    <div class="card-heartbeat">💊</div>
+                    <div class="medical-card-content">
+                        <h3 class="medical-card-title">روش‌های نوین</h3>
+                        <p class="medical-card-text">
+                            با تسلط بر FIP و مشکلات قلبی پیشرفته و بهره‌گیری از روش‌های نوین علمی، مواردی که غیرقابل درمان به نظر می‌رسند، اینجا روند بهبودی می‌یابند.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="medical-quote">
+                <div class="medical-quote-icon">💙</div>
+                <div class="medical-quote-content">
+                    <p class="medical-quote-text">
+                        ترکیبی از <span class="medical-highlight">دانش</span>، <span class="medical-highlight">تجربه</span> و <span class="medical-highlight">تعهد</span> به زندگی.
+                    </p>
+                    <div class="medical-quote-author">
+                        <div class="medical-author-badge"></div>
+                        <span>کلینیک تخصصی داخلی</span>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</section>
+
+
+                <div class="container">
+                    <section class="about-circle p-relative appear-animate pb-10 rtl text-right" data-animation-options="{
+                        'name': 'fadeInUpShorter',
+                        'duration': '1.2s',
+                        'delay': '.2s'
+                    }">
+                        <h2 class="title-echo mb-lg-6 pl-1 pr-1">خدمات پایه دامپزشکی<span class="pl-6 pr-6">خدمات پایه دامپزشکی</span></h2>
+                        <div class="row overflow-hidden">
+                            <div class="col-lg-3 col-12 text-center mt-md-0">
+                                <div class="icon-box icon-box1 pt-4">
+                                    <div class="icon-box-icon mx-auto drop-shadow mr-lg-0 ">
+                                        <figure>
+                                            <img src="{% static 'images/heart.png' %}" alt="icon" width="43"
+                                                height="48" />
+                                        </figure>
+                                    </div>
+                                    <div class="icon-box-content text-lg-start">
+                                        <h3 class="icon-box-title font-weight-bold text-normal">جراحی
+                                        </h3>
+                                        <p>از جراحی‌های ساده تا تخصصی، با استفاده از تجهیزات روز و رعایت کامل اصول بیهوشی، سلامت حیوان شما در اولویت ماست.</p>
+                                    </div>
+                                </div>
+                                <div class="icon-box icon-box2 mt-lg-10 pt-6">
+                                    <div class="icon-box-icon mx-auto drop-shadow mr-lg-0 ">
+                                        <figure>
+                                            <img src="{% static 'images/tooth.png' %}" alt="icon" width="49"
+                                                height="40" />
+                                        </figure>
+                                    </div>
+                                    <div class="icon-box-content text-lg-start">
+                                        <h3 class="icon-box-title font-weight-bold text-normal">دندانپزشکی                                        </h3>
+                                        <p>جرم‌گیری، ترمیم، و پیشگیری از مشکلات دهان و دندان، با تکنیک‌های مدرن و بدون استرس برای حیوانات خانگی شما. دهان سالم، حیوان شاد!</p></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 d-flex justify-content-center align-items-center flex-column">
+                                <figure class="floating about-center-img" style="margin-top: 60px; margin-bottom: 32px;" data-options='{"invertX":false, "invertY":false}' data-floating-depth=".1">
+                                    <img class="layer" src="{% static 'images/snapedit_1753287500109.png' %}"
+                                        alt="about-us" width="574" height="452" />
+                                </figure>
+                            </div>
+                            <div class="col-lg-3 col-12 text-center pl-3">
+                                <div class="icon-box icon-box3 pt-5">
+                                    <div class="icon-box-icon mx-auto drop-shadow ml-lg-0 mr-lg-auto">
+                                        <figure>
+                                            <img src="{% static 'images/paw.png' %}" alt="icon" width="50"
+                                                height="39" />
+                                        </figure>
+                                    </div>
+                                    <div class="icon-box-content text-lg-end">
+                                        <h3 class="icon-box-title font-weight-bold text-normal mr-1 ">
+                                             مراقبت از ابتدا، با نگاه تخصصی
+                                        </h3>
+                                        <p> عضو کوچک تازه‌وارد خانواده، نیاز به نگاهی دقیق و علمی دارد. معاینه‌ی اولیه، پایه‌گذار مسیر سلامت و کیفیت زندگی اوست. </p>
+                                    </div>
+                                </div>
+                                <div class="icon-box icon-box4 mt-lg-10 pt-6">
+                                    <div class="icon-box-icon mx-auto drop-shadow ml-lg-0 mr-lg-auto">
+                                        <figure>
+                                            <img src="{% static 'images/snapedit_1753368618702.png' %}" alt="icon" width="48"
+                                                height="45" />
+                                        </figure>
+                                    </div>
+                                    <div class="icon-box-content text-lg-end">
+                                        <h3 class="icon-box-title font-weight-bold text-normal">چکاپ دوره‌ای و پایش سلامت
+                                        </h3>
+                                        <p>با ارزیابی منظم، امکان تشخیص زودهنگام و حفظ سلامت بلندمدت فراهم می‌شود؛ رویکردی علمی برای بهبود کیفیت زندگی حیوانات</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+<section id="appointment-section" class="appointment-section">
+    <div class="appointment-container">
+        <!-- هدر بخش -->
+        <div class="appointment-header">
+            <h2 class="appointment-title">
+                <span class="title-main">نوبت‌دهی آنلاین</span>
+                <span class="title-sub">کلینیک دکتر رخشان</span>
+            </h2>
+            <div class="title-decoration">
+                <div class="decoration-line"></div>
+                <div class="decoration-paw">🐾</div>
+                <div class="decoration-line"></div>
+            </div>
+        </div>
+
+        <div class="appointment-content">
+            <!-- فرم نوبت‌دهی -->
+            <div class="appointment-form-wrapper">
+                <div class="form-header">
+                    <div class="form-icon">📅</div>
+                    <h3>رزرو نوبت</h3>
+                    <p>برای دریافت نوبت، اطلاعات زیر را تکمیل کنید</p>
+                </div>
+
+                <form id="appointment-form" class="appointment-form">
+                    <div class="form-grid">
+                        <div class="form-group floating-group">
+                            <input type="text" id="name" name="name" class="floating-input" placeholder=" " required>
+                            <label for="name" class="floating-label">نام و نام خانوادگی</label>
+                            <div class="input-icon">👤</div>
+                            <div class="input-focus-border"></div>
+                        </div>
+
+                        <div class="form-group floating-group">
+                            <input type="tel" id="phone" name="phone" class="floating-input" placeholder=" " required>
+                            <label for="phone" class="floating-label">شماره تماس</label>
+                            <div class="input-icon">📱</div>
+                            <div class="input-focus-border"></div>
+                        </div>
+
+                        <div class="form-group floating-group">
+                            <input type="text" id="date" name="date" class="floating-input date-input" placeholder=" " required readonly>
+                            <label for="date" class="floating-label">تاریخ مراجعه</label>
+                            <div class="input-icon">📅</div>
+                            <div class="input-focus-border"></div>
+                        </div>
+
+                        <div class="form-group floating-group">
+                            <select id="time" name="time" class="floating-select" required disabled>
+                                <option value="" selected disabled>انتخاب ساعت</option>
+                                <option value="08:00">۸:۰۰ صبح</option>
+                                <option value="09:00">۹:۰۰ صبح</option>
+                                <option value="10:00">۱۰:۰۰ صبح</option>
+                            </select>
+                            <div class="input-icon">⏰</div>
+                            <div class="input-focus-border"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn" disabled>
+                            <span class="btn-text">ثبت نوبت</span>
+                            <span class="btn-icon">➜</span>
+                            <div class="btn-shine"></div>
+                            <div class="btn-particles">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- پیام به زودی فعال می‌شود -->
+                <div class="coming-soon-message">
+                    <div class="message-icon">🚧</div>
+                    <div class="message-content">
+                        <h4>سیستم نوبت‌دهی به زودی فعال می‌شود</h4>
+                        <p>در حال حاضر می‌توانید از طریق شماره زیر نوبت دریافت کنید:</p>
+                        <a href="tel:09002777080" class="contact-phone">
+                            <span class="phone-icon">📞</span>
+                            ۰۹۰۰۲۷۷۷۰۸۰
+                        </a>
+                    </div>
+                    <div class="message-pulse"></div>
+                    <div class="message-sparkles">
+                        <span>✨</span>
+                        <span>✨</span>
+                        <span>✨</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- بخش تصویر و اطلاعات -->
+            <div class="appointment-info">
+                <div class="info-visual">
+                    <div class="floating-pet">
+                        <img src="{% static 'images/catpaw.png' %}" alt="Pet Care" class="pet-image">
+                        <div class="pet-glow"></div>
+                        <div class="floating-element element-1">❤️</div>
+                        <div class="floating-element element-2">❤️</div>
+                        <div class="floating-element element-3">❤️</div>
+                        <div class="floating-element element-4">❤️</div>
+                    </div>
+                </div>
+
+                <div class="info-content">
+                    <div class="info-item">
+                        <div class="info-icon">⏱️</div>
+                        <div class="info-text">
+                            <h4>ساعات کاری</h4>
+                            <p>شنبه تا پنج‌شنبه: ۱۸:۰۰ تا ۰۰:۰۰</p>
+                            <p>جمعه: ادامه درمان ۱۶:۰۰ تا ۱۸:۰۰</p>
+                        </div>
+                        <div class="info-badge">جدید</div>
+                    </div>
+
+                    <div class="info-item highlighted">
+                        <div class="info-icon">📞</div>
+                        <div class="info-text">
+                            <h4>تماس تلفنی</h4>
+                            <p><a href="tel:09002777080" class="phone-link">۰۹۰۰۲۷۷۷۰۸۰</a></p>
+                            <p class="info-note">پاسخگویی سریع</p>
+                        </div>
+                        <div class="info-pulse1"></div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <h4>آدرس کلینیک</h4>
+                            <p>تهران، سعادت آباد</p>
+                            <p class="info-note">دسترسی آسان</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('appointment-form');
+    const inputs = form.querySelectorAll('input, select');
+    const submitBtn = document.querySelector('.submit-btn');
+    
+    // غیرفعال کردن تمام فیلدها
+    inputs.forEach(input => {
+        input.disabled = true;
+        input.addEventListener('focus', (e) => {
+            e.preventDefault();
+            showComingSoonMessage();
+        });
+        
+        // افزودن افکت hover به فیلدها
+        input.addEventListener('mouseenter', function() {
+            if (this.disabled) {
+                this.style.cursor = 'not-allowed';
+                this.parentElement.style.transform = 'translateY(-2px)';
+            }
+        });
+        
+        input.addEventListener('mouseleave', function() {
+            this.parentElement.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // جلوگیری از سابمیت فرم
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        showComingSoonMessage();
+    });
+    
+    // افکت‌های تعاملی برای دکمه
+    submitBtn.addEventListener('mouseenter', function() {
+        if (this.style.opacity !== '1') {
+            this.style.transform = 'translateY(-3px) scale(1.05)';
+            this.style.boxShadow = '0 20px 40px rgba(102, 126, 234, 0.4)';
+        }
+    });
+    
+    submitBtn.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+        this.style.boxShadow = '0 15px 35px rgba(102, 126, 234, 0.3)';
+    });
+    
+    // نمایش پیام به زودی فعال می‌شود
+    function showComingSoonMessage() {
+        const message = document.querySelector('.coming-soon-message');
+        
+        // افزودن انیمیشن به پیام
+        message.style.animation = 'none';
+        void message.offsetWidth;
+        message.style.animation = 'shake 0.5s ease';
+        
+        // ایجاد افکت ریپل
+        createRippleEffect();
+        
+        // نمایش نوتیفیکیشن
+        showNotification();
+    }
+    
+    function createRippleEffect() {
+        const ripple = document.createElement('div');
+        ripple.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: rgba(102, 126, 234, 0.2);
+            border-radius: 50%;
+            animation: rippleEffect 0.6s ease-out;
+            pointer-events: none;
+            z-index: 10000;
+        `;
+        document.body.appendChild(ripple);
+        
+        setTimeout(() => {
+            ripple.remove();
+        }, 600);
+    }
+    
+    function showNotification() {
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            z-index: 10000;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            opacity: 0;
+            transition: all 0.5s ease;
+        `;
+        notification.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span style="font-size: 1.4rem;">🚧</span>
+                <span>سیستم نوبت‌دهی به زودی فعال می‌شود</span>
+            </div>
+        `;
+        document.body.appendChild(notification);
+        
+        // انیمیشن ورود
+        setTimeout(() => {
+            notification.style.opacity = '1';
+            notification.style.transform = 'translateX(-50%) translateY(0)';
+        }, 100);
+        
+        // انیمیشن خروج
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateX(-50%) translateY(-100px)';
+            setTimeout(() => notification.remove(), 500);
+        }, 3000);
+    }
+    
+    // افزودن استایل برای انیمیشن ریپل
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes rippleEffect {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(4);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+});
+</script>
+                    <section class="pt-5 mt-8 pb-2 appear-animate" data-animation-options="{
+    'name': 'fadeInUpShorter',
+    'duration': '1.2s',
+    'delay': '.2s'
+}">
+    <h2 class="title-echo">وبلاگ <span>وبلاگ </span></h2>
+    <div class="owl-carousel owl-shadow-carousel owl-theme post-slider row cols-lg-3 cols-sm-2 cols-1"
+        data-owl-options="{
+            'rtl':true,
+            'nav': true,
+            'dots': true,
+            'margin': 20,
+            'responsive': {
+                '0': {
+                    'items': 1,
+                    'nav': true,
+                    'dots': true
+                },
+                '576': {
+                    'items': 2,
+                    'nav': true,
+                    'dots': true
+                },
+                '992': {
+                    'items': 3,
+                    'nav': true,
+                    'dots': false
+                }
+            }
+        }">
+        
+        {% for blog in blogs %}
+        <div class="post drop-shadow mb-9 overlay-zoom blog-card">
+            <figure class="post-media blog-media">
+                <a href="{% url 'blog_detail' blog.slug %}">
+                    <img src="{{ blog.image.url }}" width="600" height="357" alt="post" />
+                    <div class="blog-overlay">
+                        <span class="blog-date">
+                            <i class="d-icon-calendar"></i>
+                            {% now "Y/m/d" %}
+                        </span>
+                    </div>
+                </a>
+            </figure>
+            <div class="post-details text-center blog-content">
+                
+                <h4 class="post-title ls-m text-normal blog-title">
+                    <a href="{% url 'blog_detail' blog.slug %}">{{ blog.name }}</a>
+                </h4>
+                <p class="post-short-desc font-primary mt-2 blog-excerpt">{{ blog.p_des }}</p>
+                <div class="blog-footer">
+                    <a href="{% url 'blog_detail' blog.slug %}" class="btn btn-link btn-underline btn-primary font-primary font-weight-bold ls-m read-more">
+                        بیشتر
+                        <i class="d-icon-arrow-left"></i>
+                    </a>
+                    <div class="blog-stats">
+                        <span class="view-count">
+                            <i class="d-icon-eye"></i>
+                            {{ forloop.counter|add:100 }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<style>
+/* استایل‌های جدید بدون تداخل با CSS اصلی */
+.blog-card {
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.blog-media {
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-media img {
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-media img {
+    transform: scale(1.05);
+}
+
+.blog-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 64, 175, 0.2) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.blog-card:hover .blog-overlay {
+    opacity: 1;
+}
+
+.blog-date {
+    background: rgba(255,255,255,0.9);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.blog-date i {
+    margin-left: 5px;
+    color: #3b82f6;
+}
+
+.blog-content {
+    padding: 20px 15px;
+}
+
+.blog-meta {
+    margin-bottom: 10px;
+}
+
+.blog-category {
+    background: #eff6ff;
+    color: #3b82f6;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.blog-category i {
+    margin-left: 5px;
+}
+
+.blog-title a {
+    transition: color 0.3s ease;
+}
+
+.blog-card:hover .blog-title a {
+    color: #3b82f6;
+}
+
+.blog-excerpt {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.blog-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.read-more {
+    color: #3b82f6;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    color: #1e40af;
+    transform: translateX(-3px);
+}
+
+.read-more i {
+    transition: transform 0.3s ease;
+}
+
+.read-more:hover i {
+    transform: translateX(-3px);
+}
+
+.blog-stats {
+    display: flex;
+    align-items: center;
+    color: #94a3b8;
+    font-size: 1.2rem;
+}
+
+.view-count {
+    display: flex;
+    align-items: center;
+}
+
+.view-count i {
+    margin-left: 5px;
+}
+
+/* بهبود دکمه‌های کاروسل */
+.custom-carousel-nav {
+    position: absolute;
+    top: -70px;
+    right: 0;
+    margin-top: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.custom-carousel-nav button {
+    background: linear-gradient(135deg, #3b82f6, #1e40af) !important;
+    color: white !important;
+    border-radius: 12px !important;
+    width: 48px;
+    height: 48px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    border: 2px solid transparent !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-carousel-nav button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.custom-carousel-nav button:hover::before {
+    left: 100%;
+}
+
+.custom-carousel-nav button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    border-color: rgba(255,255,255,0.3) !important;
+}
+
+.custom-carousel-nav button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.custom-carousel-nav button.custom-prev,
+.custom-carousel-nav button.custom-next {
+    font-size: 20px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-carousel-nav button.custom-prev::after {
+    content: "←";
+    font-weight: bold;
+}
+
+.custom-carousel-nav button.custom-next::after {
+    content: "→";
+    font-weight: bold;
+}
+
+.custom-carousel-nav button i {
+    display: none;
+}
+
+/* دکمه غیرفعال */
+.custom-carousel-nav button.disabled {
+    background: linear-gradient(135deg, #cbd5e1, #94a3b8) !important;
+    box-shadow: 0 2px 8px rgba(148, 163, 184, 0.2);
+    transform: none !important;
+    cursor: not-allowed;
+}
+
+.custom-carousel-nav button.disabled:hover {
+    transform: none !important;
+    box-shadow: 0 2px 8px rgba(148, 163, 184, 0.2) !important;
+}
+
+/* نقاط پایین شخصی */
+.custom-carousel-dots {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.custom-carousel-dots .custom-dot {
+    width: 32px;
+    height: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-carousel-dots .custom-dot span {
+    width: 100%;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    margin: 0;
+}
+
+.custom-carousel-dots .custom-dot.active span {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    transform: scaleX(1.2);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.custom-carousel-dots .custom-dot:hover span {
+    background: #3b82f6;
+    transform: scaleX(1.1);
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+    .custom-carousel-nav {
+        position: relative;
+        top: 0;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .custom-carousel-nav button {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .custom-carousel-dots {
+        margin-top: 30px;
+    }
+    
+    .custom-carousel-dots .custom-dot {
+        width: 28px;
+        height: 6px;
+    }
+    
+    .custom-carousel-dots .custom-dot span {
+        height: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-carousel-nav button {
+        width: 40px;
+        height: 40px;
+        font-size: 18px !important;
+    }
+    
+    .custom-carousel-dots .custom-dot {
+        width: 24px;
+        height: 5px;
+    }
+}
+
+/* انیمیشن برای دکمه‌ها */
+@keyframes custom-pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(59, 130, 246, 0.5);
+    }
+    100% {
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+}
+
+.custom-carousel-nav button:not(.disabled) {
+    animation: custom-pulse 2s infinite;
+}
+
+.custom-carousel-nav button:hover {
+    animation: none;
+}
+</style>
+<script>
+    $(document).ready(function(){
+    $('.post-slider').on('initialized.owl.carousel', function(){
+        // اضافه کردن کلاس‌های شخصی
+        $('.owl-nav').addClass('custom-carousel-nav');
+        $('.owl-dots').addClass('custom-carousel-dots');
+        $('.owl-prev').addClass('custom-prev');
+        $('.owl-next').addClass('custom-next');
+        $('.owl-dot').addClass('custom-dot');
+    });
+});
+</script>
+<section class="social-section">
+  <!-- افکت‌های پشت‌زمینه -->
+  <div class="floating-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  
+  <div class="light-beam"></div>
+  
+  <!-- محتوای اصلی -->
+  <h2 class="social-title">شبکه‌های اجتماعی</h2>
+  <p class="social-subtitle">ما را دنبال کنید و از آخرین مطالب، آموزش‌ها و رویدادهای ویژه باخبر شوید. در شبکه‌های اجتماعی همراه ما باشید.</p>
+
+  <div class="social-icons-wrapper">
+    <div class="social-icon-card">
+      <div class="social-icon-card-inner">
+        <div class="social-icon-card-front">
+          <img src="{% static 'images/insta.png' %}" alt="Instagram" class="social-icon">
+          <span class="social-name">اینستاگرام</span>
+        </div>
+        <div class="social-icon-card-back">
+          <span class="social-name-back">اینستاگرام</span>
+          <div class="follow-animation">
+            <div class="pulse-ring"></div>
+            <i class="fas fa-heart follow-icon"></i>
+            <span class="follow-text">دنبال کنید</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="social-icon-card">
+      <div class="social-icon-card-inner">
+        <div class="social-icon-card-front">
+          <img src="{% static 'images/yy.png' %}" alt="YouTube" class="social-icon">
+          <span class="social-name">یوتیوب</span>
+        </div>
+        <div class="social-icon-card-back">
+          <span class="social-name-back">یوتیوب</span>
+          <div class="follow-animation">
+            <div class="pulse-ring"></div>
+            <i class="fas fa-play-circle follow-icon"></i>
+            <span class="follow-text">مشترک شوید</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dog-bottom-wrapper">
+    <img src="{% static 'images/mm.png' %}" alt="" class="corner-dog">
+  </div>
+</section>
+                    
+                </div>
+            </div>
+        </main>
+{% endblock main %}
