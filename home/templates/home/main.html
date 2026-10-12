@@ -30,7 +30,7 @@
 
     <main class="main home">
             <div class="page-content">
-                <section class="intro-section">
+  <section class="intro-section">
     <div class="owl-carousel owl-nav-inside owl-theme row owl-nav-fade intro-slider animation-slider cols-1 gutter-no owl-nav-arrow"
         data-owl-options="{
             'rtl':true,
@@ -39,285 +39,125 @@
             'autoplay': true,
             'autoplayTimeout': 10000,
             'responsive': {
-                '0': {
-                    'items': 1
-                },
-                '768': {
-                    'nav': false,
-                    'dots': true
-                },
-                '992': {
-                    'nav': true,
-                    'dots': false
-                }
+                '0': { 'items': 1 },
+                '768': { 'nav': false, 'dots': true },
+                '992': { 'nav': true, 'dots': false }
             }
         }">
-        <div class="intro-slide1 banner banner-fixed" style="background-color: #f6f6f6;">
-            <figure>
-            <video id="heroVideo"
-       autoplay
-       muted
-       loop
-       playsinline
-       preload="auto"
-       style="width:100%;height:100%;object-fit:cover;">
-    <source src="{% static 'images/final_loop.mp4' %}" type="video/mp4">
-</video>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const video = document.getElementById("heroVideo");
+      <div class="intro-slide1 banner banner-fixed" style="background-color: #f6f6f6;">
+        <figure>
+          <video id="heroVideo"
+                 autoplay
+                 muted
+                 loop
+                 playsinline
+                 preload="auto"
+                 style="width:100%;height:100%;object-fit:cover;">
+            <source src="{% static 'images/final_loop.mp4' %}" type="video/mp4">
+          </video>
+          <script>
+          document.addEventListener("DOMContentLoaded", () => {
+              const video = document.getElementById("heroVideo");
+              const playVideo = () => {
+                  const p = video.play();
+                  if (p !== undefined) {
+                      p.catch(() => { setTimeout(playVideo, 200); });
+                  }
+              };
+              playVideo();
+              video.addEventListener("ended", () => {
+                  video.currentTime = 0;
+                  playVideo();
+              });
+              video.addEventListener("pause", () => {
+                  if (!video.ended) playVideo();
+              });
+              video.addEventListener("stalled", () => {
+                  playVideo();
+              });
+          });
+          </script>
 
-    // Force play (for Chrome/Safari/Edge quirks)
-    const playVideo = () => {
-        const p = video.play();
-        if (p !== undefined) {
-            p.catch(() => {
-                // اگر autoplay block شد، retry
-                setTimeout(playVideo, 200);
-            });
-        }
-    };
-
-    playVideo();
-
-    // 🔥 مهم‌ترین بخش: force loop recovery
-    video.addEventListener("ended", () => {
-        video.currentTime = 0;
-        playVideo();
-    });
-
-    // 🔥 اگر browser freeze کرد یا pause شد
-    video.addEventListener("pause", () => {
-        if (!video.ended) playVideo();
-    });
-
-    // 🔥 اگر buffer یا glitch شد
-    video.addEventListener("stalled", () => {
-        playVideo();
-    });
-});
-</script>
-            
-            <!-- لایه برای خوانایی -->
-            
-            
-            <!-- محتوای اصلی -->
-            <div class="vet-hero-content">
-                <div class="vet-hero-text">
-                    <!-- متن اصلی -->
-                    <h1 class="vet-hero-title">
-                        <span class="vet-title-line vet-line-1">هر ضربان قلبی که نجات می‌دهیم،</span>
-                        <span class="vet-title-line vet-line-2">داستان یک خانواده را</span>
-                        <span class="vet-title-line vet-line-3">زنده نگه می‌دارد</span>
-                    </h1>
-                    
-                    <!-- دکمه -->
-                    <div class="vet-btn-container">
-                        <a href="tel:09002777080" class="vet-main-btn">
-                            
-                            <span class="vet-btn-text">تماس با ما</span>
-                            <span class="vet-btn-arrow">⟶</span>
-                            <div class="vet-btn-shine"></div>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- المان‌های شناور -->
-                <div class="vet-floating-elements">
-                    <div class="vet-float-heart">💙</div>
-                    <div class="vet-float-paw">🐾</div>
-                    <div class="vet-float-star">⭐</div>
-                    <div class="vet-float-plus">✨</div>
-                </div>
+          <div class="vet-hero-content">
+            <div class="vet-hero-text">
+              <h1 class="vet-hero-title">
+                <span class="vet-title-line vet-line-1">هر ضربان قلبی که نجات می‌دهیم،</span>
+                <span class="vet-title-line vet-line-2">داستان یک خانواده را</span>
+                <span class="vet-title-line vet-line-3">زنده نگه می‌دارد</span>
+              </h1>
+              <div class="vet-btn-container">
+                <a href="tel:09002777080" class="vet-main-btn">
+                  <span class="vet-btn-text">تماس با ما</span>
+                  <span class="vet-btn-arrow">⟶</span>
+                  <div class="vet-btn-shine"></div>
+                </a>
+              </div>
             </div>
-        </div>
-    </div>
-</section>
-                        
-                        
-                        {% comment %} <div class="banner banner-fixed intro-slide2" style="background-color: #39351a;">
-                            <figure>
-                                <img src="{% static 'images/demos/demo-food2/slides/slide2.jpg' %}" alt="intro-banner" width="1903"
-                                    height="540" style="background-color: #39351a;" />
-                            </figure>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="banner-content x-50 y-50 text-center p-absolute mt-lg-4 rtl">
-                                        <h4 class="banner-subtitle slide-animate font-weight-light text-white mb-3"
-                                            data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1s', 'delay': '.2s'}">
-                                           کمیاب ترین میوه ها را ازما بخواهید
-                                        </h4>
-                                        <h2 class="banner-title mb-10 text-white slide-animate"
-                                            data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '.4s'}">
-                                            <span class="text-primary">تازه </span> و ارگانیک را <br> برای شما گرد آورده ایم
-                                        </h2>
-                                        <a href="demo-food2-shop.html"
-                                           class="btn btn-lg btn-shadow btn-ellipse btn-solid btn-primary slide-animate btn-icon-right ls-m mb-9"
-                                           data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1s', 'delay': '.8s'}">
-                                            مشاهده و انتخاب  <i class="d-icon-arrow-left"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> {% endcomment %}
-                        {% comment %} <div class="banner banner-fixed intro-slide3" style="background-color: #f1f1f4;">
-                            <figure>
-                                <img src="{% static 'images/demos/demo-food2/slides/slide3.jpg' %}" alt="intro-banner" width="1903"
-                                    height="540" style="background-color: #f1f1f4;" />
-                            </figure>
-                            <div class="container">
-                                <div class="banner-content y-50 offset-lg-7 pl-lg-3 text-right rtl">
-                                    <h4 class="banner-subtitle slide-animate text-uppercase font-weight-normal ls-normal mb-3"
-                                        data-animation-options="{'name': 'fadeInRightShorter', 'duration': '1s', 'delay': '.2s'}">
-                                       سلامت را با ما تجربه کنید 
-                                    </h4>
-                                    <h2 class="banner-title font-weight-bold mb-0 slide-animate"
-                                        data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '1s'}">
-                                         سبزیجات ،</h2>
-                                    <h3 class="font-weight-normal slide-animate"
-                                        data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '1s'}">
-                                        میوه ها  <span class="text-primary">مغزیجات </span>
-                                    </h3>
-                                    <p class="pb-7 slide-animate"
-                                        data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1.2s', 'delay': '1s'}">
-                                       ارسال سراسر کشور رایگان </p>
-                                    <a href="demo-food2-shop.html"
-                                        class="btn btn-ellipse btn-shadow btn-solid btn-primary slide-animate btn-icon-right ls-m mb-1"
-                                        data-animation-options="{'name': 'fadeInUpShorter', 'duration': '1s', 'delay': '.8s'}">
-                                        مشاهده و انتخاب<i class="d-icon-arrow-left"></i></a>
-                                </div>
-                            </div>
-                        </div> {% endcomment %}
-                    </div>
-                    <div class="shape-divider">
-                        <div class="shape1">
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1920px"
-                                 height="317.318px" viewBox="0 0 1920 317.318" enable-background="new 0 0 1920 317.318"
-                                 xml:space="preserve" preserveAspectRatio="none">
-                            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF"
-                                  d="M1920.5,321.029L-0.493,319.064V188.854
-                                    c0,0,266.042,282.328,851.688,0C1483.531-115.985,1817.728,72.4,1920.5,153.396V321.029z" style="opacity: .2;"></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF"
-                                  d="M-0.5,270.412V113.073
-                                    c98.208-70.839,407.683-228.759,985.305,29.000 7c593.667,264.928,935.688,0,935.688,0v128.332H-0.5z" style="opacity: .2;"></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M1920.5,234.867c-401.555-0.201-766.128-0.385-766.128-0.385
-                                    s346.533-156.566,765.94-199.011c0.063-0.000 6,0.125-0.012,0.188-0.019V234.867z"
-                                  style="opacity: .2;"></path>
-                            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF"
-                                  d="M-0.5,288.449V13.697
-                                    c163.401-0.867,337.865,32.776,510.441,125.717c160.954,86.684,317.758,63.473,422.06,59.639v88.85L-0.5,288.449z" style="opacity: .2;"></path>
-                            </svg>
-                        </div>
-                        <div class="shape2">
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-0.6 23.7 100 6"
-                                 enable-background="new -0.6 23.7 100 6" xml:space="preserve">
-                            <path fill="#FFFFFF" d="M99.4,24.5c0,0-8.7,3.7-16.1,4c-7.4,0.3-16.6-5-27.9-3.9c-8.7,0.8-9.5,4.4-23.4,4.9
-                                    c-7.8,0.3-17.4-4.6-23.7-5.5c-6.3-0.8-9,0.3-9,0.3v5.4h100V24.5z"></path>
-                            </svg>
-                        </div>
-                    </div>
-                
-
-               <section class="banner" id="main-banner1">
-    <figure class="hero-figure">
-        <picture>
-            <!-- عکس برای دستگاه‌های کوچک -->
-            <source media="(max-width: 1024px)" srcset="{% static 'images/whitee.png' %}">
-            <!-- عکس برای دسکتاپ -->
-            <img class="responsive-hero-img" 
-                 src="{% static 'images/Greyn.png' %}" 
-                 alt="Pet Shop Banner">
-        </picture>
-    </figure>
-    
-    <div class="container tea-banner-container">
-        <div class="banner-content rtl vet-banner-content" >
-            
-            <div class="vet-parallax-container">
-                <div class="vet-text-wrapper">
-                    <div class="vet-text-box vet-box-1">
-                        <div class="vet-card">
-                            <div class="vet-icon">🐾</div>
-                            <p>کلینیک دامپزشکی دکتر رخشان با تمرکز بر طب حیوانات کوچک، خدمات تخصصی را مبتنی بر دانش روز، شواهد بالینی و تجربه بالینی ارائه می‌دهد.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="vet-text-box vet-box-2">
-                        <div class="vet-card">
-                            <div class="vet-icon">🔬</div>
-                            <p>در این مرکز، تشخیص و درمان نه یک فرایند فنی، بلکه حاصل پیوندی است میان دانش، تجربه و نگرش علمی مسئولانه.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="vet-text-box vet-box-3">
-                        <div class="vet-card">
-                            <div class="vet-icon">💝</div>
-                            <p>ما هر بیمار را نه صرفاً یک پرونده پزشکی، بلکه امانتی می‌دانیم که با اعتماد به ما سپرده شده است.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="vet-floating-elements">
+              <div class="vet-float-heart">💙</div>
+              <div class="vet-float-paw">🐾</div>
+              <div class="vet-float-star">⭐</div>
+              <div class="vet-float-plus">✨</div>
             </div>
-
-        </div>
+          </div>
+        </figure>
+      </div>
     </div>
-</section>
+  </section>
 
-
-<section class="pinned">
-  <div class="pinned__sticky">
-    <img
-      id="pinnedImg"
-      src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1600&q=80"
-      alt="Dogs enjoying time together"
-      loading="lazy"
-    />
-    <div class="pinned__caption">
-      <span class="eyebrow">Our Promise</span>
-      <h3 id="pinnedTitle">Every visit, calmly handled.</h3>
-    </div>
-  </div>
-
-  <div class="pinned__steps">
-    <div
-      class="pinned__step"
-      data-img="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1600&q=80"
-      data-title="Every visit, calmly handled."
-    >
-      <h4>1 — Welcome</h4>
-      <p>Quiet check-in. No crowded waiting rooms. Treats on arrival, always.</p>
+  <section class="pinned">
+    <div class="pinned__sticky">
+      <img
+        id="pinnedImg"
+        src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1600&q=80"
+        alt="کلینیک دامپزشکی دکتر رخشان"
+        loading="lazy"
+      />
+      <div class="pinned__overlay"></div>
     </div>
 
-    <div
-      class="pinned__step"
-      data-img="https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=1600&q=80"
-      data-title="Diagnostics in minutes, not days."
-    >
-      <h4>2 — Diagnose</h4>
-      <p>In-house bloodwork, digital X-ray and ultrasound — answers, fast.</p>
-    </div>
+    <div class="pinned__steps">
+      <div class="pinned__step" data-img="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1600&q=80">
+        <span class="eyebrow">درباره‌ی ما</span>
+        <h3 class="pinned__headline">
+          دانش روز،<br>
+          <em>تجربه‌ی بالینی.</em>
+        </h3>
+        <p class="pinned__body">
+          کلینیک دامپزشکی دکتر رخشان با تمرکز بر طب حیوانات کوچک،
+          خدمات تخصصی را مبتنی بر شواهد بالینی و سال‌ها تجربه ارائه می‌دهد.
+        </p>
+        <span class="pinned__signature">— دکتر رخشان</span>
+      </div>
 
-    <div
-      class="pinned__step"
-      data-img="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1600&q=80"
-      data-title="A plan you actually understand."
-    >
-      <h4>3 — Plan</h4>
-      <p>Clear options, honest pricing, and a written take-home summary.</p>
-    </div>
+      <div class="pinned__step" data-img="https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=1600&q=80">
+        <span class="eyebrow">رویکرد ما</span>
+        <h3 class="pinned__headline">
+          تشخیص و درمان،<br>
+          <em>فراتر از یک فرایند فنی.</em>
+        </h3>
+        <p class="pinned__body">
+          در این مرکز، هر تشخیص حاصل پیوندی است میان دانش، تجربه
+          و نگرشی علمی و مسئولانه.
+        </p>
+        <span class="pinned__signature">علم، در خدمت مراقبت</span>
+      </div>
 
-    <div
-      class="pinned__step"
-      data-img="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=1600&q=80"
-      data-title="Aftercare that follows you home."
-    >
-      <h4>4 — Aftercare</h4>
-      <p>We follow up by text — because care doesn't stop at the door.</p>
+      <div class="pinned__step" data-img="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1600&q=80">
+        <span class="eyebrow">تعهد ما</span>
+        <h3 class="pinned__headline">
+          هر بیمار،<br>
+          <em>امانتی در دستان ماست.</em>
+        </h3>
+        <p class="pinned__body">
+          ما هر بیمار را نه صرفاً یک پرونده‌ی پزشکی، بلکه امانتی می‌دانیم
+          که با اعتماد، به ما سپرده شده است.
+        </p>
+        <span class="pinned__signature">با احترام، برای هر همراه</span>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
+</div>
 
                 
                 <section class="category-section mt-4 p-relative overflow-hidden rtl text-right">
@@ -724,438 +564,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <section id="rk-clinic-services" dir="rtl" lang="fa">
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap');
-
-    
-
-    #rk-clinic-services {
-  --rk-bg: #f0ece3;
-  --rk-fg: #24231f;
-  --rk-muted: #77746b;
-  --rk-accent: #94752e;
-  --rk-card-bg: rgba(255, 255, 255, 0.88);
-  --rk-card-border: rgba(148, 117, 46, 0.25);
-  --rk-font: "Vazirmatn", Tahoma, sans-serif;
-  --rk-ui-inset: 28px;
-
-  position: relative;
-  isolation: isolate;
-  display: block;
-  width: 100%;
-  min-height: 600vh;
-  overflow: clip;
-  background: #F0F3F7;
-  color: var(--rk-fg);
-  font-family: var(--rk-font);
-  direction: rtl;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-    #rk-clinic-services *,
-    #rk-clinic-services *::before,
-    #rk-clinic-services *::after {
-      box-sizing: border-box;
-    }
-
-    #rk-clinic-services img {
-      max-width: 100%;
-    }
-
-    /* =====================================
-       1. FIXED CUBE
-    ===================================== */
-
-    
-#rk-clinic-services #rk-services-scene {
-  position: sticky;
-  top: 0;
-  z-index: 0;
-  height: 100vh;
-  height: 100svh;
-  margin-bottom: -100vh;
-  margin-bottom: -100svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  perspective: 1100px;
-  pointer-events: none;
-}
-
-    #rk-clinic-services.rk-services-active #rk-services-scene {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    #rk-clinic-services #rk-services-cube {
-      --rk-cube-size: min(70vw, 70vh, 520px);
-
-      position: relative;
-      width: var(--rk-cube-size);
-      height: var(--rk-cube-size);
-      transform-style: preserve-3d;
-      transform: rotateX(90deg) rotateY(0deg);
-      will-change: transform;
-    }
-
-    #rk-clinic-services .rk-services-face {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      backface-visibility: hidden;
-      background:
-        repeating-linear-gradient(
-          0deg,
-          rgba(0, 0, 0, 0.035) 0,
-          rgba(0, 0, 0, 0.035) 1px,
-          transparent 1px,
-          transparent 48px
-        ),
-        repeating-linear-gradient(
-          90deg,
-          rgba(0, 0, 0, 0.035) 0,
-          rgba(0, 0, 0, 0.035) 1px,
-          transparent 1px,
-          transparent 48px
-        ),
-        #e4dfd4;
-    }
-
-    #rk-clinic-services .rk-services-face img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    #rk-clinic-services .rk-services-face-ph {
-      position: absolute;
-      right: 26px;
-      bottom: 24px;
-      color: rgba(36, 35, 31, 0.12);
-      font-size: clamp(20px, 5vw, 48px);
-      font-weight: 700;
-      pointer-events: none;
-      user-select: none;
-    }
-
-    #rk-clinic-services .rk-services-face:has(img) .rk-services-face-ph {
-      display: none;
-    }
-
-    #rk-clinic-services .rk-services-face[data-face="front"] {
-      transform: translateZ(calc(var(--rk-cube-size) / 2));
-    }
-
-    #rk-clinic-services .rk-services-face[data-face="back"] {
-      transform: rotateY(180deg) translateZ(calc(var(--rk-cube-size) / 2));
-    }
-
-    #rk-clinic-services .rk-services-face[data-face="right"] {
-      transform: rotateY(90deg) translateZ(calc(var(--rk-cube-size) / 2));
-    }
-
-    #rk-clinic-services .rk-services-face[data-face="left"] {
-      transform: rotateY(-90deg) translateZ(calc(var(--rk-cube-size) / 2));
-    }
-
-    #rk-clinic-services .rk-services-face[data-face="top"] {
-      transform: rotateX(-90deg) translateZ(calc(var(--rk-cube-size) / 2));
-    }
-
-    #rk-clinic-services .rk-services-face[data-face="bottom"] {
-      transform: rotateX(90deg) translateZ(calc(var(--rk-cube-size) / 2));
-    }
-
-    /* =====================================
-       2. SCROLL SECTIONS
-    ===================================== */
-
-    #rk-clinic-services #rk-services-scroll-container {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-    }
-
-    #rk-clinic-services .rk-services-section {
-      position: relative;
-      display: flex;
-      align-items: center;
-      width: 100%;
-      min-height: 100vh;
-      padding: 80px 8%;
-      scroll-margin-top: 0;
-    }
-
-    #rk-clinic-services .rk-services-text-card {
-      width: min(100%, 430px);
-      padding: 32px;
-      background: rgba(240, 236, 227, 0.08);
-      border-right: 1px solid rgba(148, 117, 46, 0.18);
-      backdrop-filter: blur(6px) saturate(120%);
-      -webkit-backdrop-filter: blur(6px) saturate(120%);
-      box-shadow: none;
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    #rk-clinic-services .rk-services-text-card.rk-services-right {
-      margin-right: auto;
-      margin-left: 0;
-      border-right: none;
-      border-left: 1px solid rgba(148, 117, 46, 0.18);
-    }
-
-    #rk-clinic-services .rk-services-text-card.rk-services-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    #rk-clinic-services .rk-services-h-line {
-      width: 52px;
-      height: 2px;
-      margin-bottom: 22px;
-      background: var(--rk-accent);
-    }
-
-    #rk-clinic-services .rk-services-section h2 {
-      margin: 0;
-      color: var(--rk-fg);
-      font-family: var(--rk-font);
-      font-size: clamp(25px, 3vw, 38px);
-      line-height: 1.6;
-      font-weight: 600;
-    }
-
-    #rk-clinic-services .rk-services-body-text {
-      margin-top: 14px;
-      color: #656157;
-      font-family: var(--rk-font);
-      font-size: 14px;
-      line-height: 2.2;
-      font-weight: 400;
-    }
-
-    /* =====================================
-       3. PROGRESS HUD
-    ===================================== */
-
-    #rk-clinic-services #rk-services-hud {
-      position: fixed;
-      top: var(--rk-ui-inset);
-      left: var(--rk-ui-inset);
-      z-index: 10;
-      text-align: left;
-      font-size: 12px;
-      letter-spacing: 2px;
-      color: var(--rk-muted);
-      direction: ltr;
-      pointer-events: none;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-    #rk-clinic-services.rk-services-active #rk-services-hud {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    #rk-clinic-services #rk-services-hud-pct {
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    #rk-clinic-services .rk-services-progress-bar {
-      position: relative;
-      width: 120px;
-      height: 2px;
-      margin-top: 10px;
-      overflow: hidden;
-      background: rgba(80, 75, 60, 0.2);
-    }
-
-    #rk-clinic-services .rk-services-progress-fill {
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 0%;
-      background: var(--rk-accent);
-    }
-
-    #rk-clinic-services .rk-services-scene-label {
-      margin-top: 9px;
-      color: var(--rk-accent);
-      font-size: 11px;
-      letter-spacing: 0;
-    }
-
-    /* =====================================
-       4. NAVIGATION DOTS
-    ===================================== */
-
-    #rk-clinic-services #rk-services-scene-strip {
-      position: fixed;
-      top: 50%;
-      left: 25px;
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 18px;
-      transform: translateY(-50%);
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-    #rk-clinic-services.rk-services-active #rk-services-scene-strip {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-
-    #rk-clinic-services .rk-services-scene-dot {
-      display: block;
-      width: 7px;
-      height: 7px;
-      padding: 0;
-      border: 0;
-      border-radius: 50%;
-      background: #bcb6a9;
-      transition: background 0.3s ease, transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    #rk-clinic-services .rk-services-scene-dot.rk-services-dot-active {
-      background: var(--rk-accent);
-      transform: scale(1.6);
-    }
-
-    /* =====================================
-       5. FIXED CAPTION
-    ===================================== */
-
-    #rk-clinic-services #rk-services-face-caption {
-      position: fixed;
-      bottom: var(--rk-ui-inset);
-      left: 50%;
-      z-index: 10;
-      text-align: center;
-      pointer-events: none;
-      white-space: nowrap;
-      transform: translateX(-50%);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-    #rk-clinic-services.rk-services-active #rk-services-face-caption {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    #rk-clinic-services #rk-services-face-caption-name {
-      color: #746b58;
-      font-family: var(--rk-font);
-      font-size: clamp(17px, 3vw, 30px);
-      font-weight: 600;
-      opacity: 0.8;
-    }
-
-    /* =====================================
-       6. RESPONSIVE
-    ===================================== */
-
-    @media (max-width: 900px) {
-      #rk-clinic-services #rk-services-cube {
-        --rk-cube-size: min(78vw, 55vh, 420px);
-      }
-
-      #rk-clinic-services #rk-services-scene-strip {
-        left: 16px;
-        gap: 15px;
-      }
-
-      #rk-clinic-services .rk-services-section {
-        min-height: 120vh;
-        align-items: flex-end;
-        padding: 30px 24px 100px;
-      }
-
-      #rk-clinic-services #rk-services-section-0 {
-        min-height: 100vh;
-        align-items: center;
-        padding-top: 100px;
-      }
-
-      #rk-clinic-services .rk-services-text-card,
-      #rk-clinic-services .rk-services-text-card.rk-services-right {
-        width: 100%;
-        max-width: 540px;
-        margin-right: auto;
-        margin-left: auto;
-        padding: 24px;
-      }
-
-      #rk-clinic-services .rk-services-section h2 {
-        font-size: clamp(24px, 5vw, 34px);
-      }
-
-      #rk-clinic-services .rk-services-body-text {
-        font-size: 13px;
-        line-height: 2;
-      }
-
-      #rk-clinic-services #rk-services-face-caption {
-        bottom: 20px;
-      }
-
-      #rk-clinic-services #rk-services-hud {
-        top: 18px;
-        left: 18px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      #rk-clinic-services #rk-services-cube {
-        --rk-cube-size: min(78vw, 45vh, 340px);
-      }
-
-      #rk-clinic-services .rk-services-section {
-        padding-right: 18px;
-        padding-left: 18px;
-      }
-
-      #rk-clinic-services .rk-services-text-card,
-      #rk-clinic-services .rk-services-text-card.rk-services-right {
-        padding: 20px;
-      }
-
-      #rk-clinic-services #rk-services-scene-strip {
-        left: 12px;
-      }
-
-      #rk-clinic-services .rk-services-progress-bar {
-        width: 85px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      #rk-clinic-services .rk-services-text-card,
-      #rk-clinic-services #rk-services-scene,
-      #rk-clinic-services #rk-services-hud,
-      #rk-clinic-services #rk-services-scene-strip,
-      #rk-clinic-services #rk-services-face-caption {
-        transition: none;
-      }
-    }
-  </style>
-
   <!-- مکعب سه‌بعدی -->
   <div id="rk-services-scene" aria-hidden="true">
     <div id="rk-services-cube">
@@ -1295,356 +703,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   </div>
 
-  <script>
-    (function () {
-      "use strict";
-
-      const root = document.getElementById("rk-clinic-services");
-
-      if (!root || root.dataset.rkInitialized === "true") {
-        return;
-      }
-
-      root.dataset.rkInitialized = "true";
-
-      const IMAGE_SRCS = [
-        "{% static 'images/brown-pussy-after-surgery-injection-animal-vet-mittens-with-injection.jpg' %}",
-        "{% static 'images/alexander-mass-fQeLC7WlNm8-unsplash.jpg' %}",
-        "{% static 'images/pexels-gustavo-fring-6816851.jpg' %}",
-        "{% static 'images/karsten-winegeart-loJL4ijUobg-unsplash.jpg' %}",
-        "{% static 'images/mirkosajkov-veterinary-4940425.jpg' %}",
-        "{% static 'images/pexels-tima-miroshnichenko-6235239.jpg' %}"
-      ];
-
-      const FACE_NAMES = [
-        "خدمات پایه",
-        "خدمات پایه",
-        "خدمات پایه",
-        "خدمات پایه",
-        "خدمات پایه",
-        "خدمات پایه"
-      ];
-
-      const N = IMAGE_SRCS.length;
-
-      const cube = root.querySelector("#rk-services-cube");
-      const faces = Array.from(root.querySelectorAll(".rk-services-face"));
-      const hudPct = root.querySelector("#rk-services-hud-pct");
-      const progFill = root.querySelector("#rk-services-prog-fill");
-      const sceneName = root.querySelector("#rk-services-scene-name");
-      const captionName = root.querySelector("#rk-services-face-caption-name");
-      const dots = Array.from(root.querySelectorAll(".rk-services-scene-dot"));
-      const sections = Array.from(root.querySelectorAll(".rk-services-section"));
-      const cards = Array.from(root.querySelectorAll(".rk-services-text-card"));
-
-      let rootTop = 0;
-      let rootHeight = 1;
-      let maxScroll = 1;
-      let sectionTops = [];
-      let currentSection = -1;
-      let targetProgress = 0;
-      let smoothProgress = 0;
-      let active = false;
-      let ticking = false;
-      let animationFrameId = null;
-
-      /* =====================================
-         LOAD IMAGES
-      ===================================== */
-
-      function preloadImage(src) {
-        return new Promise(function (resolve) {
-          const img = new Image();
-
-          img.onload = function () {
-            resolve(img);
-          };
-
-          img.onerror = function () {
-            resolve(null);
-          };
-
-          img.src = src;
-
-          if (img.complete) {
-            resolve(img.naturalWidth ? img : null);
-          }
-        });
-      }
-
-      async function setFaceImage(faceIndex, imageIndex) {
-        const face = faces[faceIndex];
-        const src = IMAGE_SRCS[imageIndex];
-
-        if (!face || !src) {
-          return;
-        }
-
-        const loadedImage = await preloadImage(src);
-
-        if (!loadedImage || !root.isConnected) {
-          return;
-        }
-
-        let img = face.querySelector("img");
-
-        if (!img) {
-          img = document.createElement("img");
-          img.alt = FACE_NAMES[imageIndex] || "تصویر خدمات کلینیک";
-          img.loading = "eager";
-          face.appendChild(img);
-        }
-
-        img.src = src;
-      }
-
-      IMAGE_SRCS.forEach(function (src, index) {
-        setFaceImage(index, index);
-      });
-
-      /* =====================================
-         CUBE ROTATION
-      ===================================== */
-
-      const STOPS = [
-        { rx: 90, ry: 0 },
-        { rx: 0, ry: 0 },
-        { rx: 0, ry: -90 },
-        { rx: 0, ry: -180 },
-        { rx: 0, ry: -270 },
-        { rx: -90, ry: -360 }
-      ];
-
-      function easeInOut(t) {
-        return t < 0.5
-          ? 2 * t * t
-          : 1 - Math.pow(-2 * t + 2, 2) / 2;
-      }
-
-      function setCubeTransform(progress) {
-        const t = Math.max(0, Math.min(1, progress)) * (N - 1);
-        const index = Math.min(Math.floor(t), N - 2);
-        const fraction = easeInOut(t - index);
-
-        const start = STOPS[index];
-        const end = STOPS[index + 1];
-
-        const rx = start.rx + (end.rx - start.rx) * fraction;
-        const ry = start.ry + (end.ry - start.ry) * fraction;
-
-        cube.style.transform =
-          "rotateX(" + rx + "deg) rotateY(" + ry + "deg)";
-      }
-
-      /* =====================================
-         MEASURE THIS SECTION ONLY
-      ===================================== */
-
-      function resize() {
-        const rect = root.getBoundingClientRect();
-
-        rootTop = rect.top + window.scrollY;
-        rootHeight = root.offsetHeight;
-
-        maxScroll = Math.max(1, rootHeight - window.innerHeight);
-
-        sectionTops = sections.map(function (section) {
-          return section.offsetTop;
-        });
-      }
-
-      function getSectionIndex(progress) {
-        const localPosition = progress * maxScroll + window.innerHeight * 0.5;
-
-        let index = 0;
-
-        for (let i = 0; i < sectionTops.length; i++) {
-          if (localPosition >= sectionTops[i]) {
-            index = i;
-          }
-        }
-
-        return Math.min(index, N - 1);
-      }
-
-      function updateHUD(progress) {
-        const percentage = Math.round(progress * 100);
-
-        hudPct.textContent =
-          String(percentage).padStart(3, "0") + "%";
-
-        progFill.style.width = percentage + "%";
-
-        const index = getSectionIndex(progress);
-
-        if (index !== currentSection) {
-          currentSection = index;
-
-          const name = FACE_NAMES[index] || "خدمات کلینیک";
-
-          sceneName.textContent = name;
-          captionName.textContent = name;
-
-          dots.forEach(function (dot, dotIndex) {
-            dot.classList.toggle(
-              "rk-services-dot-active",
-              dotIndex === index
-            );
-          });
-        }
-      }
-
-      /* =====================================
-         REVEAL TEXT
-      ===================================== */
-
-      if ("IntersectionObserver" in window) {
-        const revealObserver = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("rk-services-visible");
-                revealObserver.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.12 }
-        );
-
-        cards.forEach(function (card) {
-          revealObserver.observe(card);
-        });
-      } else {
-        cards.forEach(function (card) {
-          card.classList.add("rk-services-visible");
-        });
-      }
-
-      /* =====================================
-         ACTIVE STATE
-         مکعب فقط در محدوده همین سکشن
-      ===================================== */
-
-      function updateActiveState() {
-  const rect = root.getBoundingClientRect();
-
-  const visible =
-    rect.bottom > 0 &&
-    rect.top < window.innerHeight;
-
-  if (visible !== active) {
-    active = visible;
-    root.classList.toggle("rk-services-active", visible);
-  }
-
-  if (!visible) {
-    return;
-  }
-
-  const localScroll = window.scrollY - rootTop;
-
-  targetProgress = Math.max(
-    0,
-    Math.min(1, localScroll / maxScroll)
-  );
-
-  if (localScroll <= 0) {
-    targetProgress = 0;
-    smoothProgress = 0;
-    setCubeTransform(0);
-  }
-}
-
-      /* =====================================
-         SMOOTH CUBE ANIMATION
-      ===================================== */
-
-      function frame() {
-        if (!root.isConnected) {
-          if (animationFrameId !== null) {
-            cancelAnimationFrame(animationFrameId);
-          }
-          return;
-        }
-
-        if (active) {
-          smoothProgress +=
-            (targetProgress - smoothProgress) * 0.09;
-
-          if (Math.abs(targetProgress - smoothProgress) < 0.0001) {
-            smoothProgress = targetProgress;
-          }
-
-          setCubeTransform(smoothProgress);
-          updateHUD(smoothProgress);
-        }
-
-        animationFrameId = requestAnimationFrame(frame);
-      }
-
-      /* =====================================
-         SCROLL UPDATES
-      ===================================== */
-
-      function update() {
-        resize();
-        updateActiveState();
-        ticking = false;
-      }
-
-      function requestUpdate() {
-        if (!ticking) {
-          ticking = true;
-          requestAnimationFrame(update);
-        }
-      }
-
-      /* =====================================
-         NAVIGATION DOTS
-      ===================================== */
-
-      dots.forEach(function (dot) {
-        dot.addEventListener("click", function () {
-          const index = Number(dot.dataset.rkTarget);
-          const target = sections[index];
-
-          if (!target) {
-            return;
-          }
-
-          const targetY = rootTop + target.offsetTop;
-
-          window.scrollTo({
-            top: targetY,
-            behavior: "smooth"
-          });
-        });
-      });
-
-      /* =====================================
-         INITIALIZE
-      ===================================== */
-
-      window.addEventListener("scroll", requestUpdate, {
-        passive: true
-      });
-
-      window.addEventListener("resize", requestUpdate);
-
-      window.addEventListener("load", requestUpdate);
-
-      if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(requestUpdate);
-      }
-
-      resize();
-      updateActiveState();
-      setCubeTransform(0);
-      updateHUD(0);
-      animationFrameId = requestAnimationFrame(frame);
-
-    })();
-  </script>
+  
 
 </section>
 
@@ -2399,5 +1458,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
         </main>
-        
+       
 {% endblock main %}

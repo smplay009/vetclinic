@@ -554,3 +554,657 @@ margin-inline-end: 0;
 gap: 5px;
 }
 }
+.vet-footer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #f0f0f0;
+  padding: 40px 0 20px;
+  font-family: Vazirmatn, sans-serif;
+  position: relative;
+  overflow: hidden;
+  border-top: 3px solid #ffd700;
+}
+
+.vet-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.vet-footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+  direction: ltr;
+}
+
+.vet-col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 10px;
+}
+
+.vet-pt-4 { padding-top: 2rem; }
+.vet-pb-2 { padding-bottom: 1rem; }
+.vet-text-center { text-align: center; }
+
+/* طراحی مدرن بخش تماس */
+.vet-contact-section {
+  padding: 20px;
+}
+
+.vet-footer-title {
+  color: #ffd700;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+  direction: rtl;
+}
+
+.vet-footer-title i {
+  font-size: 1.6rem;
+}
+
+.vet-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+}
+
+.vet-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  direction: rtl;
+}
+
+.vet-contact-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  padding-right: 10px;
+  border-radius: 8px;
+}
+
+.vet-contact-item.vet-highlight {
+  background: rgba(255, 215, 0, 0.1);
+  border-right: 3px solid #ffd700;
+}
+
+.vet-contact-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffd700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.vet-contact-item:hover .vet-contact-icon {
+  background: rgba(255, 215, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.vet-contact-item.vet-highlight .vet-contact-icon {
+  background: rgba(255, 215, 0, 0.2);
+  animation: vet-pulse 2s infinite;
+}
+
+.vet-contact-item a {
+  color: #f0f0f0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.vet-contact-item a:hover {
+  color: #ffd700;
+}
+
+.vet-contact-item.vet-highlight a {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.vet-contact-icon.vet-weekend {
+  color: #ff6b6b;
+}
+
+/* طراحی مدرن نقشه */
+.vet-map-section {
+  padding: 20px;
+  direction: rtl;
+}
+
+.vet-map-container {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.vet-map-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(255, 215, 0, 0.2);
+}
+
+.vet-map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vet-map-container:hover .vet-map-overlay {
+  opacity: 1;
+}
+
+.vet-map-overlay i {
+  color: #ffd700;
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.vet-map-text {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* طراحی مدرن پایین فوتر */
+.vet-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
+  text-align: center;
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  direction: rtl;
+}
+
+/* انیمیشن‌ها */
+@keyframes vet-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 215, 0, 0);
+  }
+}
+
+/* رسپانسیو */
+@media (max-width: 768px) {
+  .vet-footer {
+    padding: 30px 0 15px;
+  }
+  
+  .vet-col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .vet-contact-section,
+  .vet-map-section {
+    padding: 15px;
+  }
+  
+  .vet-footer-title {
+    font-size: 1.2rem;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  
+  .vet-contact-item {
+    gap: 12px;
+    padding: 10px 0;
+  }
+}
+#rk-clinic-services {
+  --rk-bg: #f0ece3;
+  --rk-fg: #24231f;
+  --rk-muted: #77746b;
+  --rk-accent: #94752e;
+  --rk-card-bg: rgba(255, 255, 255, 0.88);
+  --rk-card-border: rgba(148, 117, 46, 0.25);
+  --rk-font: "Vazirmatn", Tahoma, sans-serif;
+  --rk-ui-inset: 28px;
+
+  position: relative;
+  isolation: isolate;
+  display: block;
+  width: 100%;
+  min-height: 600vh;
+  overflow: clip;
+  background: #F0F3F7;
+  color: var(--rk-fg);
+  font-family: var(--rk-font);
+  direction: rtl;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+#rk-clinic-services *,
+#rk-clinic-services *::before,
+#rk-clinic-services *::after {
+  box-sizing: border-box;
+}
+
+#rk-clinic-services img {
+  max-width: 100%;
+}
+
+/* =====================================
+   1. FIXED CUBE
+===================================== */
+
+#rk-clinic-services #rk-services-scene {
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  height: 100vh;
+  height: 100svh;
+  margin-bottom: -100vh;
+  margin-bottom: -100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1100px;
+  pointer-events: none;
+}
+
+#rk-clinic-services.rk-services-active #rk-services-scene {
+  opacity: 1;
+  visibility: visible;
+}
+
+#rk-clinic-services #rk-services-cube {
+  --rk-cube-size: min(70vw, 70vh, 520px);
+
+  position: relative;
+  width: var(--rk-cube-size);
+  height: var(--rk-cube-size);
+  transform-style: preserve-3d;
+  transform: rotateX(90deg) rotateY(0deg);
+  will-change: transform;
+}
+
+#rk-clinic-services .rk-services-face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.035) 0,
+      rgba(0, 0, 0, 0.035) 1px,
+      transparent 1px,
+      transparent 48px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.035) 0,
+      rgba(0, 0, 0, 0.035) 1px,
+      transparent 1px,
+      transparent 48px
+    ),
+    #e4dfd4;
+}
+
+#rk-clinic-services .rk-services-face img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#rk-clinic-services .rk-services-face-ph {
+  position: absolute;
+  right: 26px;
+  bottom: 24px;
+  color: rgba(36, 35, 31, 0.12);
+  font-size: clamp(20px, 5vw, 48px);
+  font-weight: 700;
+  pointer-events: none;
+  user-select: none;
+}
+
+#rk-clinic-services .rk-services-face:has(img) .rk-services-face-ph {
+  display: none;
+}
+
+#rk-clinic-services .rk-services-face[data-face="front"] {
+  transform: translateZ(calc(var(--rk-cube-size) / 2));
+}
+
+#rk-clinic-services .rk-services-face[data-face="back"] {
+  transform: rotateY(180deg) translateZ(calc(var(--rk-cube-size) / 2));
+}
+
+#rk-clinic-services .rk-services-face[data-face="right"] {
+  transform: rotateY(90deg) translateZ(calc(var(--rk-cube-size) / 2));
+}
+
+#rk-clinic-services .rk-services-face[data-face="left"] {
+  transform: rotateY(-90deg) translateZ(calc(var(--rk-cube-size) / 2));
+}
+
+#rk-clinic-services .rk-services-face[data-face="top"] {
+  transform: rotateX(-90deg) translateZ(calc(var(--rk-cube-size) / 2));
+}
+
+#rk-clinic-services .rk-services-face[data-face="bottom"] {
+  transform: rotateX(90deg) translateZ(calc(var(--rk-cube-size) / 2));
+}
+
+/* =====================================
+   2. SCROLL SECTIONS
+===================================== */
+
+#rk-clinic-services #rk-services-scroll-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+#rk-clinic-services .rk-services-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 8%;
+  scroll-margin-top: 0;
+}
+
+#rk-clinic-services .rk-services-text-card {
+  width: min(100%, 430px);
+  padding: 32px;
+  background: rgba(240, 236, 227, 0.08);
+  border-right: 1px solid rgba(148, 117, 46, 0.18);
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  box-shadow: none;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+#rk-clinic-services .rk-services-text-card.rk-services-right {
+  margin-right: auto;
+  margin-left: 0;
+  border-right: none;
+  border-left: 1px solid rgba(148, 117, 46, 0.18);
+}
+
+#rk-clinic-services .rk-services-text-card.rk-services-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#rk-clinic-services .rk-services-h-line {
+  width: 52px;
+  height: 2px;
+  margin-bottom: 22px;
+  background: var(--rk-accent);
+}
+
+#rk-clinic-services .rk-services-section h2 {
+  margin: 0;
+  color: var(--rk-fg);
+  font-family: var(--rk-font);
+  font-size: clamp(25px, 3vw, 38px);
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+#rk-clinic-services .rk-services-body-text {
+  margin-top: 14px;
+  color: #656157;
+  font-family: var(--rk-font);
+  font-size: 14px;
+  line-height: 2.2;
+  font-weight: 400;
+}
+
+/* =====================================
+   3. PROGRESS HUD
+===================================== */
+
+#rk-clinic-services #rk-services-hud {
+  position: fixed;
+  top: var(--rk-ui-inset);
+  left: var(--rk-ui-inset);
+  z-index: 10;
+  text-align: left;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--rk-muted);
+  direction: ltr;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#rk-clinic-services.rk-services-active #rk-services-hud {
+  opacity: 1;
+  visibility: visible;
+}
+
+#rk-clinic-services #rk-services-hud-pct {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#rk-clinic-services .rk-services-progress-bar {
+  position: relative;
+  width: 120px;
+  height: 2px;
+  margin-top: 10px;
+  overflow: hidden;
+  background: rgba(80, 75, 60, 0.2);
+}
+
+#rk-clinic-services .rk-services-progress-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0%;
+  background: var(--rk-accent);
+}
+
+#rk-clinic-services .rk-services-scene-label {
+  margin-top: 9px;
+  color: var(--rk-accent);
+  font-size: 11px;
+  letter-spacing: 0;
+}
+
+/* =====================================
+   4. NAVIGATION DOTS
+===================================== */
+
+#rk-clinic-services #rk-services-scene-strip {
+  position: fixed;
+  top: 50%;
+  left: 25px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  transform: translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#rk-clinic-services.rk-services-active #rk-services-scene-strip {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#rk-clinic-services .rk-services-scene-dot {
+  display: block;
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #bcb6a9;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+#rk-clinic-services .rk-services-scene-dot.rk-services-dot-active {
+  background: var(--rk-accent);
+  transform: scale(1.6);
+}
+
+/* =====================================
+   5. FIXED CAPTION
+===================================== */
+
+#rk-clinic-services #rk-services-face-caption {
+  position: fixed;
+  bottom: var(--rk-ui-inset);
+  left: 50%;
+  z-index: 10;
+  text-align: center;
+  pointer-events: none;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#rk-clinic-services.rk-services-active #rk-services-face-caption {
+  opacity: 1;
+  visibility: visible;
+}
+
+#rk-clinic-services #rk-services-face-caption-name {
+  color: #746b58;
+  font-family: var(--rk-font);
+  font-size: clamp(17px, 3vw, 30px);
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+/* =====================================
+   6. RESPONSIVE
+===================================== */
+
+@media (max-width: 900px) {
+  #rk-clinic-services #rk-services-cube {
+    --rk-cube-size: min(78vw, 55vh, 420px);
+  }
+
+  #rk-clinic-services #rk-services-scene-strip {
+    left: 16px;
+    gap: 15px;
+  }
+
+  #rk-clinic-services .rk-services-section {
+    min-height: 120vh;
+    align-items: flex-end;
+    padding: 30px 24px 100px;
+  }
+
+  #rk-clinic-services #rk-services-section-0 {
+    min-height: 100vh;
+    align-items: center;
+    padding-top: 100px;
+  }
+
+  #rk-clinic-services .rk-services-text-card,
+  #rk-clinic-services .rk-services-text-card.rk-services-right {
+    width: 100%;
+    max-width: 540px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 24px;
+  }
+
+  #rk-clinic-services .rk-services-section h2 {
+    font-size: clamp(24px, 5vw, 34px);
+  }
+
+  #rk-clinic-services .rk-services-body-text {
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  #rk-clinic-services #rk-services-face-caption {
+    bottom: 20px;
+  }
+
+  #rk-clinic-services #rk-services-hud {
+    top: 18px;
+    left: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  #rk-clinic-services #rk-services-cube {
+    --rk-cube-size: min(78vw, 45vh, 340px);
+  }
+
+  #rk-clinic-services .rk-services-section {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  #rk-clinic-services .rk-services-text-card,
+  #rk-clinic-services .rk-services-text-card.rk-services-right {
+    padding: 20px;
+  }
+
+  #rk-clinic-services #rk-services-scene-strip {
+    left: 12px;
+  }
+
+  #rk-clinic-services .rk-services-progress-bar {
+    width: 85px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #rk-clinic-services .rk-services-text-card,
+  #rk-clinic-services #rk-services-scene,
+  #rk-clinic-services #rk-services-hud,
+  #rk-clinic-services #rk-services-scene-strip,
+  #rk-clinic-services #rk-services-face-caption {
+    transition: none;
+  }
+}

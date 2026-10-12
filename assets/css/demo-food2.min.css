@@ -285,66 +285,66 @@
   filter: grayscale(100%) brightness(1.2);
 }
 
+/* ---------- Shape Divider ---------- */
 .shape-divider {
-    position: relative;
-    z-index: 1
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  display: block;
+  background: transparent;
+  height: 0;                /* ارتفاع صفر چون SVGها absolute هستن */
+  overflow: visible;
 }
 
-    .shape-divider .shape1 svg, .shape-divider .shape2 svg {
-        position: absolute
-    }
+.shape-divider .shape1,
+.shape-divider .shape2 {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  pointer-events: none;
+}
 
-    .shape-divider .shape1 svg {
-        transform: translateY(-70.5%);
-        width: 100vw
-    }
+.shape-divider .shape1 svg,
+.shape-divider .shape2 svg {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  display: block;
+  background: transparent;
+  pointer-events: none;
+}
 
-    .shape-divider .shape2 svg {
-        transform: translateY(-99%);
-        width: 100vw
-    }
+.shape-divider .shape1 svg {
+  transform: translateY(-70.5%);
+}
 
-    .shape-divider2, .shape-divider3, .shape-divider4 {
-        overflow: hidden
-    }
-    
-        .shape-divider2 svg, .shape-divider3 svg, .shape-divider4 svg {
-            position: absolute;
-            right: 0;
-            width: 100vw;
-            z-index: 1
-        }
-    
-        .shape-divider2 svg {
-            top: 0
-        }
-    
-        .shape-divider3 svg {
-            bottom: -3px
-        }
+.shape-divider .shape2 svg {
+  transform: translateY(-99%);
+}
+
+/* موج‌های دیگه (اگه استفاده می‌کنی) */
+.shape-divider2,
+.shape-divider3,
+.shape-divider4 {
+  overflow: hidden;
+  background: transparent;
+}
+
+.shape-divider2 svg,
+.shape-divider3 svg,
 .shape-divider4 svg {
-    top: -24%
+  position: absolute;
+  right: 0;
+  width: 100vw;
+  z-index: 1;
+  background: transparent;
 }
 
-.shape-divider {
-    position: relative;
-    z-index: 1
-}
-
-    .shape-divider .shape1 svg, .shape-divider .shape2 svg {
-        position: absolute
-    }
-
-    .shape-divider .shape1 svg {
-        transform: translateY(-70.5%);
-        width: 100vw
-    }
-
-    .shape-divider .shape2 svg {
-        transform: translateY(-99%);
-        width: 100vw
-    }
-
+.shape-divider2 svg { top: 0; }
+.shape-divider3 svg { bottom: -3px; }
+.shape-divider4 svg { top: -24%; }
 
 
 
@@ -20260,27 +20260,64 @@ h2 {
     z-index: 1002;
 }
 
-.intro-section img {
-    min-height: 54rem;
-    object-fit: cover;
+/* حذف فاصله‌ی بین اینترو و pinned */
+.intro-section,
+.intro-section .owl-carousel,
+.intro-section .owl-stage-outer,
+.intro-section .owl-stage,
+.intro-section .owl-item,
+.intro-section .intro-slide1,
+.intro-section figure,
+.intro-section video {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block;
 }
 
-.intro-section .banner-subtitle {
-    font-size: 2rem;
-    letter-spacing: 0.2px;
+.intro-section figure {
+  line-height: 0;
 }
 
-.intro-section .banner-title {
-    font-size: 6rem;
-    line-height: 1.3em;
+.pinned {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
-.intro-section p {
-    font-size: 1.6rem;
-    line-height: 1.625em;
-    margin-bottom: 8px;
+.pinned__sticky {
+  margin-top: 0 !important;
 }
 
+/* اگه هنوز فاصله بود، این رو هم اضافه کن */
+.intro-section {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.pinned {
+  margin-top: -1px !important;
+}
+/* .category-section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+} */
+
+
+.category-section.mt-4 {
+  margin-top: 0 !important;
+}
+
+/* لایه‌های داخلی که ممکنه فاصله بسازن */
+.category-section .shape-divider {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+.category-section .category-section-lights {
+  margin: 0 !important;
+  padding: 0 !important;
+} 
 
 
 .vet-hero-overlay {
@@ -41170,39 +41207,155 @@ h2 {
 }
 
 /* ---------- Pinned scroll story ---------- */
-.pinned { position: relative; background: var(--color-ink); color: var(--color-bg); }
+:root {
+  --font-display: "Estedad", "Vazirmatn", sans-serif;   /* تیترها */
+  --font-sans:    "Vazirmatn", sans-serif;               /* لیبل‌ها */
+  --color-accent: #d4a24c;   /* طلایی ملایم، مناسب حس کلینیک ممتاز */
+  --color-bg:     #f6f1e7;
+  --color-ink:    #14110d;
+}
+.pinned {
+  position: relative;
+  z-index: 2;
+  margin-top: 0;              /* ← صاف و بدون فاصله */
+  background: var(--color-ink);
+  color: var(--color-bg);
+  direction: rtl;
+}
+
 .pinned__sticky {
-  position: sticky; top: 0; height: 100vh; height: 100svh;
-  display: flex; align-items: center; justify-content: center; overflow: hidden;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--color-ink);
 }
+
 .pinned__sticky img {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-  opacity: 0.5; transition: opacity .6s var(--ease);
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  transition: opacity .6s var(--ease);
 }
-.pinned__caption {
-  position: relative; z-index: 2; text-align: center; padding: 0 24px;
-  max-width: 800px;
+
+.pinned__overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.75) 100%);
+  z-index: 2;
+  pointer-events: none;
 }
-.pinned__caption .eyebrow { color: var(--color-accent); }
-.pinned__caption h3 {
-  font-family: var(--font-display); font-weight: 500;
-  font-size: clamp(2rem, 5vw, 4.5rem); line-height: 1.05; letter-spacing: -0.02em;
-  margin: 0;
-}
+
 .pinned__steps {
-  position: relative; z-index: 3;
-  display: grid; grid-template-columns: 1fr; gap: 0;
+  position: relative;
+  z-index: 3;
   margin-top: -100vh;
+  margin-top: -100svh;
 }
+
 .pinned__step {
-  min-height: 100vh; min-height: 100svh;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 0 24px 80px; max-width: var(--container); margin: 0 auto; width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+  max-width: 880px;
+  margin: 0 auto;
+  width: 100%;
 }
-.pinned__step h4 {
-  font-family: var(--font-sans); font-size: 13px; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--color-accent); margin: 0 0 12px;
+
+/* ---------- eyebrow ---------- */
+.pinned__step .eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 32px;
+  padding: 0 0 14px;
+  position: relative;
+  display: inline-block;
 }
-.pinned__step p {
-  max-width: 36ch; font-size: 1.1rem; color: rgba(246,241,231,0.8); margin: 0;
+
+.pinned__step .eyebrow::before,
+.pinned__step .eyebrow::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  width: 28px;
+  background: var(--color-accent);
+  opacity: 0.5;
+}
+.pinned__step .eyebrow::before { right: calc(100% + 12px); }
+.pinned__step .eyebrow::after  { left:  calc(100% + 12px); }
+
+/* ---------- headline ---------- */
+.pinned__headline {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 4.2vw, 3.5rem);
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: var(--color-bg);
+  margin: 0 0 28px;
+  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.55);
+  text-wrap: balance;
+}
+
+.pinned__headline em {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--color-accent);
+  /* اگه فونت italic داری، از italic استفاده کن */
+}
+
+/* ---------- body ---------- */
+.pinned__body {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 2;
+  letter-spacing: 0;
+  color: rgba(246, 241, 231, 0.78);
+  margin: 0 auto 32px;
+  max-width: 46ch;
+  text-wrap: pretty;
+}
+
+/* ---------- signature ---------- */
+.pinned__signature {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  color: rgba(246, 241, 231, 0.5);
+  text-transform: uppercase;
+  position: relative;
+  padding-top: 20px;
+}
+
+.pinned__signature::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 1px;
+  background: rgba(246, 241, 231, 0.35);
+}
+
+/* ---------- ریسپانسیو ---------- */
+@media (max-width: 640px) {
+  .pinned__headline { line-height: 1.45; }
+  .pinned__body { font-size: 0.95rem; line-height: 1.9; }
+  .pinned__step .eyebrow { letter-spacing: 0.3em; }
 }
